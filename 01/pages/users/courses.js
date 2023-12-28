@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Courses() {
-  return (
-    <div>courses that user Registered</div>
-  )
+  return <h1>User Registered Courses :))</h1>;
 }
 
-export default Courses
+export default Courses;
