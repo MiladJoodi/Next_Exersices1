@@ -14,6 +14,10 @@ export default function Home() {
     {id: 1,title: 'Nextjs', shortName: 'next-js'},
   ]
 
+  const redirectHandler = ()=>{
+    route.push("/course/node");
+  }
+
 
   return (
     <>
