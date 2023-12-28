@@ -5,6 +5,9 @@ body{
   height: 100vh;
 }
 h1{
-  color: #c3c3c3 !important;
+  /* color: #c3c3c3 !important; */
   font-size: 3.5rem !important;
+}
+.text{
+  color: green;
 }
