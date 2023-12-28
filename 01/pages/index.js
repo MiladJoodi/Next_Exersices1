@@ -7,12 +7,20 @@ import Link from "next/link"
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+
+  const courses = [
+    {id: 1,title: 'Courses', shortName: 'courses'},
+    {id: 1,title: 'Node', shortName: 'node'},
+    {id: 1,title: 'Nextjs', shortName: 'next-js'},
+  ]
+
+
   return (
     <>
       <ul>
-        <li><Link href="/courses">Courses</Link></li>
-        <li><Link href="/node">node</Link></li>
-        <li><Link href="/next-js">Courses</Link></li>
+        {courses.map(course=> (
+          <li><Link href={`/${course.shortName}`}>{course.title}</Link></li>
+        ))}
       </ul>
     </>
   );

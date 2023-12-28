@@ -1,12 +1,17 @@
-import React from "react";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router'
+import React from 'react'
 
-function ArticleDetails() {
-  const route = useRouter();
+function SingleCourse() {
 
-  console.log(route.query.shortName);
+    const route = useRouter();
 
-  return <h1>Article Details ({route.query.shortName})</h1>;
+
+  return (
+    <>
+    <div>SingleCourse: {route.query.shortName}</div>
+    
+    </>
+  )
 }
 
-export default ArticleDetails;
+export default SingleCourse
