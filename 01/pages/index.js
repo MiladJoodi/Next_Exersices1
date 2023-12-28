@@ -19,7 +19,14 @@ export default function Home() {
     <>
       <ul>
         {courses.map(course=> (
-          <li><Link href={`/${course.shortName}`}>{course.title}</Link></li>
+          <li>
+            <Link href={{
+              pathname: '/[shortName]',
+              query: {
+                shortName: course.shortName
+              }
+            }}>{course.title}</Link>
+          </li>
         ))}
       </ul>
     </>
