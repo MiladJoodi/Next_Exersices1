@@ -55,7 +55,7 @@ export default function App({ Component, pageProps }) {
                     <img src="/img/logo-bbc.png" alt="BBC" className="seeon__img" />
                     <img src="/img/logo-bi.png" alt="BBC" className="seeon__img" />
                     <img
-                        src="img/logo-forbes.png"
+                        src="/img/logo-forbes.png"
                         alt="BBC"
                         className="seeon__img"
                     />
