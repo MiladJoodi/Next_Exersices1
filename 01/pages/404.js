@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import styled from './../styles/NotFound.module.scss'
 
 function NotFound() {
   return (
-    <h1 className='text'>Page not found</h1>
+    <h1 className={styled.text}>Page not found</h1>
   )
 }
 
