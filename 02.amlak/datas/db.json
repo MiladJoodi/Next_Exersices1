@@ -1,5 +1,69 @@
 {
-    "homes":[{
-        
-    }]
-}
+    "homes": [
+      {
+        "id": 1,
+        "title": "خانه ویلایی",
+        "img": "/img/house-1.jpeg",
+        "roomCount": 6,
+        "meterage": 250,
+        "price": 2000000
+      },
+      {
+        "id": 2,
+        "title": "خانه فروشی",
+        "img": "/img/house-2.jpeg",
+        "roomCount": 2,
+        "meterage": 98,
+        "price": 3000000
+      },
+      {
+        "id": 3,
+        "title": "خانه اجاره‌ای",
+        "img": "/img/house-3.jpeg",
+        "roomCount": 1,
+        "meterage": 180,
+        "price": 2500000
+      },
+      {
+        "id": 4,
+        "title": "سوییت",
+        "img": "/img/house-4.jpeg",
+        "roomCount": 5,
+        "meterage": 210,
+        "price": 500000
+      },
+      {
+        "id": 5,
+        "title": "باغ",
+        "img": "/img/house-5.jpeg",
+        "roomCount": 8,
+        "meterage": 290,
+        "price": 1200000
+      },
+      {
+        "id": 6,
+        "title": "واحد آپارتمان",
+        "img": "/img/house-6.jpeg",
+        "roomCount": 2,
+        "meterage": 150,
+        "price": 800000
+      },
+      {
+        "id": 7,
+        "title": "خانه ویلایی",
+        "img": "/img/house-1.jpeg",
+        "roomCount": 5,
+        "meterage": 300,
+        "price": 2200000
+      },
+      {
+        "id": 8,
+        "title": "خانه اجاره‌ای",
+        "img": "/img/house-2.jpeg",
+        "roomCount": 3,
+        "meterage": 200,
+        "price": 5000000
+      }
+    ]
+  }
+  
