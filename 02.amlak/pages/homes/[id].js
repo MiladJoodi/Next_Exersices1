@@ -33,7 +33,7 @@ function SingleHome() {
               <h2>مرور کلی</h2>
               <p className="">
                 <span>کد ملک : </span>
-                <span>{home.code}</span>
+                <span>{home?.code}</span>
               </p>
             </div>
             <ul className="home-review-bottom">
