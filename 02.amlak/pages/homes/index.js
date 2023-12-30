@@ -41,6 +41,14 @@ function index() {
   const paginateHandler = (event, page)=>{
     event.preventDefault()
     console.log("next page: " + page )
+
+    const endIndex = 3 * page
+    const startIndex = endIndex -3
+
+    const paginatedHomes = db.homes.slice(startIndex, endIndex)
+    setHomes(paginatedHomes)
+    console.log(paginatedHomes);
+
   }
 
   return (
@@ -63,7 +71,7 @@ function index() {
 
         {homes.length > 0 ? 
         <div className="homes">
-        {homes.slice(0,6).map(home=> <Home key={home.id} {...home} />)}
+        {homes.slice(0,3).map(home=> <Home key={home.id} {...home} />)}
       </div>
           :
           <h1>متاسفم چیزی پیدا نکردیم</h1>
@@ -72,7 +80,7 @@ function index() {
 
       <ul className="pagination__list">
         {
-          Array.from({length: Math.ceil(db.homes.length / 6)}).map((item, index)=>(
+          Array.from({length: Math.ceil(db.homes.length / 3)}).map((item, index)=>(
             <li key={index+1} className="pagination__item" onClick={event=> paginateHandler(event, index+1)}>
           <a href="#" className="">
             {index+1}
