@@ -5,6 +5,8 @@ function Product({ product }) {
 }
 
 export async function getStaticPaths() {
+  const res = await fetch(`https://fakestoreapi.com/products?limit=7`);
+  const data = await res.json();
   return {
     paths: [
       { params: { id: "1" } },
