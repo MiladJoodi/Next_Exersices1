@@ -7,12 +7,15 @@ function Product({ product }) {
 export async function getStaticPaths() {
   const res = await fetch(`https://fakestoreapi.com/products?limit=7`);
   const data = await res.json();
+
+  const paths = data.map(product=> {
+    return{
+      params: {id: String(product.id)}
+    }
+  })
+
   return {
-    paths: [
-      { params: { id: "1" } },
-      { params: { id: "2" } },
-      { params: { id: "3" } },
-    ],
+    paths: paths,
     fallback: false
   }
 }
