@@ -23,7 +23,8 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true, // true, false, "blocking"
+    // fallback: true, // true, false, "blocking"
+    fallback: "blocking",
   };
 }
 
@@ -35,7 +36,8 @@ export async function getStaticProps(context) {
 
   if (res.status !== 200) {
     return {
-      notFound: true,
+      // notFound: true,
+      redirect: {destination: '/'}
     };
   }
 
@@ -45,6 +47,7 @@ export async function getStaticProps(context) {
     props: {
       user: data,
     },
+    revalidate: 10
   };
 }
 
