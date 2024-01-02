@@ -6,7 +6,7 @@ function Products({ products }) {
     <div>
       {products.map((product) => (
         <h2 key={product.id}>
-          <Link href={`/products/${product.id}`}>
+          <Link href={`/products/${product.id}`} prefetch={true}>
             {product.id}. {product.title}
           </Link>
         </h2>

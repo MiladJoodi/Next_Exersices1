@@ -1,6 +1,15 @@
+import { useRouter } from "next/router";
 import React from "react";
 
 function Product({ product }) {
+
+  const router = useRouter()
+
+  if(router.isFallback){
+    return <h1>Fallback page: please wait</h1>
+  }
+
+
   return <h1>Product Title: {product.title}</h1>;
 }
 
@@ -16,7 +25,8 @@ export async function getStaticPaths() {
 
   return {
     paths: paths,
-    fallback: false
+    fallback: true
+    // fallback: false
   }
 }
 
