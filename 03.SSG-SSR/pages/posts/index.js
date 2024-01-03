@@ -18,13 +18,18 @@ function Posts({posts}) {
   )
 }
 
-export async function getServerSideProps(){
+export async function getServerSideProps(context){
+
+    const { params, req: request, res: response } = context
+
 
     const res = await fetch('https://jsonplaceholder.typicode.com/posts')
     const data = await res.json();
 
     console.log("ssr")
     console.log("Directory=>", __dirname)
+    console.log("request info=>", request)
+
 
     return{
         props: {
