@@ -6,7 +6,7 @@ function Posts({posts}) {
         <ul>
             {
                 posts.map(post=> (
-                    <li>
+                    <li key={post.div}>
                         <h3>{post.title}</h3>
                         <p>{post.body}</p>
                         <hr />
@@ -24,10 +24,11 @@ export async function getServerSideProps(){
     const data = await res.json();
 
     console.log("ssr")
+    console.log("Directory=>", __dirname)
 
     return{
         props: {
-            posts: data
+            posts: data.slice(0,8)
         }
     }
 }
