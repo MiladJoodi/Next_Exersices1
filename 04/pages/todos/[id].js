@@ -15,8 +15,8 @@ function Todo({ id, title, completed }) {
     })
 
 
-    id(res.status === 200){
-      console.log('Todo');
+    if(res.status === 200){
+      console.log('Todo compeleted successfully');
     }
 
 
