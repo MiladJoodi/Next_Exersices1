@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import Todo from "./[id]"
 
 function Todos() {
 
@@ -16,15 +17,7 @@ function Todos() {
         <ul>
           {
             todos.length ? todos.map((todo) => (
-                <li key={todo.id}>
-                  <Link href={`/todos/${todo.id}`}>
-                    <h3>{todo.title}</h3>
-                  </Link>
-                  <p>Complete: {todo.completed ? '✔️' : '❌'}
-                    
-                  </p>
-                  <hr />
-                </li>
+                <Todo key={todo.id} {...todo} />
               )) : <h1>Todos not found</h1>
           }
         </ul>
