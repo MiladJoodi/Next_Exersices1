@@ -1,0 +1,36 @@
+{
+    "menu": [
+        {
+            "id": 1,
+            "title": "Black Coffee",
+            "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
+            "price": 8,
+            "img": "images/menu-1.jpg",
+            "off": 0
+        },
+        {
+            "id": 2,
+            "title": "Black Coffee",
+            "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
+            "price": 8,
+            "img": "images/menu-2.jpg",
+            "off": 0
+        }
+    ],
+    "services" : [
+        {
+            "id" : 1,
+            "title": "Fastest Door Delivery",
+            "img" : "/images/service-1.jpg",
+            "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
+            "icon": "faTruck"
+        },
+        {
+            "id" : 2,
+            "title": "Fastest Door Delivery",
+            "img" : "/images/service-2.jpg",
+            "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
+            "icon": "faCoffee"
+        }
+    ]
+}

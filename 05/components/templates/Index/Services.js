@@ -16,7 +16,7 @@ function Services() {
                         desc="Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit
                 invidunt, dolore tempor diam ipsum takima erat tempor"
                         img="images/service-1.jpg"
-                    
+                        icon="faTruck"
                     />
 
                     <ServiceItem
@@ -24,6 +24,7 @@ function Services() {
                         desc="Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit
                 invidunt, dolore tempor diam ipsum takima erat tempor"
                         img="images/service-2.jpg"
+                        icon="faCoffee"
                     />
 
                     <ServiceItem
@@ -31,6 +32,7 @@ function Services() {
                         desc="Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit
                 invidunt, dolore tempor diam ipsum takima erat tempor"
                         img="images/service-3.jpg"
+                        icon="faAward"
                     />
 
                     <ServiceItem
@@ -38,6 +40,7 @@ function Services() {
                         desc="Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit
                 invidunt, dolore tempor diam ipsum takima erat tempor"
                         img="images/service-4.jpg"
+                        icon="faTable"
                     />
 
 
