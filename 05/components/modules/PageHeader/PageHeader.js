@@ -13,7 +13,11 @@ function PageHeader({ route }) {
             </Link>
           </p>
           <p class="m-0 text-white px-2">/</p>
-          <p class="m-0 text-white">{route}</p>
+          <p class="m-0 text-white">
+            <Link href={`/${route}`}>
+            {route}
+            </Link>
+          </p>
         </div>
       </div>
     </div>

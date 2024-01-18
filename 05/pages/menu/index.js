@@ -19,7 +19,8 @@ export async function getStaticProps(context) {
   return {
     props: {
       menu: data,
-    }
+    },
+    revalidate: 60*60*12,
   }
 }
 
