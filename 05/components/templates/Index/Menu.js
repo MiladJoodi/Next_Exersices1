@@ -16,14 +16,17 @@ function Menu({data}) {
                 <div class="col-lg-6">
                     <h1 class="mb-5">Hot Coffee</h1>
 
-                    {data.filter(item=> item.type === 'hot').slice(0,3).map(item=> (
-                      <Card item={...item} />
+                    {data.filter(item=> item.type === 'hot').slice(0,3).map((item)=> (
+                      <Card {...item} />
                     ))}
-
 
                 </div>
                 <div class="col-lg-6">
                     <h1 class="mb-5">Cold Coffee</h1>
+                      
+                    {data.filter(item=> item.type === 'cold').slice(0,3).map((item)=> (
+                      <Card {...item} />
+                    ))}
 
                 </div>
             </div>
