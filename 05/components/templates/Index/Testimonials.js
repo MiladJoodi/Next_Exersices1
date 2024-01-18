@@ -1,6 +1,7 @@
+import Testimonial from '@/components/modules/Testimonial/Testimonial'
 import React from 'react'
 
-function Testimonial({data}) {
+function Testimonials({data}) {
   return (
     <div class="container-fluid py-5">
         <div class="container">
@@ -12,16 +13,7 @@ function Testimonial({data}) {
 
               {
                 data.slice(0,4).map(comment=> (
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid" src={comment.profile} alt="" />
-                        <div class="ml-3">
-                            <h4>{comment.username}</h4>
-                            <i>User</i>
-                        </div>
-                    </div>
-                    <p class="m-0">{comment.body}</p>
-                </div>
+                  <Testimonial {...comment} />
                 ))
               }
 
@@ -33,4 +25,4 @@ function Testimonial({data}) {
   )
 }
 
-export default Testimonial
+export default Testimonials
