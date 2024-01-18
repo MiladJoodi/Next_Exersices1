@@ -18,7 +18,7 @@ function Index({data}) {
       <Offer />
       <Menu data={data.menu} />
       <Reservation />
-      <Testimonial />
+      <Testimonial data={data.comments} />
     </>
   )
 }
