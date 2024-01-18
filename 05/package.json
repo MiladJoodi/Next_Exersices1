@@ -6,12 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "server": "json-server --watch ./data/db.json -p 4000",
     "lint": "next lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "json-server": "^1.0.0-alpha.21",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
