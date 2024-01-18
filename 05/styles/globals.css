@@ -7345,12 +7345,12 @@ h6,
 
 .overlay-top::before {
   top: -1px;
-  background: url(/overlay-top.png);
+  background: url(../public/images/overlay-top.png);
 }
 
 .overlay-bottom::after {
   bottom: -1px;
-  background: url(/overlay-bottom.png);
+  background: url(../public/images/overlay-bottom.png);
 }
 
 .section-title {
