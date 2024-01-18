@@ -12,8 +12,14 @@ function Offer() {
       headers: {
         "Content-Type" : "application/json" 
       },
-      body: JSON.stringify({email: email})
+      body: JSON.stringify({email})
     })
+    console.log(response)
+
+    if(response.status === 201){
+      setEmail("")
+      alert('Join Successfully')
+    }
 
   }
 

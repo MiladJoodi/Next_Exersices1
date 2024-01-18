@@ -1,81 +1,84 @@
 {
-    "menu": [
-      {
-        "id": 1,
-        "title": "Black Coffee",
-        "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
-        "price": 8,
-        "img": "/images/menu-1.jpg",
-        "off": 0
-      },
-      {
-        "id": 2,
-        "title": "Chocolete Coffee",
-        "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
-        "price": 7,
-        "img": "/images/menu-2.jpg",
-        "off": 0
-      }
-    ],
-  
-    "services": [
-      {
-        "id": 1,
-        "title": "Fastest Door Delivery",
-        "img": "/images/service-1.jpg",
-        "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
-        "icon": "faTruck"
-      },
-      {
-        "id": 2,
-        "title": "Fastest Door Delivery",
-        "img": "/images/service-2.jpg",
-        "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
-        "icon": "faCoffee"
-      },
-      {
-        "id": 3,
-        "title": "Best Quality Coffee",
-        "img": "/images/service-3.jpg",
-        "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
-        "icon": "faAward"
-      },
-      {
-        "id": 4,
-        "title": "Online Table Booking",
-        "img": "/images/service-4.jpg",
-        "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
-        "icon": "faTable"
-      }
-    ],
-  
-    "newsLetters": [
-      {
-        "id": 1,
-        "email": "amin@gmail.com"
-      },
-      {
-        "id": 2,
-        "email": "qadir@gmail.com"
-      }
-    ],
-  
-    "comment": [
-      {
-        "id": 1,
-        "username": "Q_Yolme",
-        "body": "Perfect Coffee :))",
-        "productID": 1,
-        "score": 5
-      },
-  
-      {
-        "id": 2,
-        "username": "Amin_Saeedi",
-        "body": "Perfect Coffee :))",
-        "productID": 2,
-        "score": 4.5
-      }
-    ]
-  }
-  
+  "menu": [
+    {
+      "id": 1,
+      "title": "Black Coffee",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
+      "price": 8,
+      "img": "/images/menu-1.jpg",
+      "off": 0
+    },
+    {
+      "id": 2,
+      "title": "Chocolete Coffee",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
+      "price": 7,
+      "img": "/images/menu-2.jpg",
+      "off": 0
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "title": "Fastest Door Delivery",
+      "img": "/images/service-1.jpg",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
+      "icon": "faTruck"
+    },
+    {
+      "id": 2,
+      "title": "Fastest Door Delivery",
+      "img": "/images/service-2.jpg",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
+      "icon": "faCoffee"
+    },
+    {
+      "id": 3,
+      "title": "Best Quality Coffee",
+      "img": "/images/service-3.jpg",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
+      "icon": "faAward"
+    },
+    {
+      "id": 4,
+      "title": "Online Table Booking",
+      "img": "/images/service-4.jpg",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
+      "icon": "faTable"
+    }
+  ],
+  "newsLetters": [
+    {
+      "id": 1,
+      "email": "amin@gmail.com"
+    },
+    {
+      "id": 2,
+      "email": "qadir@gmail.com"
+    },
+    {
+      "id": "43a0",
+      "email": "mimil@gmail.com"
+    },
+    {
+      "id": "c2c2",
+      "email": "milad@yahoo.com"
+    }
+  ],
+  "comment": [
+    {
+      "id": 1,
+      "username": "Q_Yolme",
+      "body": "Perfect Coffee :))",
+      "productID": 1,
+      "score": 5
+    },
+    {
+      "id": 2,
+      "username": "Amin_Saeedi",
+      "body": "Perfect Coffee :))",
+      "productID": 2,
+      "score": 4.5
+    }
+  ]
+}
