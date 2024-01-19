@@ -18,7 +18,9 @@ export async function getServerSideProps(context){
   const res = await fetch('http://localhost:4000/menu')
   const data = await res.json();
 
-  const searchResult = data.filter(item=> (item.type.includes(query.q) || item.title.includes(query.q)))
+  const searchResult = data.filter(
+    item=> item.type.toLowerCase().includes(query.q.toLowerCase()) || item.title.toLowerCase().includes(query.q.toLowerCase())
+    );
 
   console.log('search result', item)
 
