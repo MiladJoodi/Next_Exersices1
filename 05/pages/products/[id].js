@@ -16,6 +16,7 @@ export async function getStaticProps(context){
 
   const res = await fetch(`http://localhost:4000/menu/${params.id}`);
   const product = await res.json()
+  console.log('product', product)
 
   return {
     props:{
