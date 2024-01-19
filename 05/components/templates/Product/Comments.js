@@ -25,6 +25,7 @@ const Comments = ({data}) => {
 
         <>
       <Swiper
+        loop={true}
         slidesPerView={1}
         spaceBetween={10}
         pagination={{
@@ -32,8 +33,8 @@ const Comments = ({data}) => {
         }}
         breakpoints={{
           1024: {
-            slidesPerView: 5,
-            spaceBetween: 50,
+            slidesPerView: 2,
+            spaceBetween: 100,
           },
         }}
         modules={[Pagination]}
@@ -59,11 +60,9 @@ const Comments = ({data}) => {
             </p>
           </div>
         </SwiperSlide>
-      </Swiper>
-    </>
 
-
-          <div className="testimonial-item">
+        <SwiperSlide className={styles.swiper_slide}>
+        <div className="testimonial-item">
             <div className="d-flex align-items-center mb-3">
               <img
                 className="img-fluid"
@@ -81,6 +80,74 @@ const Comments = ({data}) => {
               eirmod clita lorem. Dolor tempor ipsum sanct clita
             </p>
           </div>
+        </SwiperSlide>
+
+        <SwiperSlide className={styles.swiper_slide}>
+        <div className="testimonial-item">
+            <div className="d-flex align-items-center mb-3">
+              <img
+                className="img-fluid"
+                width={100}
+                src="/images/testimonial-3.jpg"
+                alt=""
+              />
+              <div className="ml-3">
+                <h4>Alireza</h4>
+                <p className="text-left mb-0">User</p>
+              </div>
+            </div>
+            <p className="m-0 mb-4">
+              Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr
+              eirmod clita lorem. Dolor tempor ipsum sanct clita
+            </p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className={styles.swiper_slide}>
+        <div className="testimonial-item">
+            <div className="d-flex align-items-center mb-3">
+              <img
+                className="img-fluid"
+                width={100}
+                src="/images/testimonial-3.jpg"
+                alt=""
+              />
+              <div className="ml-3">
+                <h4>Alireza</h4>
+                <p className="text-left mb-0">User</p>
+              </div>
+            </div>
+            <p className="m-0 mb-4">
+              Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr
+              eirmod clita lorem. Dolor tempor ipsum sanct clita
+            </p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className={styles.swiper_slide}>
+        <div className="testimonial-item">
+            <div className="d-flex align-items-center mb-3">
+              <img
+                className="img-fluid"
+                width={100}
+                src="/images/testimonial-3.jpg"
+                alt=""
+              />
+              <div className="ml-3">
+                <h4>Alireza</h4>
+                <p className="text-left mb-0">User</p>
+              </div>
+            </div>
+            <p className="m-0 mb-4">
+              Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr
+              eirmod clita lorem. Dolor tempor ipsum sanct clita
+            </p>
+          </div>
+        </SwiperSlide>
+
+      </Swiper>
+    </>
+
 
         </div>
       </div>
