@@ -5,7 +5,7 @@ import Services from '@/components/templates/Index/Services'
 import Offer from '@/components/templates/Index/Offer'
 import Menu from '@/components/templates/Index/Menu'
 import Reservation from '@/components/templates/Index/Reservation'
-import Testimonial from '@/components/templates/Index/Testimonials'
+import Testimonials from '@/components/templates/Index/Testimonials'
 
 
 
@@ -18,7 +18,7 @@ function Index({data}) {
       <Offer />
       <Menu data={data.menu} />
       <Reservation />
-      <Testimonial data={data.comments} />
+      <Testimonials data={data.comments} />
     </>
   )
 }

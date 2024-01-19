@@ -22,7 +22,7 @@ function ReservationDetails() {
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="text-center p-5" style="background: rgba(51, 33, 29, .8);">
+                        <div class="text-center p-5" style={{background: 'rgba(51, 33, 29, .8)'}}>
                             <h1 class="text-white mb-4 mt-5">Book Your Table</h1>
                             <form class="mb-5">
                                 <div class="form-group">
@@ -42,7 +42,7 @@ function ReservationDetails() {
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <select class="custom-select bg-transparent border-primary px-4" style="height: 49px;">
+                                    <select class="custom-select bg-transparent border-primary px-4" style={{height: '49px'}}>
                                         <option selected="">Person</option>
                                         <option value="1">Person 1</option>
                                         <option value="2">Person 2</option>
