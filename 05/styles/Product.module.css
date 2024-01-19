@@ -1,0 +1,75 @@
+.product_main {
+    width: max-content;
+    margin: 0 auto;
+    gap: 50px;
+    display: flex;
+    padding-top: 100px;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)),
+      url(https://daqiantimes.com/wp-content/uploads/2019/01/The-Grounds.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .product_img {
+    width: 350px;
+    border-radius: 30px;
+  }
+  
+  .fill_star {
+    color: orange;
+  }
+  
+  .stars {
+    display: flex;
+    gap: 5px;
+    margin-top: 1rem;
+  }
+  
+  .price_details {
+    display: flex;
+    gap: 30px;
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 1rem;
+  }
+  
+  .price_details p:nth-child(2) {
+    text-decoration: line-through;
+    color: red;
+  }
+  
+  .shopping_btn {
+    width: 100%;
+    padding: 0.7rem;
+    text-align: center;
+    margin-top: 5rem;
+    color: white;
+    outline: 0;
+    border: 0;
+    border-radius: 10px;
+    background: rgb(79 51 25);
+  }
+  
+  .shopping_btn:hover {
+    opacity: 0.7;
+    transition: 0.2s all ease-in-out;
+  }
+  
+  .swiper {
+    width: 100%;
+    margin-top: 4rem;
+    height: 100%;
+    padding-bottom: 5rem !important;
+  }
+  
+  .swiper_slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
