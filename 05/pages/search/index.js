@@ -2,11 +2,11 @@ import PageHeader from '@/components/modules/PageHeader/PageHeader'
 import Result from '@/components/templates/Search/Result'
 import React from 'react'
 
-function Search() {
+function Search({data}) {
   return (
     <>
       <PageHeader route="Search" />
-      <Result />
+      <Result searchResult={data} />
     </>
   )
 }
@@ -27,7 +27,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-
+      data: searchResult,
     },
   }
 }
