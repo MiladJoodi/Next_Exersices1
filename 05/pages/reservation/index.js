@@ -1,8 +1,11 @@
+import PageHeader from '@/components/modules/PageHeader/PageHeader'
 import React from 'react'
 
 function Reservation() {
   return (
-    <div>Reservation Page</div>
+    <>
+    <PageHeader route="Reservation" />
+    </>
   )
 }
 
