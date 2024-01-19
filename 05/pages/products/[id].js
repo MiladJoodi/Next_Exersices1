@@ -52,5 +52,5 @@ export async function getStaticProps(context) {
   };
 }
 
-
+// gg
 export default Product
