@@ -35,7 +35,7 @@ function Navbar() {
             Services
             </Link>
 
-            <Link href='menu' className={`${styles.nav_link}`}>
+            <Link href='/menu' className={`${styles.nav_link}`}>
             Menu
             </Link>
             <div className={`${styles.dropdown}`}>
@@ -47,12 +47,15 @@ function Navbar() {
                 Pages
               </a>
               <div className={`${styles.dropdown_menu} ${styles.text_capitalize}`}>
-                <a href="reservation.html" className={`${styles.dropdown_item}`}>
-                  Reservation
-                </a>
-                <a href="testimonial.html" className={`${styles.dropdown_item}`}>
-                  Testimonial
-                </a>
+
+                <Link href="/reservation" className={`${styles.dropdown_item}`}>
+                Reservation
+                </Link>
+
+                <Link href="/testimonial" className={`${styles.dropdown_item}`}>
+                Testimonial
+                </Link>
+
               </div>
             </div>
             <a href="contact.html" className={`${styles.nav_link}`}>
