@@ -3,6 +3,10 @@ import Comments from '@/components/templates/Product/Comments'
 import React from 'react'
 
 function Product({product, comment}) {
+
+  console.log(comment)
+
+
   return (
     <>
       <ProductsDetails data={product} />
@@ -33,10 +37,9 @@ export async function getStaticProps(context){
   const commentRespnse = await fetch(`http://localhost:4000/comments`);
   const comments = await commentRespnse.json()
 
-  // console.log(comments)
   
   const productComments = comments.filter(
-    comment=> comment.productID === +params.id
+    (comment)=> comment.productID === +params.id
     );
 
 
