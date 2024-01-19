@@ -26,8 +26,16 @@ const ProductsDetails = ({ data }) => {
           <FontAwesomeIcon icon={faStar} />
         </div>
         <div className={styles.price_details}>
-          
-          {data}
+
+          {data.off ?
+            <>
+              <p>${data.price - (data.price * data.off) / 100}</p>
+              <p>${data.price}</p>
+            </>
+            :
+            <p>${data.price}</p>}
+
+
 
           {data.off ? (
             <>
