@@ -3,7 +3,6 @@ import React from 'react'
 
 function Comments({data}) {
 
-  console.log(data)
   
   return (
     <div class="container-fluid py-5">

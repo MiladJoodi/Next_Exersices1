@@ -1,5 +1,5 @@
 import ProductsDetails from '@/components/templates/Product/ProductDetails'
-import Comments from '@/components/templates/Testmonial/Comments'
+import Comments from '@/components/templates/Product/Comments'
 import React from 'react'
 
 function Product({product, comment}) {
