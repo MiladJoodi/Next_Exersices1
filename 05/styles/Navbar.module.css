@@ -332,7 +332,7 @@
 }
 
 .search_icon {
-  position: absolute;
+  /* position: absolute; */
   right: 5px;
   cursor: pointer;
   color: white;
