@@ -35,16 +35,6 @@ const ProductsDetails = ({ data }) => {
             :
             <p>${data.price}</p>}
 
-
-
-          {data.off ? (
-            <>
-              <p>${data.price - (data.price * data.off) / 100}</p>
-              <p>${data.price}</p>
-            </>
-          ) : (
-            <p>${data.price}</p>
-          )}
         </div>
         <p style={{ color: "#fff" }} className="m-0 pr-5">
           {data.desc}
