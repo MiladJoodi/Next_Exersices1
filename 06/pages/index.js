@@ -30,7 +30,7 @@ function Homepage() {
     }
     console.log("Response =>", res);
     console.log("Response Data =>", data);
-  };
+  }
 
   return (
     <>
