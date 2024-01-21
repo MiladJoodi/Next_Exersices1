@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "aa404c5a-271a-4607-bfae-d7e2e352d98b",
+      "username": "amin_saeedi",
+      "email": "amin_saeedi@gmail.com",
+      "password": "amin1215"
+    },
+    {
+      "id": "dce2af4e-e838-4819-8736-840a7fcaab47",
+      "username": "Q_Yolme",
+      "email": "yolme@gmail.com",
+      "password": "q121314"
+    },
+    {
+      "id": "b1525fbb-f7c5-491b-b296-8e70f22f6975",
+      "username": "ali",
+      "email": "ali@gmail.com",
+      "password": "ali121212"
+    }
+  ]
+}
