@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCashRegister, faFile, faTag, faUser } from "@fortawesome/free-solid-svg-icons";
 import styles from "@/styles/Modal.module.css";
 import { useState } from "react";
+import swal from 'sweetalert';
 
 const AddCourseModal = ({ hideAddCourseModal }) => {
 
@@ -24,6 +25,9 @@ const AddCourseModal = ({ hideAddCourseModal }) => {
         console.log("res=> ", res)
 
         if(res.status === 201){
+            swal({
+                title: "دوره مورد نظر با موفقیت اضافه شد"
+            });
             console.log("course created successfully")
             setTitle("")
             hideAddCourseModal()
