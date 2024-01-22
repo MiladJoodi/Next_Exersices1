@@ -26,7 +26,9 @@ const AddCourseModal = ({ hideAddCourseModal }) => {
 
         if(res.status === 201){
             swal({
-                title: "دوره مورد نظر با موفقیت اضافه شد"
+                title: "دوره مورد نظر با موفقیت اضافه شد",
+                icon: "success",
+                button: "اوکی"
             });
             console.log("course created successfully")
             setTitle("")
