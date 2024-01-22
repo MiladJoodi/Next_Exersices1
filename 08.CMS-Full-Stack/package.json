@@ -16,6 +16,7 @@
     "mongoose": "^7.6.3",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "sweetalert": "^2.1.2"
   }
 }
