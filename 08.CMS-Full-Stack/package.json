@@ -1,6 +1,6 @@
 {
   "name": "sabzlearn",
-  "version": "0.1.0", 
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -13,7 +13,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "mongoose": "^8.1.0",
+    "mongoose": "^7.6.3",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
