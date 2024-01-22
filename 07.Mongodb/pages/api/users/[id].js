@@ -2,11 +2,14 @@ import users from "@/data/db";
 import fs from "fs";
 import path from "path";
 
-const handler = (req, res) => {
+import connectToDB from "@/utils/db";
+import usersModel from "@/models/user";
+
+const handler = async (req, res) => {
   if (req.method === "GET") {
     const { id } = req.query;
 
-    const user = users.find((user) => user.id === +id);
+    const user = await usersModel.find({_id : id})
 
     if (user) {
       return res.json(user);

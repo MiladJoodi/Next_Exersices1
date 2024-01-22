@@ -1,21 +1,24 @@
 // ES Module
 // import fs from "fs";
 // import path from "path";
+import connectToDB from "@/utils/db";
+import usersModel from "@/models/user";
 
 // CommonJS
 const fs = require("fs");
 const path = require("path");
 
-const handler = (req, res) => {
+const handler = async (req, res) => {
+  connectToDB();
+
   switch (req.method) {
     case "GET": {
-      const dbPath = path.join(process.cwd(), "data", "db.json");
 
-      const data = fs.readFileSync(dbPath);
+      // const users = await usersModel.find()
+      // const users = await usersModel.find({})
+      const users = await usersModel.find()
 
-      const parsedData = JSON.parse(data);
-
-      res.json(parsedData.users);
+      res.json(users);
       break;
     }
 
@@ -27,26 +30,16 @@ const handler = (req, res) => {
         return res.status(422).json({ message: "Data is not valid" });
       }
 
-      const dbPath = path.join(process.cwd(), "data", "db.json");
+      const user = await usersModel.create({ username, email, password });
 
-      const data = fs.readFileSync(dbPath);
+      console.log(user);
 
-      const parsedData = JSON.parse(data);
-
-      parsedData.users.push({
-        id: crypto.randomUUID(),
-        username,
-        email,
-        password,
-      });
-
-      const err = fs.writeFileSync(dbPath, JSON.stringify(parsedData));
-
-      if (err) {
-        // Response Codes
+      if (user) {
+        return res
+          .status(201)
+          .json({ message: "User registered successfully" });
       } else {
-        res.status(201).json({ message: "User registered successfully" });
-        break;
+        return res.status(409).json({ message: "Unknown Error !!" });
       }
     }
 

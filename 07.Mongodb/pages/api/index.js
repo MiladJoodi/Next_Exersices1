@@ -1,7 +1,7 @@
-const connectToDB =  require('./../../utils/db')
+import connectToDB from "./../../utils/db";
 
 const handler = (req, res) => {
-  connectToDB()
+  connectToDB();
   return res.json({ message: "Welcome to next.js api routes feature :))" });
 };
 
