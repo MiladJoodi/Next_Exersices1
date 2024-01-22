@@ -1,15 +1,16 @@
-import users from "@/data/db";
+import usersModel from "@/models/user";
+import connectToDB from "@/utils/db";
 import fs from "fs";
 import path from "path";
 
-import connectToDB from "@/utils/db";
-import usersModel from "@/models/user";
-
 const handler = async (req, res) => {
-  if (req.method === "GET") {
-    const { id } = req.query;
+  connectToDB();
 
-    const user = await usersModel.find({_id : id})
+  if (req.method === "GET") {
+    const { id: email } = req.query;
+
+    // const user = await usersModel.find({ email }); // => [...]
+    const user = await usersModel.findOne({ email }); // => {...}
 
     if (user) {
       return res.json(user);
@@ -19,68 +20,28 @@ const handler = async (req, res) => {
   } else if (req.method === "DELETE") {
     const { id } = req.query;
 
-    const dbPath = path.join(process.cwd(), "data", "db.json");
+    const deletedUser = await usersModel.findOneAndDelete({ _id: id });
 
-    const data = fs.readFileSync(dbPath);
+    console.log(deletedUser);
 
-    const parsedData = JSON.parse(data);
-
-    const isUser = parsedData.users.some(
-      (user) => String(user.id) === String(id)
-    );
-
-    if (isUser) {
-      const newUsers = parsedData.users.filter(
-        (user) => String(user.id) !== String(id)
-      );
-
-      const err = fs.writeFileSync(
-        dbPath,
-        JSON.stringify({ ...parsedData, users: newUsers })
-      );
-
-      if (err) {
-        // return res.json();
-      } else {
-        return res.json({ message: "User removed successfully :))" });
-      }
-    } else {
-      return res.status(404).json({ message: "User not found !!" });
+    if (deletedUser) {
+      return res.status(200).json({ message: "User removed successfully :))" });
     }
   } else if (req.method === "PUT") {
     const { id } = req.query;
     const { username, email, password } = req.body;
 
-    const dbPath = path.join(process.cwd(), "data", "db.json");
-
-    const data = fs.readFileSync(dbPath);
-
-    const parsedData = JSON.parse(data);
-
-    const isUser = parsedData.users.some(
-      (user) => String(user.id) === String(id)
+    const updatedUser = await usersModel.findOneAndUpdate(
+      { _id: id },
+      {
+        username,
+        email,
+        password,
+      }
     );
 
-    if (isUser) {
-      parsedData.users.some((user) => {
-        if (String(user.id) === String(id)) {
-          user.username = username;
-          user.email = email;
-          user.password = password;
-
-          return true;
-        }
-      });
-
-      const err = fs.writeFileSync(dbPath, JSON.stringify({ ...parsedData }));
-
-      if (err) {
-        // Coding
-      } else {
-        return res.json({ message: "User updated successfully :))" });
-      }
-    } else {
-      return res.status(404).json({ message: "User not found !!" });
+    if (updatedUser) {
+      return res.json({ message: "User updated successfully :))" });
     }
   }
 };
