@@ -3,9 +3,8 @@ import { useState } from "react";
 import AddCourseModal from "./AddCourseModal";
 import styles from "@/styles/Course.module.css";
 
-const Course = (data) => {
-  const [showAddCourseModal, setShowAddCourseModal] = useState(false);
-
+const Course = ({data}) => {
+  const [showAddCourseModal, setShowAddCourseModal] = useState(false);  
   const hideAddCourseModal = () => setShowAddCourseModal(false);
 
   return (
@@ -24,14 +23,11 @@ const Course = (data) => {
         <ul className={styles.courses_list}>
 
           {
-            data.map(course=> <CoursesItem {...course} />)
+            data.map((course)=> (
+              <CoursesItem {...course} />
+            ))
           }
 
-          
-          {/* <CoursesItem
-            title="دوره جاوا اسکریپت"
-            image="/images/courses/js.png"
-          /> */}
         </ul>
       </section>
 

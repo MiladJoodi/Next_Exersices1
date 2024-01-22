@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from "@/styles/Course.module.css";
 
 
-const CoursesItem = ({ title, image }) => {
+const CoursesItem = ({ title }) => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
@@ -16,7 +16,7 @@ const CoursesItem = ({ title, image }) => {
       <li className={styles.courses_item}>
         <div className={styles.courses_img_title}>
           <img
-            src={image}
+            src="https://sabzlearn.ir/wp-content/uploads/2023/12/ezgif.com-jpg-to-webp-converted-20-1-768x432.webp"
             alt="course-item-img"
             className={styles.courses_img}
           />
