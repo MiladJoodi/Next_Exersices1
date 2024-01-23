@@ -26,10 +26,12 @@ const CoursesItem = ({ title, _id }) => {
 
   }
 
-  const updateCourse = async ({title})=>{
+  const updateCourse = async (event,title)=>{
+    event.preventDefault()
+
     const res = await fetch(`api/courses/${_id}`, {
       method: "PUT",
-      header: {
+      headers: {
         "Context-Type" : "application/json"
       },
       body: JSON.stringify({title})
@@ -76,7 +78,7 @@ const CoursesItem = ({ title, _id }) => {
           </a>
         </div>
       </li>
-      {showEditModal && <EditModal hideEditModal={hideEditModal} />}
+      {showEditModal && <EditModal updateHandler={updateCourse} hideEditModal={hideEditModal} />}
       {showDeleteModal && <DeleteModal removeHandler={removeCourse} hideDeleteModal={hideDeleteModal} />}
     </>
   );
