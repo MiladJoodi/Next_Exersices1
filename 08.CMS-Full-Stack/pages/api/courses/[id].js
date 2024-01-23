@@ -4,7 +4,9 @@ import { isValidObjectId } from "mongoose";
 
 const handler = async (req, res)=>{
     connectToDB()
-    const {id} = req.query;
+    
+    if(req.method === 'DELETE'){
+        const {id} = req.query;
 
     if(isValidObjectId(id)){
         try{
@@ -16,7 +18,7 @@ const handler = async (req, res)=>{
     }else{
         return res.status(422).json({message: "Course ID is not valid"})
     }
-
+    }
     
 
 }
