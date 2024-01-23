@@ -57,7 +57,7 @@ const CoursesItem = ({ title, _id }) => {
         </div>
       </li>
       {showEditModal && <EditModal hideEditModal={hideEditModal} />}
-      {showDeleteModal && <DeleteModal hideDeleteModal={hideDeleteModal} />}
+      {showDeleteModal && <DeleteModal removeHandler={removeCourse} hideDeleteModal={hideDeleteModal} />}
     </>
   );
 };
