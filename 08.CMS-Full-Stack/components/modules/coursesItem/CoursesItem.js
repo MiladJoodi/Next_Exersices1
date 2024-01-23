@@ -11,6 +11,21 @@ const CoursesItem = ({ title, _id }) => {
   const hideEditModal = () => setShowEditModal(false);
   const hideDeleteModal = () => setShowDeleteModal(false);
 
+  const removeCourse = async ()=>{
+    const res = await fetch(`/api/courses/${_id}`)
+    const data = await res.json()
+
+    if(res.status === 200){
+      setShowDeleteModal(false)
+      swal({
+        title: "دوره مورد نظر با موفقیت حذف شد",
+        icon: 'success',
+        buttons: "اوکی"
+      })
+    }
+
+  }
+
   return (
     <>
       <li className={styles.courses_item}>
