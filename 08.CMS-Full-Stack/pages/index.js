@@ -6,11 +6,6 @@ const index = ({courses}) => {
   return <Courses data={courses} />;
 };
 
-export async function getStaticProps(context){
-  connectToDB()
-  
-}
-
 export async function getStaticProps(context) {
   connectToDB();
   const courses = await coursesModel.find({});
