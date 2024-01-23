@@ -26,6 +26,26 @@ const CoursesItem = ({ title, _id }) => {
 
   }
 
+  const updateCourse = async ({title})=>{
+    const res = await fetch(`api/courses/${_id}`, {
+      method: "PUT",
+      header: {
+        "Context-Type" : "application/json"
+      },
+      body: JSON.stringify({title})
+    });
+    if(res.status === 200){
+      setShowDeleteModal(false)
+      swal({
+        title: "دوره مورد نظر با موفقیت آپدیت شد",
+        icon: 'success',
+        buttons: "اوکی"
+      })
+    }
+
+
+  }
+
   return (
     <>
       <li className={styles.courses_item}>
