@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from "@/styles/Course.module.css";
 
 
-const CoursesItem = ({ title }) => {
+const CoursesItem = ({ title, _id }) => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
