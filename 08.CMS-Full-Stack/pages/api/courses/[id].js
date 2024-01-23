@@ -28,6 +28,7 @@ const handler = async (req, res) => {
                     { _id: id },
                     { title }
                 )
+                return res.json({ message: "Course Updated Successfully :))" });
             }catch(err){
             return res.status(500).json({ message: "Internal server error" })
             }
