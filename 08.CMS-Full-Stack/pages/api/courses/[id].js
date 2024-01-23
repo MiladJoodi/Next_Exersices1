@@ -14,7 +14,7 @@ const handler = async (req, res)=>{
             return res.status(500).json({message: "Internal Server Error"})
         }
     }else{
-        return res.status(422).json(message: "Course ID is not valid")
+        return res.status(422).json({message: "Course ID is not valid"})
     }
 
     
