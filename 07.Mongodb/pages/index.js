@@ -1,11 +1,5 @@
-// ESM
-// import fs from "fs";
-// import path from "path";
-
-// CommonJS
-const fs = require("fs");
-const path = require("path");
-
+import usersModel from "@/models/user";
+import connectToDB from "@/utils/db";
 import { useState } from "react";
 
 function Homepage({ users }) {
@@ -84,19 +78,24 @@ function Homepage({ users }) {
   );
 }
 
-export async function getStaticProps(context) {
-  // const res = await fetch("/api/users");
-  // const usersData = await res.json();
+// export async function getStaticProps(context) {
+//   connectToDB();
+//   const users = await usersModel.find({});
 
-  const dbPath = path.join(process.cwd(), "data", "db.json");
+//   return {
+//     props: {
+//       users: JSON.parse(JSON.stringify(users)),
+//     },
+//   };
+// }
 
-  const data = fs.readFileSync(dbPath);
-
-  const parsedData = JSON.parse(data);
+export async function getServerSideProps(context) {
+  connectToDB();
+  const users = await usersModel.find({});
 
   return {
     props: {
-      users: parsedData.users,
+      users: JSON.parse(JSON.stringify(users)),
     },
   };
 }

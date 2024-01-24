@@ -1,0 +1,44 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar_search {
+    width: 40%;
+    position: relative;
+  }
+  
+  .navbar_search input {
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    font-family: inherit;
+  }
+  
+  .navbar_search_icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem;
+    font-size: 1.5rem;
+    color: #636e72;
+    cursor: pointer;
+  }
+  
+  .navbar_user_avatar {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .navbar_user_avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

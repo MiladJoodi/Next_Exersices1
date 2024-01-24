@@ -13,10 +13,8 @@ const handler = async (req, res) => {
 
   switch (req.method) {
     case "GET": {
-
-      // const users = await usersModel.find()
-      // const users = await usersModel.find({})
-      const users = await usersModel.find()
+      // const users = await usersModel.find();
+      const users = await usersModel.find({});
 
       res.json(users);
       break;

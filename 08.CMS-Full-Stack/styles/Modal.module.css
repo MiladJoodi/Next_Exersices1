@@ -1,0 +1,157 @@
+.modal_container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  top: 0px;
+  left: 0px;
+  transition: .4s;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+}
+.modal_bg{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+ 
+
+.modal_container::before {
+  content: '';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background-color: #080909;
+}
+
+.modal_content {
+  width: 450px;
+  background-color: #fff;
+  z-index: 1;
+  padding: 30px 40px;
+}
+
+.modal_title {
+  text-align: right;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+.btn_groups {
+  display: flex;
+  gap: 10px;
+}
+
+.accept_btn,
+.unaccept_btn {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: .4s;
+  font-family: inherit;
+}
+
+.accept_btn {
+  background-color: #CE0000;
+  color: #fff;
+  box-shadow: #ce000077 0px 8px 24px;
+}
+
+.accept_btn:hover {
+  transform: translateY(-5px);
+}
+
+.unaccept_btn {
+  background-color: transparent;
+  border: 1px solid #009CF0;
+  color: #000;
+}
+
+.unaccept_btn:hover {
+  background-color: #009CF0;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.update_btn {
+  cursor: pointer;
+  width: 100%;
+  background-color: #41b300;
+  color: #fff;
+  box-shadow: #42b3009a 0px 8px 24px;
+  font-family: inherit;
+}
+
+.edit_user_form {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.input_field {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid #eee;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.input_field span {
+  font-size: 1.6rem;
+  color: #636e72;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input_field input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.4rem;
+  padding-right: 15px;
+  font-family: inherit;
+
+}
+.update_btn {
+  text-decoration: none;
+  padding: 1.2rem 2rem;
+  outline: none;
+  border: none;
+  transition: all 0.4s;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+.update_btn:hover::before {
+  z-index: 1;
+  transition: all 0.4s;
+  transform: scale(1.3);
+  opacity: 0;
+}
+
+.update_btn::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: -1;
+  transition: all 0.4s;
+  transform: scale(0);
+  box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
+}
