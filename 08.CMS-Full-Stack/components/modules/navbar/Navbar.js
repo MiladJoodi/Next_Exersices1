@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styles from "@/styles/Navbar.module.css";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
 
@@ -17,6 +17,10 @@ const Navbar = () => {
       router.push(`/search?q=${search}`)
     }
   }
+
+  useEffect(()=>{
+    setSearch(router.query.q)
+  }, [])
 
   return (
     <nav className={styles.navbar}>

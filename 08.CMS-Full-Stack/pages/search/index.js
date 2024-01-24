@@ -6,9 +6,12 @@ const index = ({courses}) => {
   return <Courses courses={courses} />;
 };
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   connectToDB();
-  const courses = await coursesModel.find({});
+  const {query} = context
+  console.log(query)
+
+  const courses = await coursesModel.find({title: {$regex: query.q}});
 
   console.log(courses);
 
@@ -16,7 +19,6 @@ export async function getStaticProps(context) {
     props: {
       courses: JSON.parse(JSON.stringify(courses))
     },
-    revalidate: 60*60*12,
   };
 }
 

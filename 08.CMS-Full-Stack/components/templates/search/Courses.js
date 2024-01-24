@@ -14,12 +14,11 @@ const Course = ({courses}) => {
         </div>
         <ul className={styles.courses_list}>
 
-          {/* {
-            data.map((course)=> (
+          {
+            courses.map((course)=> (
               <CoursesItem {...course} />
             ))
-          } */}
-          <CoursesItem title="" />
+          }
 
         </ul>
       </section>
