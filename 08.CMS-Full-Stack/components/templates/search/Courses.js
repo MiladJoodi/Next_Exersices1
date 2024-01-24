@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "@/styles/Course.module.css";
+import CoursesItem from "@/components/modules/coursesItem/CoursesItem";
 
 const Course = ({courses}) => {
 
@@ -18,6 +19,7 @@ const Course = ({courses}) => {
               <CoursesItem {...course} />
             ))
           } */}
+          <CoursesItem title="" />
 
         </ul>
       </section>
