@@ -45,7 +45,7 @@ const Course = ({courses}) => {
       </section>
 
       {showAddCourseModal && (
-        <AddCourseModal hideAddCourseModal={hideAddCourseModal} />
+        <AddCourseModal getCourses={getCourses} hideAddCourseModal={hideAddCourseModal} />
       )}
     </>
   );

@@ -3,8 +3,19 @@ import connectToDB from "@/utils/db";
 
 const handler = async (req, res) => {
   connectToDB();
+  if (req.method === "GET") {
+    console.log(req.query.q)
 
-  if (req.method === "POST") {
+    if(req.query.q){
+      const {q} = req.query;
+      const courses = await coursesModel.find({title: {$regex: q}})
+      res.json(courses)
+    }else{
+      const courses = await coursesModel.find({})
+      return res.json(courses)
+    }
+
+  } else if (req.method === "POST") {
     try {
       const { title } = req.body;
       if (!title.trim() || title.length < 8) {
