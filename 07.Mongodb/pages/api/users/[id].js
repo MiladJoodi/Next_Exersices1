@@ -1,7 +1,7 @@
 import usersModel from "@/models/user";
 import connectToDB from "@/utils/db";
-import fs from "fs";
-import path from "path";
+
+import { isValidObjectId } from "mongoose";
 
 const handler = async (req, res) => {
   connectToDB();
@@ -20,12 +20,16 @@ const handler = async (req, res) => {
   } else if (req.method === "DELETE") {
     const { id } = req.query;
 
-    const deletedUser = await usersModel.findOneAndDelete({ _id: id });
+    if (isValidObjectId(id)) {
+      const deletedUser = await usersModel.findOneAndDelete({ _id: id });
 
-    console.log(deletedUser);
-
-    if (deletedUser) {
-      return res.status(200).json({ message: "User removed successfully :))" });
+      if (deletedUser) {
+        return res
+          .status(200)
+          .json({ message: "User removed successfully :))" });
+      }
+    } else {
+      return res.status(422).json({ message: "User ID is not valid !!" });
     }
   } else if (req.method === "PUT") {
     const { id } = req.query;
