@@ -6,6 +6,13 @@ import { faCashRegister, faTag, faUser } from "@fortawesome/free-solid-svg-icons
 import styles from "@/styles/Modal.module.css";
 
 const EditModal = ({ hideEditModal }) => {
+
+    const closeOnPressESC = window.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            hideEditModal()
+        }
+      });
+
     return (
         <div className={styles.modal_container} id="edit-modal">
             <div className={styles.modal_bg} onClick={hideEditModal}></div>

@@ -12,7 +12,7 @@ const AddCourseModal = ({ hideAddCourseModal }) => {
 
     const [title, setTitle] = useState("")
 
-    const addNewCourse = (event) => {
+    const addNewCourse = async (event) => {
         event.preventDefault();
 
         // Not Empty Validation
@@ -23,11 +23,35 @@ const AddCourseModal = ({ hideAddCourseModal }) => {
             confirmButtonText: 'باشه',
             width: '500px',
         })
-        // Not Empty Validation
-
-        // const res = await fetch('')
+        else{
+            const res = await fetch('http://localhost:4000/posts',{
+            method: 'POST',
+            headers:{
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify({title})
+        })
+        if(res.status === 201){
+            Swal.fire({
+            title: 'تبریک',
+            title: 'دوره با موفقیت اضافه شد',
+            icon: 'success',
+            confirmButtonText: 'باشه',
+            width: '500px',
+            })
+        }
+        hideAddCourseModal(false)
+        }
+        
+        
     
     }
+
+    window.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            hideAddCourseModal()
+        }
+      });
 
     return (
         <div className={styles.modal_container} id="add-new-course-modal">

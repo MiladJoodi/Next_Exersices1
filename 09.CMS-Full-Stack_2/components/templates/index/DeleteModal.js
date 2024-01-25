@@ -1,6 +1,13 @@
 import styles from "@/styles/Modal.module.css";
 
 const DeleteModal = ({ hideDeleteModal }) => {
+
+  const closeOnPressESC = window.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      hideDeleteModal()
+    }
+  });
+
   return (
     <div className={styles.modal_container} id="delete-modal">
    <div className={styles.modal_bg} onClick={hideDeleteModal}></div>

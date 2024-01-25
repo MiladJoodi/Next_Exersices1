@@ -1,18 +1,19 @@
 import Course from "@/components/templates/index/Course";
-import connectToDB from "@/utils/db";
-import postsModel from '@/models/post'
 
-const index = () => {
-  return <Course />;
+const index = ({posts}) => {
+  return <Course {...posts} />;
 };
 
 export async function getStaticProps(context){
-  connectToDB();
-  // const posts = await postsModel.find({})
-  console.log(postsModel.find({}))
+  const res = await fetch('http://localhost:4000/posts')
+  const data = await res.json()
+  console.log(data)
+
 
   return{
-    props:{},
+    props:{
+      posts: JSON.parse(JSON.stringify(data))
+    },
   }
 }
 

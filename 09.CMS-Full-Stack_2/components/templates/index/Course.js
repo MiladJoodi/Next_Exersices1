@@ -3,7 +3,10 @@ import { useState } from "react";
 import AddCourseModal from "./AddCourseModal";
 import styles from "@/styles/Course.module.css";
 
-const Course = () => {
+const Course = (posts) => {
+
+  const [data, setData] = useState(Object.entries({...posts})) // convert object to array
+
   const [showAddCourseModal, setShowAddCourseModal] = useState(false);
 
   const hideAddCourseModal = () => setShowAddCourseModal(false);
@@ -22,11 +25,11 @@ const Course = () => {
           </a>
         </div>
         <ul className={styles.courses_list}>
-          <CoursesItem title="دوره PWA" image="/images/courses/PWA.jpg" />
-          <CoursesItem
-            title="دوره جاوا اسکریپت"
-            image="/images/courses/js.png"
-          />
+
+          {data.map((post)=>(
+            <CoursesItem {...post} />
+          ))}
+
         </ul>
       </section>
 
