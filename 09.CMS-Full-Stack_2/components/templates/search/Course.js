@@ -37,7 +37,7 @@ const Course = ({posts}) => {
         <ul className={styles.courses_list}>
 
           {data.length>0 ? data.reverse().map((post)=>(
-            <CoursesItem getCourses={getCourses} image="/images/courses/PWA.jpg" {...post} key={post.id} />
+            <CoursesItem getCourses={getCourses} image="/images/courses/PWA.jpg" {...post} />
           )) :
           <div>
             <h1>هیج موردی یافت نشد</h1>
