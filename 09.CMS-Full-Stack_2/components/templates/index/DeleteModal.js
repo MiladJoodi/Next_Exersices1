@@ -1,6 +1,6 @@
 import styles from "@/styles/Modal.module.css";
 
-const DeleteModal = ({ hideDeleteModal }) => {
+const DeleteModal = ({ hideDeleteModal, deletePost }) => {
 
   const closeOnPressESC = window.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
@@ -14,7 +14,7 @@ const DeleteModal = ({ hideDeleteModal }) => {
     <div className={styles.modal_content}>
          <h1 className={styles.modal_title}>ایا از حذف دوره مطمئن هستید؟</h1>
         <div className={styles.btn_groups}>
-            <button className={styles.accept_btn}>بله</button>
+            <button onClick={deletePost} className={styles.accept_btn}>بله</button>
             <button className={styles.unaccept_btn} onClick={hideDeleteModal}>خیر</button>
         </div>
     </div>

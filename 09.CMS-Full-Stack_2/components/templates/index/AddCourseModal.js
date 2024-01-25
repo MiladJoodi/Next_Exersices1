@@ -8,7 +8,7 @@ import { useState } from "react";
 
 import Swal from 'sweetalert2'
 
-const AddCourseModal = ({ hideAddCourseModal }) => {
+const AddCourseModal = ({ hideAddCourseModal, getCourses }) => {
 
     const [title, setTitle] = useState("")
 
@@ -23,35 +23,39 @@ const AddCourseModal = ({ hideAddCourseModal }) => {
             confirmButtonText: 'باشه',
             width: '500px',
         })
-        else{
-            const res = await fetch('http://localhost:4000/posts',{
-            method: 'POST',
-            headers:{
-                "Content-Type" : "application/json"
-            },
-            body: JSON.stringify({title})
-        })
-        if(res.status === 201){
-            Swal.fire({
-            title: 'تبریک',
-            title: 'دوره با موفقیت اضافه شد',
-            icon: 'success',
-            confirmButtonText: 'باشه',
-            width: '500px',
+        else {
+            const res = await fetch('http://localhost:4000/posts', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ title })
             })
+            if (res.status === 201) {
+                Swal.fire({
+                    title: 'تبریک',
+                    title: 'دوره با موفقیت اضافه شد',
+                    icon: 'success',
+                    confirmButtonText: 'باشه',
+                    width: '500px',
+                })
+                hideAddCourseModal(false)
+                // getCourses()
+
+            }
+
         }
-        hideAddCourseModal(false)
-        }
-        
-        
-    
+
+
+
+
     }
 
-    window.addEventListener('keydown', function(event) {
+    window.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {
             hideAddCourseModal()
         }
-      });
+    });
 
     return (
         <div className={styles.modal_container} id="add-new-course-modal">

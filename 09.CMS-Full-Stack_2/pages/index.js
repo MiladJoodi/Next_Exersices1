@@ -1,6 +1,7 @@
 import Course from "@/components/templates/index/Course";
 
-const index = ({posts}) => {
+const index = (posts) => {
+  // console.log(posts)
   return <Course {...posts} />;
 };
 
@@ -12,7 +13,7 @@ export async function getStaticProps(context){
 
   return{
     props:{
-      posts: JSON.parse(JSON.stringify(data))
+      posts: data,
     },
   }
 }

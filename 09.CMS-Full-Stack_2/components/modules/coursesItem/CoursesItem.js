@@ -3,26 +3,48 @@ import EditModal from "@/components/templates/index/EditModal";
 import { useState } from "react";
 import styles from "@/styles/Course.module.css";
 
+import Swal from 'sweetalert2'
 
-const CoursesItem = (posts) => {
+const CoursesItem = ({title, image, id}) => {
 
-  console.log(posts[2].title)
+  
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const hideEditModal = () => setShowEditModal(false);
   const hideDeleteModal = () => setShowDeleteModal(false);
 
+  const deletePost = async () => {
+    const res = await fetch(`http://localhost:4000/posts/${id}`,{
+      method: "DELETE",
+    });
+
+    if (res.status === 200) {
+      setShowDeleteModal(false);
+      Swal.fire({
+        title: 'تبریک',
+        title: 'دوره با موفقیت اضافه شد',
+        icon: 'success',
+        confirmButtonText: 'باشه',
+        width: '500px',
+        })
+    }
+  };
+
+
+
+
+
   return (
     <>
       <li className={styles.courses_item}>
         <div className={styles.courses_img_title}>
           <img
-            // src={image}
+            src={image}
             alt="course-item-img"
             className={styles.courses_img}
           />
-          {/* <h5 className={styles.courses_name}>{title}</h5> */}
+          <h5 className={styles.courses_name}>{title}</h5>
         </div>
         <div className={styles.courses_btns}>
           <a
@@ -44,7 +66,7 @@ const CoursesItem = (posts) => {
         </div>
       </li>
       {showEditModal && <EditModal hideEditModal={hideEditModal} />}
-      {showDeleteModal && <DeleteModal hideDeleteModal={hideDeleteModal} />}
+      {showDeleteModal && <DeleteModal deletePost={deletePost} hideDeleteModal={hideDeleteModal} />}
     </>
   );
 };

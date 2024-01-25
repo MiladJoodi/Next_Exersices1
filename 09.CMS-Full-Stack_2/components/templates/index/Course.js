@@ -3,13 +3,26 @@ import { useState } from "react";
 import AddCourseModal from "./AddCourseModal";
 import styles from "@/styles/Course.module.css";
 
-const Course = (posts) => {
+const Course = ({posts}) => {
 
-  const [data, setData] = useState(Object.entries({...posts})) // convert object to array
+  const [data, setData] = useState(posts)
 
   const [showAddCourseModal, setShowAddCourseModal] = useState(false);
 
   const hideAddCourseModal = () => setShowAddCourseModal(false);
+
+  const getCourses = async ()=>{
+    const res = await fetch('http://localhost:4000/posts')
+    const postsData = await res.json()
+    console.log(postsData)
+
+    // if(res.status === 200){
+      setData(postsData)
+    // }
+
+  }
+  // getCourses()
+
 
   return (
     <>
@@ -27,7 +40,7 @@ const Course = (posts) => {
         <ul className={styles.courses_list}>
 
           {data.map((post)=>(
-            <CoursesItem {...post} />
+            <CoursesItem getCourses={getCourses} image="/images/courses/PWA.jpg" {...post} />
           ))}
 
         </ul>
