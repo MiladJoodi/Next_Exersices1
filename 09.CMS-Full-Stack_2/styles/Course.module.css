@@ -1,0 +1,114 @@
+.courses {
+    padding: 4rem 0;
+    width: 85%; 
+}
+
+.courses_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.courses_title {
+    font-size: 3rem;
+}
+
+.new_course_btn {
+    background-color: #41b300;
+    color: #fff;
+    box-shadow: #42b3009a 0px 8px 24px;
+}
+
+.courses_list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 0;
+}
+
+.courses_item {
+    width: 100%;
+    height: 75px;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.courses_img_title {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.6rem;
+}
+
+
+
+.courses_img {
+    width: 120px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.courses_name {
+    font-size: 1.6rem;
+}
+
+.courses_btns {
+    padding: 0 2rem;
+    display: flex;
+    gap: 3px;
+}
+
+
+.new_course_btn ,
+.courses_btn_delete,
+.courses_btn_edit {
+    text-decoration: none;
+    padding: 1.2rem 2rem;
+    outline: none;
+    border: none;
+    transition: all 0.4s;
+    position: relative;
+    font-size: 1.6rem;
+}
+
+.new_course_btn:hover::before ,
+.courses_btn_delete:hover::before ,
+.courses_btn_edit:hover::before  {
+    z-index: 1;
+    transition: all 0.4s;
+    transform: scale(1.3);
+    opacity: 0;
+}
+
+.new_course_btn::before  ,
+.courses_btn_delete::before ,
+.courses_btn_edit::before  {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: -1;
+    transition: all 0.4s;
+    transform: scale(0);
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
+}
+
+.courses_btn_delete {
+    background-color: #CE0000;
+    color: #fff;
+    box-shadow: #ce000077 0px 8px 24px;
+}
+
+.courses_btn_edit {
+    background-color: #009CF0;
+    color: #fff;
+    box-shadow: #009cf05d 0px 8px 24px;
+}
