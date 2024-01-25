@@ -4,8 +4,13 @@ config.autoAddCss = false;
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCashRegister, faTag, faUser } from "@fortawesome/free-solid-svg-icons";
 import styles from "@/styles/Modal.module.css";
+import { useState } from "react";
 
-const EditModal = ({ hideEditModal }) => {
+const EditModal = ({ hideEditModal, updatePost }) => {
+
+
+    const [title, setTitle] = useState("")
+
 
     const closeOnPressESC = window.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
@@ -24,11 +29,13 @@ const EditModal = ({ hideEditModal }) => {
                         <span><FontAwesomeIcon icon={faTag} /></span>
                         <input
                             type="text" 
-                            placeholder="نام دوره"
+                            placeholder="نام جدید دوره را وارد کنید"
                             spellcheck="false"
+                            value={title}
+                            onChange={e=> setTitle(e.target.value)}
                         />
                     </div>
-                    <div className={styles.input_field}>
+                    {/* <div className={styles.input_field}>
                         <span><FontAwesomeIcon icon={faCashRegister} /> </span>
                         <input
                             type="text" 
@@ -43,9 +50,9 @@ const EditModal = ({ hideEditModal }) => {
                             placeholder="مدرس دوره"
                             spellcheck="false"
                         />
-                    </div>
+                    </div> */}
 
-                    <button type="submit" className={styles.update_btn }>
+                    <button onClick={(e)=> updatePost(e, title)} type="submit" className={styles.update_btn }>
                         اپدیت دوره
                     </button>
                 </form>

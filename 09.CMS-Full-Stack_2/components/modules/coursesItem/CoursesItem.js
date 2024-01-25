@@ -33,7 +33,28 @@ const CoursesItem = ({title, image, id, getCourses}) => {
 
   };
 
+  const updatePost = async (e, title)=>{
+e.preventDefault();
+    const res = await fetch(`http://localhost:4000/posts/${id}`,{
+      method: 'PUT',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({title})
+    })
 
+    if (res.status === 200) {
+      setShowEditModal(false);
+      Swal.fire({
+        title: 'دوره با موفقیت ویرایش شد',
+        icon: 'success',
+        confirmButtonText: 'باشه',
+        width: '500px',
+        })
+        getCourses()
+    }
+
+  }
 
 
 
@@ -67,7 +88,7 @@ const CoursesItem = ({title, image, id, getCourses}) => {
           </a>
         </div>
       </li>
-      {showEditModal && <EditModal hideEditModal={hideEditModal} />}
+      {showEditModal && <EditModal updatePost={updatePost} hideEditModal={hideEditModal} />}
       {showDeleteModal && <DeleteModal deletePost={deletePost} hideDeleteModal={hideDeleteModal} />}
     </>
   );
