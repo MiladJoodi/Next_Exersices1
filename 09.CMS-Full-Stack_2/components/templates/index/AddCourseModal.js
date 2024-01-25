@@ -40,7 +40,7 @@ const AddCourseModal = ({ hideAddCourseModal, getCourses }) => {
                     width: '500px',
                 })
                 hideAddCourseModal(false)
-                // getCourses()
+                getCourses()
 
             }
 

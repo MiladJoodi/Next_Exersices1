@@ -5,7 +5,7 @@ import styles from "@/styles/Course.module.css";
 
 import Swal from 'sweetalert2'
 
-const CoursesItem = ({title, image, id}) => {
+const CoursesItem = ({title, image, id, getCourses}) => {
 
   
   const [showEditModal, setShowEditModal] = useState(false);
@@ -21,14 +21,16 @@ const CoursesItem = ({title, image, id}) => {
 
     if (res.status === 200) {
       setShowDeleteModal(false);
-      Swal.fire({
-        title: 'تبریک',
-        title: 'دوره با موفقیت اضافه شد',
-        icon: 'success',
-        confirmButtonText: 'باشه',
-        width: '500px',
-        })
+            Swal.fire({
+            title: 'تبریک',
+            title: 'دوره با موفقیت حذف شد',
+            icon: 'success',
+            confirmButtonText: 'باشه',
+            width: '500px',
+            })
+            getCourses()
     }
+
   };
 
 

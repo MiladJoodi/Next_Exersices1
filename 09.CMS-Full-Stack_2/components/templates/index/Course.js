@@ -14,15 +14,12 @@ const Course = ({posts}) => {
   const getCourses = async ()=>{
     const res = await fetch('http://localhost:4000/posts')
     const postsData = await res.json()
-    console.log(postsData)
 
-    // if(res.status === 200){
+    if(res.status === 200){
       setData(postsData)
-    // }
+    }
 
   }
-  // getCourses()
-
 
   return (
     <>
@@ -39,15 +36,19 @@ const Course = ({posts}) => {
         </div>
         <ul className={styles.courses_list}>
 
-          {data.map((post)=>(
+          {data.length>0 ? data.reverse().map((post)=>(
             <CoursesItem getCourses={getCourses} image="/images/courses/PWA.jpg" {...post} />
-          ))}
+          )) :
+          <div>
+            <h1>هیج موردی یافت نشد</h1>
+          </div>
+          }
 
         </ul>
       </section>
 
       {showAddCourseModal && (
-        <AddCourseModal hideAddCourseModal={hideAddCourseModal} />
+        <AddCourseModal getCourses={getCourses} hideAddCourseModal={hideAddCourseModal} />
       )}
     </>
   );
