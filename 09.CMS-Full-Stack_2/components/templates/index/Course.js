@@ -36,7 +36,7 @@ const Course = ({posts}) => {
         </div>
         <ul className={styles.courses_list}>
 
-          {data.length>0 ? data.reverse().map((post)=>(
+          {data ? data.reverse().map((post)=>(
             <CoursesItem getCourses={getCourses} image="/images/courses/PWA.jpg" {...post} key={post.id} />
           )) :
           <div>
