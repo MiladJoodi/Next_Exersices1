@@ -7,21 +7,26 @@ import styles from "@/styles/Modal.module.css";
 import { useState } from "react";
 
 import Swal from 'sweetalert2'
-import Swal from 'sweetalert2/dist/sweetalert2.js'
-import 'sweetalert2/src/sweetalert2.scss'
 
 const AddCourseModal = ({ hideAddCourseModal }) => {
 
     const [title, setTitle] = useState("")
-    
-    const addNewCourse = (event)=>{
+
+    const addNewCourse = (event) => {
         event.preventDefault();
-        if(title === "") Swal.fire({
-            title: 'Error!',
-            text: 'Do you want to continue',
+
+        // Not Empty Validation
+        if (title === "") Swal.fire({
+            // title: 'd!',
+            title: 'لطفاً نام دوره را وارد نمایید',
             icon: 'error',
-            confirmButtonText: 'Cool'
-          })
+            confirmButtonText: 'باشه',
+            width: '500px',
+        })
+        // Not Empty Validation
+
+        // const res = await fetch('')
+    
     }
 
     return (
@@ -38,7 +43,7 @@ const AddCourseModal = ({ hideAddCourseModal }) => {
                             placeholder="نام دوره"
                             spellcheck="false"
                             value={title}
-                            onChange={e=>setTitle(e)}
+                            onChange={e => setTitle(e.target.value)}
                         />
                     </div>
 

@@ -55,3 +55,11 @@ body {
     url('/fonts/Shabnam-Medium-FD.ttf')format('truetype'),
     url('/fonts/Shabnam-Medium-FD.woff')format('woff')
 }
+
+ /* ///// sweet alert custom */
+ .swal2-popup {
+  font-size: 1.5rem;
+  }
+  .swal2-confirm{
+    font-family: inherit;
+  }
