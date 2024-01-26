@@ -23,6 +23,6 @@ const schema = mongoose.Schema({
     },
     role: {
         type: String,
-        required: true
+        required: true 
     },
 })
