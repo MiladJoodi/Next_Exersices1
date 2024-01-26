@@ -14,4 +14,4 @@ const generateToken = (data) => {
     return token;
 }
 
-export { hashPassword };
+export { hashPassword, generateToken };
