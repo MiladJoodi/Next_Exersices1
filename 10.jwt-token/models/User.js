@@ -18,15 +18,12 @@ const schema = mongoose.Schema({
     required: true,
   },
   password: {
-    // amin1221 -> Hash -> bgr3hvgupt4wbpjrntbijnidjan
-    // Token -> JWT -> Cookies
     type: String,
     required: true,
   },
   role: {
     type: String,
-    required: true, // USER - ADMIN
-    // default: "USER",
+    required: true,
   },
 });
 
