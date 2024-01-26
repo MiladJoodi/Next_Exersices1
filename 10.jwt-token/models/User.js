@@ -26,3 +26,6 @@ const schema = mongoose.Schema({
         required: true 
     },
 })
+
+const model = mongoose.models.User || mongoose.model('User', schema)
+export default model;
