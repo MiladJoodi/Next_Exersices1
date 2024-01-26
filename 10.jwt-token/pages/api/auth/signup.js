@@ -18,7 +18,7 @@ const handler = (req, res) => {
             !email.trim() ||
             !password.trim()
         ) {
-            return res.status(422).json({message: "Data is not valid"})
+            return res.status(422).json({ message: "Data is not valid" })
         }
 
     } catch (err) {
