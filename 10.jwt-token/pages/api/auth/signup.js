@@ -43,7 +43,7 @@ const handler = async (req, res) => {
     const hashedPassword = await hashPassword(password)
 
     // token
-    const token = generateToken({email:email})
+    const token = generateToken({email})
 
     // admin frist
     const users = await UserModel.find({})
@@ -60,7 +60,7 @@ const handler = async (req, res) => {
     });
 
     return res
-    .setHeader("Set-Cookie", serialize("token", 'token', {
+    .setHeader("Set-Cookie", serialize("token", token, {
       httpOnly: true,
       path: "/",
       maxAge: 60 * 60 * 24
