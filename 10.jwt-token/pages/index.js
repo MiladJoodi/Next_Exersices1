@@ -15,12 +15,15 @@ import {
 function Index() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
     const userAuth = async () => {
       const res = await fetch("/api/auth/me");
       if (res.status === 200) {
         setIsLoggedIn(true)
+        const {data: user} = await res.json();
+        console.log("user=>",user)
       }
 
 

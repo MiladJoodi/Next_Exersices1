@@ -8,6 +8,14 @@ function Index() {
   const [identifier, setIdentifier] = useState("")
   const [password, setPassword] = useState("")
 
+  useEffect(()=>{
+    fetch("/api/auth/me").then((res)=>{
+      if(res.status === 200){
+        router.replace("/dashboard")
+      }
+    })
+  }, [])
+
   const signIn = async (event)=>{
     event.preventDefault();
 
