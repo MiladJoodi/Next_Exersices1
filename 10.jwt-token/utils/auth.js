@@ -19,9 +19,16 @@ const verifyPassword = async (password, hashPassword) => {
     return isValid
 }
 
-const verifyToken = (data)=>{
-    const validationResult = verify(data, process.env.privateKey)
-    return validationResult;
+const verifyToken = (token) => {
+    try {
+        const validationResult = verify(token, process.env.privateKey)
+        return validationResult;
+    } catch (err) {
+        console.log("Verify Token Error", err)
+        return false;
+    }
 }
 
-export { hashPassword, generateToken,verifyPassword, verifyToken };
+
+
+export { hashPassword, generateToken, verifyPassword, verifyToken };
