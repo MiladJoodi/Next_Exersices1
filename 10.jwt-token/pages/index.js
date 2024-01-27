@@ -35,6 +35,13 @@ function Index() {
     userAuth()
   }, [])
 
+  const signOut = async ()=>{
+    const res = await fetch("/api/auth/signout")
+    const data = await res.json()
+    console.log("Res=>", res)
+    console.log("data=>", data)
+  }
+
   return (
     <div className="container">
       <aside className="sidebar">
@@ -86,16 +93,19 @@ function Index() {
               </>
             )}
           </>
-
+          
           {/* User is login & admin */}
-          {/* <li>
-            <Link href="/p-admin">
-              <span>
-                <FontAwesomeIcon icon={faSolarPanel} />
-              </span>
-              Admin panel
-            </Link>
-          </li> */}
+            {isAdmin &&(
+              <li>
+              <Link href="/p-admin">
+                <span>
+                  <FontAwesomeIcon icon={faSolarPanel} />
+                </span>
+                Admin panel
+              </Link>
+            </li>
+            )}
+          
         </ul>
         <img className="wave" src="/Images/wave.svg" alt="wave" />
       </aside>
