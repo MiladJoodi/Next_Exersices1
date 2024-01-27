@@ -1,6 +1,9 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 function Index() {
+
+  const router = useRouter()
 
   const [identifier, setIdentifier] = useState("")
   const [password, setPassword] = useState("")
@@ -17,7 +20,20 @@ function Index() {
       body: JSON.stringify(user)
     });
 
-    console.log(res)
+    if(res.status === 200){
+      setIdentifier('')
+      setPassword('')
+      alert('Logged successfully')
+
+      router.replace("/dashboard/")
+
+    }else if(res.status === 404){
+      alert("User Not Found")
+    }else if(res.status === 422){
+      alert("username or password in not currect")
+    }else if(res.status === 500){
+      alert("Error")
+    }
   }
 
   return (
