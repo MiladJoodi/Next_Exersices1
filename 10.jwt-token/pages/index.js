@@ -11,8 +11,11 @@ import {
   faSolarPanel,
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
 
 function Index() {
+
+  const router = useRouter()
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
@@ -38,9 +41,19 @@ function Index() {
   const signOut = async ()=>{
     const res = await fetch("/api/auth/signout")
     const data = await res.json()
-    console.log("Res=>", res)
-    console.log("data=>", data)
+
+    if(res.status === 200){
+      setIsLoggedIn(false)
+      setIsAdmin(false)
+
+      router.replace("/")
+
+    }
+
+
   }
+
+  
 
   return (
     <div className="container">
@@ -61,7 +74,7 @@ function Index() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#">
+                  <Link href="#" onClick={signOut}>
                     <span>
                       <FontAwesomeIcon icon={faSignOut} />
                     </span>
