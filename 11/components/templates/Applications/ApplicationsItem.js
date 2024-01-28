@@ -6,7 +6,7 @@ function ApplicationsItem({name, date, company, offer, meeting, status, profileI
             <td>
                 <img
                     alt="..."
-                    src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                    src={`/images/profile/${profileImg}`}
                     class="avatar avatar-sm rounded-circle me-2"
                 />
                 <a class="text-heading font-semibold" href="#">
@@ -17,7 +17,7 @@ function ApplicationsItem({name, date, company, offer, meeting, status, profileI
             <td>
                 <img
                     alt="..."
-                    src="https://preview.webpixels.io/web/img/other/logos/logo-3.png"
+                    src={`/images/profile/${companyImg}`}
                     class="avatar avatar-xs rounded-circle me-2"
                 />
                 <a class="text-heading font-semibold" href="#">
@@ -27,7 +27,7 @@ function ApplicationsItem({name, date, company, offer, meeting, status, profileI
             <td>${offer}</td>
             <td>
                 <span class="badge badge-lg badge-dot">
-                    <i class="bg-success"></i>{meeting}
+                    <i class={status}></i>{meeting}
                 </span>
             </td>
             <td class="text-end">
