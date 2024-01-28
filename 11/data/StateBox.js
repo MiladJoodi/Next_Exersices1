@@ -6,7 +6,7 @@ export const stateBoxProps = [
       iconColor: "bg-tertiary",
       arrow: "bi bi-arrow-up me-1",
       stateNumber: "13",
-      stateColor: "#ccf5e7",
+      stateColor: "bg-soft-success",
       since: "Since last month",
     },
     {
@@ -16,7 +16,7 @@ export const stateBoxProps = [
       iconColor: "bg-primary",
       arrow: "bi bi-arrow-up me-1",
       stateNumber: "30",
-      stateColor: "#ccf5e7",
+      stateColor: "bg-soft-success",
       since: "Since last month",
     },
     {
@@ -26,7 +26,7 @@ export const stateBoxProps = [
       iconColor: "bg-info",
       arrow: "bi bi-arrow-down me-1",
       stateNumber: "-5",
-      stateColor: "#ffd6e0",
+      stateColor: "bg-soft-danger",
       since: "Since last month"
     },
     {
@@ -34,8 +34,9 @@ export const stateBoxProps = [
       value: "95%",
       icon: "bi bi-credit-card",
       iconColor: "bg-warning",
+      arrow: "bi bi-arrow-up me-1",
       stateNumber: "13",
-      stateColor: "#ccf5e7",
+      stateColor: "bg-soft-success",
       since: "Since last month"
     },
   ];
