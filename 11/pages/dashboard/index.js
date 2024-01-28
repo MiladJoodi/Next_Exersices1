@@ -9,16 +9,18 @@ function Dashboard() {
   return (
     <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
       <Navbar />
+
       <div class="h-screen flex-grow-1 overflow-y-lg-auto">
         <Header />
         {/* <!-- Main --> */}
         <main class="py-6 bg-surface-secondary">
           <div class="container-fluid">
-           <States />
+            <States />
             <Applications />
           </div>
         </main>
       </div>
+
     </div>
   );
 }

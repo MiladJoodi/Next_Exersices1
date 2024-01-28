@@ -1,8 +1,36 @@
-/* Webpixels CSS */
-/* Utility and component-centric Design System based on Bootstrap for fast, responsive UI development */
-/* URL: https://github.com/webpixels/css */
-
 @import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
-
-/* Bootstrap Icons */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css");
+
+@font-face {
+    font-family: 'IranSansBold';
+    src: url('../public/fonts/IRANSansDN-Bold.ttf');
+    font-weight: 400;
+    font-style: normal;
+    }
+@font-face{
+    font-family: 'IranSansRegular';
+    src: url('../public/fonts/IRANSansDN.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    font-family: 'IranSansBold';
+    direction: rtl;
+}
+/* width */
+.navbar::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+.navbar::-webkit-scrollbar-track {
+    /* box-shadow: inset 0 0 5px grey; */
+    border-radius: 10px;
+}
+
+/* Handle */
+.navbar::-webkit-scrollbar-thumb {
+    background: #dedffd9a;
+    border-radius: 10px;
+}

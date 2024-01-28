@@ -75,17 +75,17 @@ function Navbar() {
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <i class="bi bi-house"></i> Dashboard
+                <i class="bi bi-house"></i> داشبورد
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <i class="bi bi-bar-chart"></i> Analitycs
+                <i class="bi bi-bar-chart"></i> نمودار تغییرات
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <i class="bi bi-chat"></i> Messages
+                <i class="bi bi-chat"></i> پیام ها
                 <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto">
                   6
                 </span>
@@ -93,12 +93,12 @@ function Navbar() {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <i class="bi bi-bookmarks"></i> Collections
+                <i class="bi bi-bookmarks"></i> ذخیره شده ها
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <i class="bi bi-people"></i> Users
+                <i class="bi bi-people"></i> کاربران
               </a>
             </li>
           </ul>
@@ -111,7 +111,7 @@ function Navbar() {
                 class="nav-link text-xs font-semibold text-uppercase text-muted ls-wide"
                 href="#"
               >
-                Contacts
+                مخاطبین
                 <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-4">
                   13
                 </span>
