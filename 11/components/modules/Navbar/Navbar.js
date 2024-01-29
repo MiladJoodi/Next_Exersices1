@@ -84,9 +84,9 @@ function Navbar() {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link d-flex" href="#">
                 <i class="bi bi-chat"></i> پیام ها
-                <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto">
+                <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center mr-0-important">
                   6
                 </span>
               </a>
@@ -118,7 +118,8 @@ function Navbar() {
               </div>
             </li>
             <li>
-              <a href="#" class="nav-link d-flex align-items-center">
+              <a href="#" class="nav-link d-flex align-items-center space justify-content-between">
+                <div className="d-flex gap-1">
                 <div class="me-4">
                   <div class="position-relative d-inline-block text-white">
                     <img
@@ -131,13 +132,14 @@ function Navbar() {
                 </div>
                 <div>
                   <span class="d-block text-sm font-semibold">
-                    Marie Claire
+                    فاطمه
                   </span>
                   <span class="d-block text-xs text-muted font-regular">
-                    Paris, FR
+                    گرافیست
                   </span>
                 </div>
-                <div class="ms-auto">
+                </div>
+                <div class="">
                   <i class="bi bi-chat"></i>
                 </div>
               </a>
@@ -154,10 +156,10 @@ function Navbar() {
                 </div>
                 <div>
                   <span class="d-block text-sm font-semibold">
-                    Michael Jordan
+                    علیرضا
                   </span>
                   <span class="d-block text-xs text-muted font-regular">
-                    Bucharest, RO
+                    نویسنده
                   </span>
                 </div>
                 <div class="ms-auto">
@@ -179,10 +181,10 @@ function Navbar() {
                 </div>
                 <div>
                   <span class="d-block text-sm font-semibold">
-                    Heather Wright
+                    محمد
                   </span>
                   <span class="d-block text-xs text-muted font-regular">
-                    London, UK
+                    نویسنده
                   </span>
                 </div>
                 <div class="ms-auto">

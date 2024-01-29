@@ -18,6 +18,16 @@
     font-family: 'IranSansBold';
     direction: rtl;
 }
+
+.mr-0-important{
+    margin-right: auto !important;
+}
+
+.navbar-nav{
+    padding: 0;
+}
+
+
 /* width */
 .navbar::-webkit-scrollbar {
     width: 15px;
