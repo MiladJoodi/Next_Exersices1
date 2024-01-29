@@ -115,91 +115,17 @@ function Navbar() {
                 href="#"
               >
                 مخاطبین
-                <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-4">
-                  13
+                <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center mr-0-important">
+                  {contacts.length}
                 </span>
+                
               </div>
             </li>
             {
               contacts.map(contact=>(
-                <ContactItem />
+                <ContactItem {...contact} />
               ))
             }
-            <li>
-              <a href="#" class="nav-link d-flex align-items-center space justify-content-between">
-                <div className="d-flex gap-1">
-                <div class="me-4">
-                  <div class="position-relative d-inline-block text-white">
-                    <img
-                      alt="Image Placeholder"
-                      src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                      class="avatar rounded-circle"
-                    />
-                    <span class="position-absolute bottom-2 end-2 transform translate-x-1/2 translate-y-1/2 border-2 border-solid border-current w-3 h-3 bg-success rounded-circle"></span>
-                  </div>
-                </div>
-                <div>
-                  <span class="d-block text-sm font-semibold">
-                    فاطمه
-                  </span>
-                  <span class="d-block text-xs text-muted font-regular">
-                    گرافیست
-                  </span>
-                </div>
-                </div>
-                <div class="">
-                  <i class="bi bi-chat"></i>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link d-flex align-items-center">
-                <div class="me-4">
-                  <div class="position-relative d-inline-block text-white">
-                    <span class="avatar bg-soft-warning text-warning rounded-circle">
-                      JW
-                    </span>
-                    <span class="position-absolute bottom-2 end-2 transform translate-x-1/2 translate-y-1/2 border-2 border-solid border-current w-3 h-3 bg-success rounded-circle"></span>
-                  </div>
-                </div>
-                <div>
-                  <span class="d-block text-sm font-semibold">
-                    علیرضا
-                  </span>
-                  <span class="d-block text-xs text-muted font-regular">
-                    نویسنده
-                  </span>
-                </div>
-                <div class="ms-auto">
-                  <i class="bi bi-chat"></i>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link d-flex align-items-center">
-                <div class="me-4">
-                  <div class="position-relative d-inline-block text-white">
-                    <img
-                      alt="..."
-                      src="https://images.unsplash.com/photo-1610899922902-c471ae684eff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                      class="avatar rounded-circle"
-                    />
-                    <span class="position-absolute bottom-2 end-2 transform translate-x-1/2 translate-y-1/2 border-2 border-solid border-current w-3 h-3 bg-danger rounded-circle"></span>
-                  </div>
-                </div>
-                <div>
-                  <span class="d-block text-sm font-semibold">
-                    محمد
-                  </span>
-                  <span class="d-block text-xs text-muted font-regular">
-                    نویسنده
-                  </span>
-                </div>
-                <div class="ms-auto">
-                  <i class="bi bi-chat"></i>
-                </div>
-              </a>
-            </li>
           </ul>
           {/* <!-- Push content down --> */}
           <div class="mt-auto"></div>

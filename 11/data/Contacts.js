@@ -1,20 +1,20 @@
 export const contacts = [
     {
-        title: "فاطمه",
-        desc: "گرافیست",
+        name: "فاطمه",
+        job: "گرافیست",
         img: "photo-1548142813-c348350df52b.avif",
-        status: "online"
+        status: "bg-success"
     },
     {
-        title: "علیرضا",
-        desc: "نویسنده",
+        name: "علیرضا",
+        job: "نویسنده",
         img: "photo-1610899922902-c471ae684eff.avif",
-        status: "online"
+        status: "bg-success"
     },
     {
-        title: "مریم",
-        desc: "نویسنده",
+        name: "مریم",
+        job: "نویسنده",
         img: "03.jpg",
-        status: "offline"
+        status: "bg-danger"
     }
 ]
