@@ -6,25 +6,55 @@
     src: url('../public/fonts/IRANSansDN-Bold.ttf');
     font-weight: 400;
     font-style: normal;
-    }
-@font-face{
+}
+
+@font-face {
     font-family: 'IranSansRegular';
     src: url('../public/fonts/IRANSansDN.ttf');
     font-weight: 400;
     font-style: normal;
 }
 
-*{
+@font-face {
+    font-family: 'faNum';
+    src: url('../public/fonts/IRANSansWeb\(FaNum\).woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
     font-family: 'IranSansBold';
     direction: rtl;
 }
 
-.mr-0-important{
+.persianNumber {
+    font-family: "faNum";
+}
+
+.mr-0-important {
     margin-right: auto !important;
 }
 
-.navbar-nav{
+.flex-center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-logo {
+    height: 100px !important;
+}
+
+.brand-logo img {
+    height: 100px !important;
+}
+
+.navbar-nav {
     padding: 0;
+}
+
+.badge-dot i {
+    margin-right: 0;
 }
 
 

@@ -7,9 +7,9 @@ function ApplicationsItem({name, date, company, offer, meeting, status, profileI
                 <img
                     alt="..."
                     src={`/images/profile/${profileImg}`}
-                    class="avatar avatar-sm rounded-circle me-2"
+                    class="avatar avatar-sm rounded-circle ms-2"
                 />
-                <a class="text-heading font-semibold" href="#">
+                <a class="text-heading font-semibold " href="#">
                     {name}
                 </a>
             </td>
@@ -18,21 +18,22 @@ function ApplicationsItem({name, date, company, offer, meeting, status, profileI
                 <img
                     alt="..."
                     src={`/images/profile/${companyImg}`}
-                    class="avatar avatar-xs rounded-circle me-2"
+                    class="avatar avatar-xs rounded-circle ms-2"
                 />
                 <a class="text-heading font-semibold" href="#">
                     {company}
                 </a>
             </td>
-            <td>${offer}</td>
+            <td className='persianNumber'>{`${offer}`} تومان</td>
             <td>
                 <span class="badge badge-lg badge-dot">
-                    <i class={status}></i>{meeting}
+                    <i class={status}></i>
+                    <span className='me-2'>{meeting}</span>
                 </span>
             </td>
-            <td class="text-end">
+            <td class="text-end d-flex gap-2">
                 <a href="#" class="btn btn-sm btn-neutral">
-                    View
+                    جزئیات
                 </a>
                 <button
                     type="button"

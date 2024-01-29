@@ -12,11 +12,11 @@ function Applications() {
                 <table class="table table-hover table-nowrap">
                   <thead class="thead-light">
                     <tr>
-                      <th scope="col">Name</th>
-                      <th scope="col">Date</th>
-                      <th scope="col">Company</th>
-                      <th scope="col">Offer</th>
-                      <th scope="col">Meeting</th>
+                      <th scope="col">نام</th>
+                      <th scope="col">تاریخ</th>
+                      <th scope="col">محل توسعه</th>
+                      <th scope="col">پیشنهاد</th>
+                      <th scope="col">وضعیت</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -32,7 +32,7 @@ function Applications() {
               </div>
               <div class="card-footer border-0 py-5">
                 <span class="text-muted text-sm">
-                  Showing 10 items out of 250 results found
+                  نمایش 10 از 250
                 </span>
               </div>
             </div>

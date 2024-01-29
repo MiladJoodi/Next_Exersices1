@@ -10,7 +10,7 @@ function StateBox({title, value, icon, iconColor, arrow,stateNumber,stateColor,s
                         <span class="h6 font-semibold text-muted text-sm d-block mb-2">
                           {title}
                         </span>
-                        <span class="h3 font-bold mb-0">{value}</span>
+                        <span class="h3 font-bold mb-0 persianNumber">{value}</span>
                       </div>
                       <div class="col-auto">
                         <div class={`icon icon-shape text-white text-lg rounded-circle ${iconColor}`}>
@@ -19,11 +19,11 @@ function StateBox({title, value, icon, iconColor, arrow,stateNumber,stateColor,s
                       </div>
                     </div>
                     <div class="mt-2 mb-0 text-sm">
-                      <span class={`badge badge-pill text-success me-2 ${stateColor}`}>
-                        <i class={arrow}></i>13%
+                      <span class={`badge badge-pill text-success persianNumber ${stateColor}`}>
+                        <i class={arrow}></i>{stateNumber}
                       </span>
-                      <span class="text-nowrap text-xs text-muted">
-                        Since last month
+                      <span class="text-nowrap text-xs text-muted me-2 ">
+                        {since}
                       </span>
                     </div>
                   </div>
