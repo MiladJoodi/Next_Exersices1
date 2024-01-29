@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import formatCurrency from '@/utils/separate3'
 
 function ApplicationsItem({name, date, company, offer, meeting, status, profileImg, companyImg}) {
     return (
@@ -24,7 +25,7 @@ function ApplicationsItem({name, date, company, offer, meeting, status, profileI
                     {company}
                 </a>
             </td>
-            <td className='persianNumber'>{`${offer}`} تومان</td>
+            <td className='persianNumber'>{formatCurrency(Number(offer))} تومان</td>
             <td>
                 <span class="badge badge-lg badge-dot">
                     <i class={status}></i>
