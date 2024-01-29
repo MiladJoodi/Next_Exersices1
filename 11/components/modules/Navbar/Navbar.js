@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import {contacts} from "@/data/Contacts"
+import ContactItem from './ContactItem'
 
 function Navbar() {
+
   return (
     <nav
       class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg"
@@ -103,7 +106,7 @@ function Navbar() {
             </li>
           </ul>
           {/* <!-- Divider --> */}
-          <hr class="navbar-divider my-5 opacity-20" />
+          <hr class="navbar-divider my-1 opacity-20" />
           {/* <!-- Navigation --> */}
           <ul class="navbar-nav mb-md-4">
             <li>
@@ -117,6 +120,11 @@ function Navbar() {
                 </span>
               </div>
             </li>
+            {
+              contacts.map(contact=>(
+                <ContactItem />
+              ))
+            }
             <li>
               <a href="#" class="nav-link d-flex align-items-center space justify-content-between">
                 <div className="d-flex gap-1">
@@ -199,15 +207,21 @@ function Navbar() {
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <i class="bi bi-person-square"></i> Account
+                <i class="bi bi-person-square"></i> حساب کاربری
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <i class="bi bi-box-arrow-left"></i> Logout
+                <i class="bi bi-box-arrow-left"></i>ورود
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-box-arrow-right"></i>خروج
               </a>
             </li>
           </ul>
+          <div class="my-5"></div>
         </div>
       </div>
     </nav>
