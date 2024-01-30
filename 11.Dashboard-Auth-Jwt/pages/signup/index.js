@@ -3,8 +3,16 @@ import styles from "@/styles/signup.module.css";
 import Coffee from '@/components/modules/Coffee/Coffee';
 import { useRouter } from 'next/router';
 
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+
+import toast, { Toaster } from 'react-hot-toast';
+
 
 function Signup() {
+
+  // const notify = () => toast('Here is your toast.');
+
 
   // router
   const router = useRouter()
@@ -43,14 +51,19 @@ function Signup() {
       setEmail("")
       setPassword("")
 
-    // alert("submitted")
-    swal("تبریک میگم", "success");;
-
-
+    toast.success('با موفقیت عضو شدید', {
+      toastId: 'success1',
+      position: 'top-right',
+      closeOnClick: true
+  })
+  setTimeout(() => {
     router.replace("dashboard")
+}, 2000);
+
     }
     if(res.status === 422){
-      
+      toast.success('Successfully toasted!')
+    
 
     }
     
@@ -60,7 +73,7 @@ function Signup() {
 
 
   return (
-    <div className={styles.wrapperCoffee} style={{backgroundImage: "@/images/Background.jpg"}}>
+    <div className={styles.wrapperCoffee}>
       <div className={styles.container}>
         <div className={styles.container__content}>
           <form className={styles.container__form} onSubmit={signup}>
@@ -81,6 +94,11 @@ function Signup() {
           <Coffee />
         </div>
       </div>
+      <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
+      {/* <ToastContainer rtl autoClose={1500}/> */}
     </div>
 
   )

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {contacts} from "@/data/Contacts"
 import ContactItem from './ContactItem'
+import Link from "next/link";
 
 function Navbar() {
 
@@ -137,14 +138,19 @@ function Navbar() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <i className="bi bi-box-arrow-left"></i>ورود
-              </a>
+              <Link href="/signin" className="nav-link">
+              <i className="bi bi-box-arrow-left"></i>ورود
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <i className="bi bi-box-arrow-right"></i>خروج
-              </a>
+              <Link href="/signup" className="nav-link">
+              <i className="bi bi-box-arrow-left"></i>ثبت نام
+              </Link>
+            </li>
+            <li className="nav-item">
+            <Link href="/" className="nav-link">
+              <i className="bi bi-box-arrow-right"></i>خروج
+              </Link>
             </li>
           </ul>
           <div className="my-5"></div>
