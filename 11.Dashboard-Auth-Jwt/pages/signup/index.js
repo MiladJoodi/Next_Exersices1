@@ -11,12 +11,16 @@ function Signup() {
   // router
   const router = useRouter();
 
-  const { register, handleSubmit } = useForm({
+  const { 
+    register,
+    control,
+    handleSubmit,
+    formState: { errors } } = useForm({
     defaultValues: {
       name: "",
-      email: "",
-    },
-  });
+    }
+  })
+
 
   // get inputs state
   const [firstname, setFirstname] = useState("");
