@@ -3,16 +3,10 @@ import styles from "@/styles/signup.module.css";
 import Coffee from '@/components/modules/Coffee/Coffee';
 import { useRouter } from 'next/router';
 
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-
 import toast, { Toaster } from 'react-hot-toast';
 
 
 function Signup() {
-
-  // const notify = () => toast('Here is your toast.');
-
 
   // router
   const router = useRouter()
@@ -45,28 +39,25 @@ function Signup() {
     })
 
     if (res.status === 201) {
-      setFirstname("")
-      setLastname("")
-      setUsername("")
-      setEmail("")
-      setPassword("")
 
-    toast.success('با موفقیت عضو شدید', {
-      toastId: 'success1',
-      position: 'top-right',
-      closeOnClick: true
-  })
-  setTimeout(() => {
-    router.replace("dashboard")
-}, 2000);
+      toast.success('عضویت موفقیت آمیز بود')
+
+      setTimeout(() => {
+        setFirstname("")
+        setLastname("")
+        setUsername("")
+        setEmail("")
+        setPassword("")
+        router.replace("dashboard")
+      }, 2000);
 
     }
-    if(res.status === 422){
-      toast.success('Successfully toasted!')
-    
+    if (res.status === 422) {
+      toast.error('لطفاً اطلاعات را کامل وارد کنید')
+
 
     }
-    
+
 
   }
 
@@ -95,10 +86,9 @@ function Signup() {
         </div>
       </div>
       <Toaster
-  position="top-center"
-  reverseOrder={false}
-/>
-      {/* <ToastContainer rtl autoClose={1500}/> */}
+        position="top-left"
+        reverseOrder={false}
+      />
     </div>
 
   )
