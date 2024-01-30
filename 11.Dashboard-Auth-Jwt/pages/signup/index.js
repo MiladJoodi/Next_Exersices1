@@ -13,8 +13,6 @@ function Signup() {
   // router
   const router = useRouter();
 
-  const { register, handleSubmit } = useForm();
-
   // get inputs state
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -61,10 +59,31 @@ function Signup() {
     }
   };
 
-  const onFormSubmit = (data)=>{
-    console.log(data)
-  }
+  // React Hook Form
 
+  // const schema = yup.object().shape({
+  //   firstname: yup.string().min(3).max(15).required("وارد کردن نام الزامیست"),
+  //   lastname: yup.string().min(3).max(15).required(),
+  //   username: yup.string().min(3).max(15).required(),
+  //   email: yup.string().email().min(3).max(32).required(),
+  //   password: yup.string().min(4).max(15).required(),
+  //   // confirmPassword: yup.string().oneOf([yup.ref("password")]).required()
+  // })
+
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      name: "",
+    },
+  });
+
+  const formSubmiting = (data) => {
+    console.log("Data=> ", data);
+  };
 
   return (
     <div className={styles.wrapperCoffee}>
@@ -72,7 +91,7 @@ function Signup() {
         <div className={styles.container__content}>
           <form
             className={styles.container__form}
-            onSubmit={handleSubmit(onFormSubmit)}
+            onSubmit={handleSubmit(formSubmiting)}
           >
             {/* <input
               type="text"
@@ -98,22 +117,31 @@ function Signup() {
             <input
               type="text"
               name="firstname"
-              {...register("firstname")} 
+              {...register("firstname", {
+                required: "الزمایست",
+                minLength: {
+                  value: 1,
+                  message: "حداقل 3 کاراکتر",
+                },
+                maxLength: 12,
+              })}
               onChange={(e) => setFirstname(e.target.value)}
               value={firstname}
               placeholder="نام"
               className={styles.container__inputField}
             />
+            {errors.firstname && errors.firstname.message}
 
             <input
               type="text"
               name="lastname"
-              onChange={(e) => setLastname(e.target.value)}
-              value={lastname}
-              placeholder="نام خانوادگی"
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
+              placeholder="نام کاربری"
               className={styles.container__inputField}
-              {...register("lastname")} 
+              // {...register("username")}
             />
+
             <input
               type="text"
               name="username"
@@ -121,7 +149,7 @@ function Signup() {
               value={username}
               placeholder="نام کاربری"
               className={styles.container__inputField}
-              {...register("username")} 
+              // {...register("username")}
             />
             <input
               type="text"
@@ -130,7 +158,7 @@ function Signup() {
               value={email}
               placeholder="ایمیل"
               className={styles.container__inputField}
-              {...register("email")} 
+              // {...register("email")}
             />
             <input
               type="password"
@@ -139,7 +167,7 @@ function Signup() {
               value={password}
               placeholder="رمز عبور"
               className={styles.container__inputField}
-              {...register("password")} 
+              // {...register("password")}
             />
             <input
               type="submit"
