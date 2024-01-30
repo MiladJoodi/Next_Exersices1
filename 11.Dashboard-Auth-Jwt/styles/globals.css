@@ -24,9 +24,14 @@
 
 :root {
     --color1: #36e6fd;
+    --color2: #136294;
+    --color2Hover: #0c4e77;
+    --color3: #fff;
+
+    /* --color1: #36e6fd;
     --color2: #526470;
     --color2Hover: #415059;
-    --color3: #fff;
+    --color3: #fff; */
 }
 
 * {

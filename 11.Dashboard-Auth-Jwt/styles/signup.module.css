@@ -23,7 +23,8 @@
     align-items: center;
 } */
 .wrapperCoffee {
-    background-color: var(--color1);
+    background-image: url("../public/images/Background.jpg");
+    /* background-color: var(--color1); */
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
     display: flex;
@@ -94,7 +95,7 @@
 
     /* Border */
     border: none;
-    border-bottom: solid 1px var(--color2);
+    border-bottom: dashed 1px rgba(19,98,148, 0.2);
     border-radius: 0;
 }
 
@@ -118,6 +119,7 @@
     padding: 15px 0;
     font-size: 14px;
     cursor: pointer;
+    margin-top: 2rem !important;
 
     /* Text */
     text-transform: uppercase;
@@ -136,8 +138,10 @@
     /* Position */
     position: absolute;
     left: 50%;
-    bottom: 30px;
+    bottom: 15px;
     transform: translateX(-50%);
+    /* margin-top: 2rem !important; */
+
 
     /* Flex */
     display: flex;
