@@ -6,21 +6,14 @@ import { useRouter } from "next/router";
 import toast, { Toaster } from "react-hot-toast";
 
 import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 function Signup() {
   // router
   const router = useRouter();
 
-  const { 
-    register,
-    control,
-    handleSubmit,
-    formState: { errors } } = useForm({
-    defaultValues: {
-      name: "",
-    }
-  })
-
+  const { register, handleSubmit } = useForm();
 
   // get inputs state
   const [firstname, setFirstname] = useState("");
@@ -68,9 +61,10 @@ function Signup() {
     }
   };
 
-  const formSubmiting = (data) => {
-    console.log("Data=> ", data);
-  };
+  const onFormSubmit = (data)=>{
+    console.log(data)
+  }
+
 
   return (
     <div className={styles.wrapperCoffee}>
@@ -78,9 +72,9 @@ function Signup() {
         <div className={styles.container__content}>
           <form
             className={styles.container__form}
-            onSubmit={handleSubmit(formSubmiting)}
+            onSubmit={handleSubmit(onFormSubmit)}
           >
-            <input
+            {/* <input
               type="text"
               name="firstname"
               onChange={(e) => setFirstname(e.target.value)}
@@ -99,7 +93,17 @@ function Signup() {
                 },
               })}
             />
-            {errors.name && errors.name.message}
+            {errors.name && errors.name.message} */}
+
+            <input
+              type="text"
+              name="firstname"
+              {...register("firstname")} 
+              onChange={(e) => setFirstname(e.target.value)}
+              value={firstname}
+              placeholder="نام"
+              className={styles.container__inputField}
+            />
 
             <input
               type="text"
@@ -108,6 +112,7 @@ function Signup() {
               value={lastname}
               placeholder="نام خانوادگی"
               className={styles.container__inputField}
+              {...register("lastname")} 
             />
             <input
               type="text"
@@ -116,6 +121,7 @@ function Signup() {
               value={username}
               placeholder="نام کاربری"
               className={styles.container__inputField}
+              {...register("username")} 
             />
             <input
               type="text"
@@ -124,6 +130,7 @@ function Signup() {
               value={email}
               placeholder="ایمیل"
               className={styles.container__inputField}
+              {...register("email")} 
             />
             <input
               type="password"
@@ -132,6 +139,7 @@ function Signup() {
               value={password}
               placeholder="رمز عبور"
               className={styles.container__inputField}
+              {...register("password")} 
             />
             <input
               type="submit"
