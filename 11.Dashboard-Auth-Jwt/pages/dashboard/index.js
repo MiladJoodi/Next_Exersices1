@@ -7,6 +7,7 @@ import Applications from "@/components/templates/Applications/Applications";
 import { verifyToken } from "@/utils/auth";
 import connectToDB from '@/configs/db';
 import UserModel from "@/models/User"
+import Charts from "@/components/templates/Charts/Charts";
 
 function Dashboard({user}) {
 
@@ -20,10 +21,12 @@ function Dashboard({user}) {
         <main className="py-6 bg-surface-secondary">
           <div className="container-fluid">
             <States />
+            <Charts />
             <Applications />
           </div>
         </main>
       </div>
+      {/* <a class="gh-ribbon red left" href="https://github.com/Scrumplex" target="_blank">Fork me on GitHub!</a> */}
     </div>
   );
 }

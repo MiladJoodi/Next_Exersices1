@@ -1,39 +1,52 @@
 import React, { useEffect, useState } from "react";
-import { contacts } from "@/data/Contacts"
-import ContactItem from './ContactItem'
+import { contacts } from "@/data/Contacts";
+import ContactItem from "./ContactItem";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 function Navbar({ username }) {
-  const [isLoginIn, setIsLoginIn] = useState(true)
-  const [otherUser, setOtherUser] = useState(false)
-  const [adminUser, setAdminUser] = useState(false)
+
+  const router = useRouter()
+
+  const [isLoginIn, setIsLoginIn] = useState(true);
+  const [otherUser, setOtherUser] = useState(false);
+  const [adminUser, setAdminUser] = useState(false);
 
   useEffect(() => {
     const userAuth = async () => {
-      const res = await fetch('/api/auth/me')
+      const res = await fetch("/api/auth/me");
       if (res.status === 200) {
-        setIsLoginIn(true)
+        setIsLoginIn(true);
       }
-      console.log(res)
-    }
-    userAuth()
-  }, [])
+      console.log(res);
+    };
+    userAuth();
+  }, []);
 
   const showUserMenu = () => {
-    setIsLoginIn(true)
-    setOtherUser(false)
-    setAdminUser(false)
-  }
+    setIsLoginIn(true);
+    setOtherUser(false);
+    setAdminUser(false);
+  };
   const showOtherUser = () => {
-    setIsLoginIn(false)
-    setOtherUser(true)
-    setAdminUser(false)
-  }
+    setIsLoginIn(false);
+    setOtherUser(true);
+    setAdminUser(false);
+  };
 
   const showAdminUser = () => {
-    setIsLoginIn(false)
-    setOtherUser(false)
-    setAdminUser(true)
+    setIsLoginIn(false);
+    setOtherUser(false);
+    setAdminUser(true);
+  };
+
+  const signOut = async ()=>{
+    const res = await fetch("/api/auth/signout")
+    const data = await res.json()
+
+    if(res.status === 200){
+      router.replace("/")
+    }
   }
 
   return (
@@ -56,19 +69,42 @@ function Navbar({ username }) {
         </button>
         {/* <!-- Brand --> */}
 
-        <a className="navbar-brand py-lg-2 px-lg-6 me-0 flex-center-all brand-logo" href="#">
-          <img
-            src="/images/Brand-Logo.png"
-            alt="..."
-          />
+        <a
+          className="navbar-brand py-lg-2 px-lg-6 me-0 flex-center-all brand-logo"
+          href="#"
+        >
+          <img src="/images/Brand-Logo.png" alt="..." />
           <span className="online-circle"></span>
         </a>
         <span className="profile-username">{username.firstname}</span>
 
-        <div style={{ textAlign: "center" }} className="btn-group-sm" role="group" aria-label="Basic outlined example">
-          <button onClick={showUserMenu} type="button" class="btn btn-outline-secondary">کاربر</button>
-          <button onClick={showAdminUser} type="button" class="btn btn-outline-secondary">مدیر</button>
-          <button onClick={showOtherUser} type="button" class="btn btn-outline-secondary">مهمان</button>
+        <div
+          style={{ textAlign: "center" }}
+          className="btn-group-sm"
+          role="group"
+          aria-label="Basic outlined example"
+        >
+          <button
+            onClick={showUserMenu}
+            type="button"
+            class="btn btn-outline-secondary"
+          >
+            کاربر
+          </button>
+          <button
+            onClick={showAdminUser}
+            type="button"
+            class="btn btn-outline-secondary"
+          >
+            مدیر
+          </button>
+          <button
+            onClick={showOtherUser}
+            type="button"
+            class="btn btn-outline-secondary"
+          >
+            مهمان
+          </button>
         </div>
 
         {/* <!-- User menu (mobile) --> */}
@@ -86,7 +122,6 @@ function Navbar({ username }) {
             >
               <div className="avatar-parent-child">
                 <img
-                  alt="Image Placeholder"
                   src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
                   className="avatar avatar- rounded-circle"
                 />
@@ -148,7 +183,6 @@ function Navbar({ username }) {
                 </a>
               </li>
             </ul>
-
           ) : null}
 
           {/* <!-- Divider --> */}
@@ -164,16 +198,13 @@ function Navbar({ username }) {
                   <span className="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center mr-0-important persianNumber">
                     {contacts.length}
                   </span>
-
                 </div>
               </li>
-              {
-                contacts.map(contact => (
-                  <div key={contact.id}>
-                    <ContactItem {...contact} />
-                  </div>
-                ))
-              }
+              {contacts.map((contact) => (
+                <div key={contact.id}>
+                  <ContactItem {...contact} />
+                </div>
+              ))}
             </ul>
           ) : null}
           {/* <!-- Navigation --> */}
@@ -205,14 +236,21 @@ function Navbar({ username }) {
               </>
             ) : null}
 
-            {isLoginIn || adminUser ? (
+            {adminUser ? (
               <li className="nav-item">
-                <Link href="/" className="nav-link">
-                  <i className="bi bi-box-arrow-right"></i>خروج
+                <Link href="/p-admin" className="nav-link">
+                  <i className="bi bi-box-arrow-right"></i>پنل مدیریت
                 </Link>
               </li>
             ) : null}
 
+            {isLoginIn || adminUser ? (
+              <li className="nav-item">
+                <Link onClick={signOut} href="#" className="nav-link">
+                  <i className="bi bi-box-arrow-right"></i>خروج
+                </Link>
+              </li>
+            ) : null}
           </ul>
           <div className="my-5"></div>
         </div>
