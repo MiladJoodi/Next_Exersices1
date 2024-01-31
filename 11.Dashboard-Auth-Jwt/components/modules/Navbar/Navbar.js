@@ -4,7 +4,7 @@ import ContactItem from './ContactItem'
 import Link from "next/link";
 
 function Navbar({ username }) {
-  const [isLoginIn, setIsLoginIn] = useState()
+  const [isLoginIn, setIsLoginIn] = useState(true)
   const [otherUser, setOtherUser] = useState(false)
   const [adminUser, setAdminUser] = useState(false)
 
@@ -12,28 +12,28 @@ function Navbar({ username }) {
     const userAuth = async () => {
       const res = await fetch('/api/auth/me')
       if (res.status === 200) {
-        setIsLoginIn(false)
+        setIsLoginIn(true)
       }
       console.log(res)
     }
     userAuth()
   }, [])
 
-  const showUserMenu = ()=>{
+  const showUserMenu = () => {
     setIsLoginIn(true)
     setOtherUser(false)
-    showAdminUser(false)
+    setAdminUser(false)
   }
-  const showOtherUser = ()=>{
+  const showOtherUser = () => {
     setIsLoginIn(false)
     setOtherUser(true)
-    showAdminUser(false)
+    setAdminUser(false)
   }
 
-  const showAdminUser = ()=>{
+  const showAdminUser = () => {
     setIsLoginIn(false)
     setOtherUser(false)
-    showAdminUser(true)
+    setAdminUser(true)
   }
 
   return (
@@ -65,10 +65,10 @@ function Navbar({ username }) {
         </a>
         <span className="profile-username">{username.firstname}</span>
 
-        <div style={{textAlign: "center"}} className="btn-group-sm" role="group" aria-label="Basic outlined example">
+        <div style={{ textAlign: "center" }} className="btn-group-sm" role="group" aria-label="Basic outlined example">
+          <button onClick={showUserMenu} type="button" class="btn btn-outline-secondary">کاربر</button>
+          <button onClick={showAdminUser} type="button" class="btn btn-outline-secondary">مدیر</button>
           <button onClick={showOtherUser} type="button" class="btn btn-outline-secondary">مهمان</button>
-          <button onClick={showAdminUser} type="button" class="btn btn-outline-secondary">منوی مدیر</button>
-          <button onClick={showUserMenu} type="button" class="btn btn-outline-secondary">منوی کاربر</button>
         </div>
 
         {/* <!-- User menu (mobile) --> */}
@@ -117,7 +117,7 @@ function Navbar({ username }) {
         {/* <!-- Collapse --> */}
         <div className="collapse navbar-collapse" id="sidebarCollapse">
           {/* <!-- Navigation --> */}
-          {isLoginIn ? (
+          {isLoginIn || adminUser ? (
             <ul className="navbar-nav">
               <li className="nav-item">
                 <a className="nav-link" href="#">
@@ -148,64 +148,71 @@ function Navbar({ username }) {
                 </a>
               </li>
             </ul>
-            
+
           ) : null}
 
           {/* <!-- Divider --> */}
           <hr className="navbar-divider my-1 opacity-20" />
           {isLoginIn ? (
-<ul className="navbar-nav mb-md-4">
-            <li>
-              <div
-                className="nav-link text-xs font-semibold text-uppercase text-muted ls-wide"
-                href="#"
-              >
-                مخاطبین
-                <span className="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center mr-0-important persianNumber">
-                  {contacts.length}
-                </span>
+            <ul className="navbar-nav mb-md-4">
+              <li>
+                <div
+                  className="nav-link text-xs font-semibold text-uppercase text-muted ls-wide"
+                  href="#"
+                >
+                  مخاطبین
+                  <span className="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center mr-0-important persianNumber">
+                    {contacts.length}
+                  </span>
 
-              </div>
-            </li>
-            {
-              contacts.map(contact => (
-                <div key={contact.id}>
-                  <ContactItem {...contact} />
                 </div>
-              ))
-            }
-          </ul>
-          ): null}
+              </li>
+              {
+                contacts.map(contact => (
+                  <div key={contact.id}>
+                    <ContactItem {...contact} />
+                  </div>
+                ))
+              }
+            </ul>
+          ) : null}
           {/* <!-- Navigation --> */}
-          
+
           {/* <!-- Push content down --> */}
           {/* <div className="mt-auto"></div> */}
           {/* <!-- User (md) --> */}
           <ul className="navbar-nav">
             {isLoginIn || adminUser ? (
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                <i className="bi bi-person-square"></i> حساب کاربری
-              </a>
-            </li>
-            ): null}
-            
-            {isLoginIn}
-            <li className="nav-item">
-              <Link href="/signin" className="nav-link">
-                <i className="bi bi-box-arrow-left"></i>ورود
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/signup" className="nav-link">
-                <i className="bi bi-box-arrow-left"></i>ثبت نام
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/" className="nav-link">
-                <i className="bi bi-box-arrow-right"></i>خروج
-              </Link>
-            </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  <i className="bi bi-person-square"></i> حساب کاربری
+                </a>
+              </li>
+            ) : null}
+
+            {otherUser ? (
+              <>
+                <li className="nav-item">
+                  <Link href="/signin" className="nav-link">
+                    <i className="bi bi-box-arrow-left"></i>ورود
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link href="/signup" className="nav-link">
+                    <i className="bi bi-box-arrow-left"></i>ثبت نام
+                  </Link>
+                </li>
+              </>
+            ) : null}
+
+            {isLoginIn || adminUser ? (
+              <li className="nav-item">
+                <Link href="/" className="nav-link">
+                  <i className="bi bi-box-arrow-right"></i>خروج
+                </Link>
+              </li>
+            ) : null}
+
           </ul>
           <div className="my-5"></div>
         </div>
