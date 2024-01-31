@@ -25,4 +25,15 @@ function Dashboard() {
   );
 }
 
+export async function getServerSideProps(context){
+  const {token} = context.req.cookies
+  console.log(token)
+
+  return{
+    props:{
+      
+    }
+  }
+}
+
 export default Dashboard;
