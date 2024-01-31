@@ -18,8 +18,10 @@ const handler = async (req,res)=>{
             {email: tokenPayload.email},
             "firstname lastname role"
         )
-
+        return res.status(200).json({data: user})
     }catch(err){
-
+        return res
+        status(500)
+        .json({message: "Unknown Internal Server Error !"})
     }
 }
