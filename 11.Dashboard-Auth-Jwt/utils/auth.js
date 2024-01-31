@@ -9,16 +9,16 @@ const hashPassword = async (password) => {
 
 const generateToken = (data) => {
   const token = sign({ ...data }, process.env.privateKey, {
-      // algorithm:'HS256',
-      expiresIn: '24h',
+    // algorithm:'HS256',
+    expiresIn: '24h',
   });
   return token;
 }
 
-const verifyPassword = async(password, hashPassword)=> {
+const verifyPassword = async (password, hashPassword) => {
   const isValid = await compare(password, hashPassword);
   return isValid
 }
 
 
-export { hashPassword,generateToken, verifyPassword };
+export { hashPassword, generateToken, verifyPassword };
