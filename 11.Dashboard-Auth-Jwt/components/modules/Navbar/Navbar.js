@@ -124,7 +124,9 @@ function Navbar() {
             </li>
             {
               contacts.map(contact=>(
-                <ContactItem {...contact} />
+                <div key={contact.id}>
+                  <ContactItem {...contact} />
+                </div>
               ))
             }
           </ul>
