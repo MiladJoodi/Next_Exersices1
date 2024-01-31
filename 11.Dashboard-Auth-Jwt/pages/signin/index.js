@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "@/styles/signin.module.css";
+import styles from "@/styles/signup.module.css";
 import Coffee from '@/components/modules/Coffee/Coffee';
 
 function Login() {

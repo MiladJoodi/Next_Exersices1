@@ -38,6 +38,9 @@ const handler = async (req, res) => {
     const token = generateToken({email:email})
     // console.log(token)
 
+    //Admin First
+    const users = await UserModel.find({})
+
        // Create Model
        await UserModel.create({
         firstname,
@@ -45,9 +48,8 @@ const handler = async (req, res) => {
         username,
         email,
         password: hashedPassword,
-        role: "USER",
+        role: users.length > 0 ? "USER" : "ADMIN"
       });
-      console.log("model create")
   
       return res
       .setHeader("Set-Cookie", serialize("token", token, {
