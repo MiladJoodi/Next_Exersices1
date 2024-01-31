@@ -4,12 +4,15 @@ import Navbar from "@/components/modules/Navbar/Navbar";
 import Header from "@/components/modules/Header/Header";
 import States from "@/components/modules/States/States";
 import Applications from "@/components/templates/Applications/Applications";
+import { verifyToken } from "@/utils/auth";
+import connectToDB from '@/configs/db';
+import UserModel from "@/models/User"
 
-function Dashboard() {
+function Dashboard({user}) {
 
   return (
     <div className="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
-      <Navbar />
+      <Navbar user={user} />
 
       <div className="h-screen flex-grow-1 overflow-y-lg-auto">
         <Header />
@@ -26,12 +29,34 @@ function Dashboard() {
 }
 
 export async function getServerSideProps(context){
+  connectToDB()
   const {token} = context.req.cookies
-  console.log(token)
+  
+  if(!token){
+    return{
+      redirect:{
+        destination:'/signin'
+      }
+    }
+  }
+
+  //Token Validation
+  const tokenPayload = verifyToken(token)
+  if(!tokenPayload){
+    return{
+      redirect:{
+        destination: "/signin"
+      }
+    }
+  }
+
+  const user = await UserModel.findOne({
+    email: tokenPayload.email
+  },'_id firstname lastname')
 
   return{
     props:{
-      
+      user: JSON.parse(JSON.stringify(user))
     }
   }
 }

@@ -24,6 +24,7 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         {/* <!-- Brand --> */}
+        
         <a className="navbar-brand py-lg-2 px-lg-6 me-0 flex-center-all brand-logo" href="#">
           <img
             src="/images/Brand-Logo.png"

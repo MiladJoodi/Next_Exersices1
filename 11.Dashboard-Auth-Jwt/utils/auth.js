@@ -1,6 +1,6 @@
 const { hash } = require("bcrypt");
 import { compare } from "bcryptjs";
-import { sign } from "jsonwebtoken";
+import { sign, verify } from "jsonwebtoken";
 
 const hashPassword = async (password) => {
   const hashedPassword = await hash(password, 12);
@@ -20,5 +20,15 @@ const verifyPassword = async (password, hashPassword) => {
   return isValid
 }
 
+const verifyToken = (data) => {
+  try {
+    const validationResult = verify(data, process.env.privateKey)
+    return validationResult
+  } catch (err) {
+    console.log("Verify Token Error", err)
+    return false;
+  }
+}
 
-export { hashPassword, generateToken, verifyPassword };
+
+export { hashPassword, generateToken, verifyPassword, verifyToken };
