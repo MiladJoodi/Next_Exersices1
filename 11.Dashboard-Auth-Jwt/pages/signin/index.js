@@ -33,6 +33,13 @@ function Login() {
         router.replace("/dashboard")
       }, 2000);
     }
+    else if(res.status === 404){
+      toast.error("نام کاربری یا کلمه عبور اشتباه است");
+    }else if(res.status === 422){
+      toast.error("کاربری با این مشخصات یافت نشد");
+    }else if(res.status === 500){
+      alert("Error")
+    }
 
   }
 
