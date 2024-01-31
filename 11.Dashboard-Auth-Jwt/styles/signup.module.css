@@ -153,6 +153,10 @@
     color: var(--color2);
     font-size: 12px;
     text-decoration: none;
+
+    background-color: rgba(62, 114, 212, 0.1);
+    padding: 3px 10px;
+    border-radius: 5px;
 }
 
 .container__link:hover {
