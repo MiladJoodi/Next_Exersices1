@@ -3,7 +3,7 @@ import {contacts} from "@/data/Contacts"
 import ContactItem from './ContactItem'
 import Link from "next/link";
 
-function Navbar() {
+function Navbar({username}) {
 
   return (
     <nav
@@ -30,7 +30,9 @@ function Navbar() {
             src="/images/Brand-Logo.png"
             alt="..."
           />
+          <span className="online-circle"></span>
         </a>
+        <span className="profile-username">{username.firstname}</span>
         {/* <!-- User menu (mobile) --> */}
         <div className="navbar-user d-lg-none">
           {/* <!-- Dropdown --> */}
@@ -123,13 +125,13 @@ function Navbar() {
                 
               </div>
             </li>
-            {
+            {/* {
               contacts.map(contact=>(
                 <div key={contact.id}>
                   <ContactItem {...contact} />
                 </div>
               ))
-            }
+            } */}
           </ul>
           {/* <!-- Push content down --> */}
           <div className="mt-auto"></div>

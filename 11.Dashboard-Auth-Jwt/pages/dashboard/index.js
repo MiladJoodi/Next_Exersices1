@@ -12,7 +12,7 @@ function Dashboard({user}) {
 
   return (
     <div className="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
-      <Navbar user={user} />
+      <Navbar username={user} />
 
       <div className="h-screen flex-grow-1 overflow-y-lg-auto">
         <Header />

@@ -55,10 +55,20 @@
 
 .brand-logo {
     height: 100px !important;
+    border-radius: 100%;
+    position: relative;
+    
 }
 
 .brand-logo img {
     height: 100px !important;
+    border-radius: 100%;
+    object-fit: cover;
+    width: 80px;
+    height: 80px !important;
+    /* width: 100%; */
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+
 }
 
 .navbar-nav {
@@ -95,3 +105,18 @@
     margin: 0;
 }
 
+
+.profile-username{
+    text-align: center;
+}
+
+.online-circle{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url("../public/images/vip.webp");
+    background-position: center;
+    background-size: cover;
+    bottom: 0;
+    left: 87px;
+}
