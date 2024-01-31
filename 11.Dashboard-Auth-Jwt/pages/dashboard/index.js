@@ -32,13 +32,13 @@ export async function getServerSideProps(context){
   connectToDB()
   const {token} = context.req.cookies
   
-  if(!token){
-    return{
-      redirect:{
-        destination:'/signin'
-      }
-    }
-  }
+  // if(!token){
+  //   return{
+  //     redirect:{
+  //       destination:'/signin'
+  //     }
+  //   }
+  // }
 
   //Token Validation
   const tokenPayload = verifyToken(token)
