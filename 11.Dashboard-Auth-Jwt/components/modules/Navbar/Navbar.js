@@ -22,11 +22,18 @@ function Navbar({ username }) {
   const showUserMenu = ()=>{
     setIsLoginIn(true)
     setOtherUser(false)
-
+    showAdminUser(false)
   }
   const showOtherUser = ()=>{
     setIsLoginIn(false)
     setOtherUser(true)
+    showAdminUser(false)
+  }
+
+  const showAdminUser = ()=>{
+    setIsLoginIn(false)
+    setOtherUser(false)
+    showAdminUser(true)
   }
 
   return (
