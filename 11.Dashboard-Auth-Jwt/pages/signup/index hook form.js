@@ -8,9 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-
 import Link from "next/link";
-
 
 const SignupSchema = yup.object().shape({
   firstname: yup.string().required("الزامی"),
@@ -64,8 +62,7 @@ function Signup() {
         },
         body: JSON.stringify(user),
       });
-
-
+  
       // 201
       if (res.status === 201) {
         toast.success("عضویت موفقیت آمیز بود");
