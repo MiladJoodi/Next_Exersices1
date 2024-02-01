@@ -33,7 +33,7 @@ function Index() {
       setPassword('')
       alert('Logged successfully')
 
-      router.replace("/dashboard/")
+      // router.replace("/dashboard/")
 
     }else if(res.status === 404){
       alert("User Not Found")
