@@ -31,10 +31,15 @@ function Applications() {
                 </table>
               </div>
               <div class="card-footer border-0 py-5">
-                <span class="text-muted text-sm">
+                <span class="text-muted text-sm persianNumber">
                   نمایش 10 از 250
                 </span>
+                <span className='make'>
+                  ساخته شده با
+                <a href="https://github.com/MiladJoodi/Next_Exersices1/tree/main/11.Dashboard-Auth-Jwt"> ❤️</a>
+              </span>
               </div>
+              
             </div>
   )
 }

@@ -125,9 +125,9 @@
 /* Charts */
 .chart-container {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     flex-direction: row !important;
-    width: 100%;
+    /* width: 100%; */
     justify-content: space-between;
     gap: 35px;
 }
@@ -139,7 +139,16 @@
     background-color: #fff;
     border-radius: 0.75rem;
     justify-content: center;
-width: 100%;
+/* width: 100%; */
+}
+
+.card-footer{
+    display: flex;
+    /* flex-direction: row !important; */
+    justify-content: space-between;
+}
+.card-footer span:nth-child(2){
+    font-size: 12px;
 }
 
 

@@ -134,17 +134,17 @@ function Navbar({ username }) {
               aria-labelledby="sidebarAvatar"
             >
               <a href="#" className="dropdown-item">
-                Profile
+                پروفایل
               </a>
               <a href="#" className="dropdown-item">
-                Settings
+                تنظیمات
               </a>
               <a href="#" className="dropdown-item">
-                Billing
+                حساب کاربری
               </a>
               <hr className="dropdown-divider" />
               <a href="#" className="dropdown-item">
-                Logout
+                خروج
               </a>
             </div>
           </div>

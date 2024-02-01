@@ -21,7 +21,7 @@ function Dashboard({user}) {
         <main className="py-6 bg-surface-secondary">
           <div className="container-fluid">
             <States />
-            <Charts />
+            {/* <Charts /> */}
             <Applications />
           </div>
         </main>
