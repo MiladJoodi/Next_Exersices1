@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.0"
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "prisma": "^5.9.0"
   }
 }
