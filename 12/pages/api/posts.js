@@ -57,12 +57,18 @@ export default async function userServices(req, res) {
   //DELETE
 
   //PUT
-  if(req.method === 'DELETE'){
-    let data = await prisma.delete({
+  if(req.method === 'PUT'){
+    const data = await prisma.post.update({
       where: {
-        
+        id: req.body.id
+      },
+      data:{
+        title: req.body.title,
+        content: req.body.content,
+        published: req.body.published
       }
     })
+    return res.json(data)
   }
   //PUT
 
