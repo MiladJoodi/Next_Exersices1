@@ -1,4 +1,9 @@
-const handler = (res, req) => {
+import connectToDB from "@/configs/db";
+import { verifyToken } from "@/utils/auth";
+import UserModel from "@/models/User"
+import TodoModel from "@/models/Todo"
+
+const handler = async (res, req) => {
 
 
     if(req.method === 'GET'){
@@ -22,6 +27,22 @@ const handler = (res, req) => {
           return res.status(401).json({ message: "You are not login" })
         }
 
+        const user = await UserModel.findOne(
+            { email: tokenPayload.email }
+          )
+
+          //create cookie
+
+          const {title, isCompleted} = req.body
+
+          const newTodo = {
+            title,
+            isCompleted,
+            user: user._id
+          }
+          
+          await TodoModel.create(newTodo)
+          return res.status(201).json({message: "Todo Successfully"})
 
     }else{
         return false
