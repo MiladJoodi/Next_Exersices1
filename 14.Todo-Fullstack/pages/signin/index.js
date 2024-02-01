@@ -11,7 +11,7 @@ function Index() {
   useEffect(()=>{
     fetch("/api/auth/me").then((res)=>{
       if(res.status === 200){
-        router.replace("/dashboard")
+        router.replace("/todos")
       }
     })
   }, [])
