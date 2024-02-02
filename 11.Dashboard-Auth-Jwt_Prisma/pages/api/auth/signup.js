@@ -3,13 +3,17 @@ import connectToDB from "@/configs/db";
 import { generateToken, hashPassword } from "@/utils/auth";
 import { serialize } from "cookie";
 
+import {PrismaClient} from '@prisma/client';
+const prisma = new PrismaClient();
+
+
 const handler = async (req, res) => {
   if (req.method !== "POST") {
     return false;
   }
 
   try {
-    connectToDB();
+    // connectToDB();
 
     const { firstname, lastname, username, email, password } = req.body;
 
@@ -41,17 +45,18 @@ const handler = async (req, res) => {
     //Admin First
     const users = await UserModel.find({})
 
-       // Create Model
-       await UserModel.create({
+    // Create Model
+    const post = await prisma.user.create({
+      data: {
         firstname,
         lastname,
         username,
         email,
         password: hashedPassword,
         role: users.length > 0 ? "USER" : "ADMIN"
-      });
-  
-      return res
+      }
+    })
+    return res
       .setHeader("Set-Cookie", serialize("token", token, {
         httpOnly: true,
         path: "/",

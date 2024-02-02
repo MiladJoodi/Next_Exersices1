@@ -8,9 +8,10 @@ const handler = async (req, res) => {
     }
   
     try{
-      connectToDB()
+      // connectToDB()
 
-      const { token } = req.cookies;
+      const { token } = req.body;
+      // console.log(token)
   
       if (!token) {
         res.status(401).json({ message: "You are not login" })
@@ -21,12 +22,20 @@ const handler = async (req, res) => {
         if (!tokenPayload) {
             return res.status(401).json({ message: "You are not login" })
           }
+        // console.log(tokenPayload)
 
-        const user = await UserModel.findOne(
-            {email: tokenPayload.email},
-            "firstname lastname role"
-        )
-        return res.status(200).json({data: user})
+        const user = await prisma.user.findFirst({
+            where:{
+              email : tokenPayload.email
+            },
+            })
+        console.log("user finded")
+
+        // const user = await UserModel.findOne(
+        //     {email: tokenPayload.email},
+        //     "firstname lastname role"
+        // )
+        // return res.status(200).json({data: user})
     }catch(err){
         return res
         .status(500)

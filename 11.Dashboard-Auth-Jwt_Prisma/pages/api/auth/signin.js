@@ -3,13 +3,14 @@ import connectToDB from "@/configs/db";
 import { generateToken,verifyPassword } from "@/utils/auth";
 import { serialize } from "cookie";
 
+import {PrismaClient} from '@prisma/client';
+const prisma = new PrismaClient();
+
 const handler = async (req, res) => {
     if (req.method !== 'POST') {
         return false
     }
-
     try {
-        connectToDB();
 
         const { identifier, password } = req.body
 
@@ -22,9 +23,14 @@ const handler = async (req, res) => {
         }
         
        //Check and Find Username or Email 
-        const user = await UserModel.findOne({
-            $or: [{username: identifier}, {email:identifier}]
-        })
+       const user = await prisma.user.findFirst({
+        where:{
+            OR:[
+                {username: identifier},
+                {email: identifier}
+            ]
+        }
+       })
         if(!user){
             return res.status(404).json({message: "User Not Found"})
         }
