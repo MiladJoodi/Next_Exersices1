@@ -3,31 +3,34 @@ import { verifyToken } from "@/utils/auth";
 import UserModel from "@/models/User";
 import TodoModel from "@/models/Todo";
 
-connectToDB();
 
-const { token } = req.cookies;
-
-if (!token) {
-  return res.status(401).json({ message: "You are not login !!" });
-}
-
-const tokenPayload = verifyToken(token);
-
-if (!tokenPayload) {
-  return res.status(401).json({ message: "You are not login !!" });
-}
-
-const user = await UserModel.findOne({
-  email: tokenPayload.email,
-});
 
 
 const handler = async (req, res) => {
 
+  // Globaly functions
+  connectToDB();
+
+  const { token } = req.cookies;
+
+  if (!token) {
+    return res.status(401).json({ message: "You are not login !!" });
+  }
+
+  const tokenPayload = verifyToken(token);
+
+  if (!tokenPayload) {
+    return res.status(401).json({ message: "You are not login !!" });
+  }
+
+  const user = await UserModel.findOne({
+    email: tokenPayload.email,
+  });
+
   //Get
   if (req.method === "GET") {
-    const todos = await TodoModel.find({user: user._id})
-
+    const todos = await TodoModel.find({ user: user._id })
+    return res.json(todos)
   }
   //Get
 
