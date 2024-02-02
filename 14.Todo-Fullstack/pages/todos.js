@@ -9,9 +9,12 @@ import connectToDB from "@/configs/db";
 import TodoModel from "@/models/Todo"
 import UserModel from "@/models/User"
 import { verifyToken } from "@/utils/auth";
+import { useRouter } from "next/router";
 
 
 function Todolist({user, todos}) {
+
+  const router = useRouter()
   
   console.log("todos =>",todos)
 
@@ -42,15 +45,23 @@ function Todolist({user, todos}) {
     }
   }
 
-  const removeTodo = (id)=>{
-    const res = await.fetch(`/api/todos/${id}`,{
+  const removeTodo = async (id)=>{
+    const res = await fetch(`/api/todos/${id}`,{
       method: 'DELETE'
     })
     
     if(res.status === 200){
       getTodos()
     }
-    
+  }
+
+  const signOut = async ()=>{
+    const res = await fetch('/api/auth/signout')
+
+    if(res.status === 200){
+      alert("Logout Successfully")
+      router.replace('/signin')
+    }
   }
 
 
@@ -98,7 +109,7 @@ function Todolist({user, todos}) {
               />
             </svg>
           </div>
-          <div className="time">
+          <div className="time" onClick={signOut}>
             <a href="#">Logout</a>
           </div>
         </div>
@@ -113,7 +124,7 @@ function Todolist({user, todos}) {
                 <div className="list">
                   <p>{todo.title}</p>
                 </div>
-                <span className="delete">
+                <span className="delete" onClick={()=> removeTodo(todo._id)}>
                   <FontAwesomeIcon icon={faTrash} />
                 </span>
               </li>
