@@ -4,31 +4,38 @@ import toast, { Toaster } from "react-hot-toast";
 
 function Welcome() {
 
-   const [popup, setPopup] = useState(true)
 
+    const [popup, setPopup] = useState(true)
 
+    const onHidePopup = () => {
+        setPopup(false)
+        localStorage.setItem("popup", JSON.stringify(false))
+    }
 
-   const onHidePopup = ()=>{
-    setPopup(false)
-    localStorage.setItem("popup", JSON.stringify(false))
-   }
-
-   useEffect(()=>{
-    const data = localStorage.getItem("popup")
-    setPopup(JSON.parse(data))
-    // console.log(data)
-},[])
+    useEffect(() => {
+        const data = localStorage.getItem("popup")
+        console.log(data)
+        if(data){
+            setPopup(false)
+        }
+    }, [])
 
     return (
+
+
         <>
-             {popup &&(
+            {popup && (
+
                 <div className='popup'>
-                    <h1>
+                    <span>
                         خوش آمدید
-                    </h1>
-                    <span onClick={onHidePopup}>بستن</span>
+                    </span>
+                    <span className='pop-up-close-btn' onClick={onHidePopup}>
+                        <i class="bi bi-x-circle"></i>
+                    </span>
                 </div>
-             )}
+            )}
+
         </>
     )
 }
