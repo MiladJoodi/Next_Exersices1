@@ -5,17 +5,20 @@ import Header from "@/components/modules/Header/Header";
 import States from "@/components/modules/States/States";
 import Applications from "@/components/templates/Applications/Applications";
 import { verifyToken } from "@/utils/auth";
-import connectToDB from '@/configs/db';
-import UserModel from "@/models/User"
-import Charts from "@/components/templates/Charts/Charts";
-import Welcome from "../../components/modules/Welcome/welcome";
+// import connectToDB from '@/configs/db';
+// import UserModel from "@/models/User"
+// import Charts from "@/components/templates/Charts/Charts";
+// import Welcome from "../../components/modules/Welcome/welcome";
+
+import {PrismaClient} from '@prisma/client';
+const prisma = new PrismaClient();
 
 function Dashboard({user}) {
 
   return (
     <div className="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
       <Navbar username={user} />
-      <Welcome />
+      {/* <Welcome /> */}
 
       <div className="h-screen flex-grow-1 overflow-y-lg-auto">
         <Header />
@@ -34,16 +37,16 @@ function Dashboard({user}) {
 }
 
 export async function getServerSideProps(context){
-  connectToDB()
+  // connectToDB()
   const {token} = context.req.cookies
   
-  // if(!token){
-  //   return{
-  //     redirect:{
-  //       destination:'/signin'
-  //     }
-  //   }
-  // }
+  if(!token){
+    return{
+      redirect:{
+        destination:'/signin'
+      }
+    }
+  }
 
   //Token Validation
   const tokenPayload = verifyToken(token)
@@ -55,9 +58,15 @@ export async function getServerSideProps(context){
     }
   }
 
-  const user = await UserModel.findOne({
-    email: tokenPayload.email
-  },'_id firstname lastname')
+  const user = await prisma.user.findFirst({
+    where:{
+            email: tokenPayload.email
+    }
+   })
+
+  // const user = await UserModel.findOne({
+  //   email: tokenPayload.email
+  // },'_id firstname lastname')
 
   return{
     props:{

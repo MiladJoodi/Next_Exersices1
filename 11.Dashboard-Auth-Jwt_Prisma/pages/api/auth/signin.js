@@ -1,5 +1,5 @@
-import UserModel from "@/models/User";
-import connectToDB from "@/configs/db";
+// import UserModel from "@/models/User";
+// import connectToDB from "@/configs/db";
 import { generateToken,verifyPassword } from "@/utils/auth";
 import { serialize } from "cookie";
 
@@ -13,8 +13,6 @@ const handler = async (req, res) => {
     try {
 
         const { identifier, password } = req.body
-
-        // Not Empty Validation
         if(
             !identifier.trim() ||
             !password.trim()
@@ -22,7 +20,7 @@ const handler = async (req, res) => {
             return res.status(422).json({message: "Data is not valid"})
         }
         
-       //Check and Find Username or Email 
+    //    Check and Find Username or Email 
        const user = await prisma.user.findFirst({
         where:{
             OR:[
@@ -35,7 +33,8 @@ const handler = async (req, res) => {
             return res.status(404).json({message: "User Not Found"})
         }
 
-        //Password Validation
+
+        // Password Validation
         const isValidPassword = await verifyPassword(password, user.password)
         if(!isValidPassword){
             return res.status(422).json({message: 'username or password is not valid'})
@@ -51,6 +50,9 @@ const handler = async (req, res) => {
         }))
         .status(200)
         .json({ message: "User Logged in Successfully :))" });
+
+        // Not Empty Validation
+        
     
       } catch (err) {
           return res

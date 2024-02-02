@@ -76,8 +76,8 @@ function Navbar({ username }) {
           <img src="/images/Brand-Logo.png" alt="..." />
           <span className="online-circle"></span>
         </a>
-        {/* <span className="profile-username">{username.firstname}</span> */}
-        <span className="profile-username">نام کاربر</span>
+        <span className="profile-username">{username.firstname}</span>
+        {/* <span className="profile-username">نام کاربر</span> */}
 
         <div
           style={{ textAlign: "center" }}

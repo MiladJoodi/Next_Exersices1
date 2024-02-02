@@ -9,7 +9,7 @@ function Welcome() {
 
     const onHidePopup = () => {
         setPopup(false)
-        localStorage.setItem("popup", JSON.stringify(false))
+        // localStorage.setItem("popup", JSON.stringify(false))
     }
 
     useEffect(() => {
@@ -23,20 +23,20 @@ function Welcome() {
     return (
 
 
-        <>
+        <div>
             {popup && (
 
                 <div className='popup'>
-                    <span>
+                    <p>
                         خوش آمدید
-                    </span>
-                    <span className='pop-up-close-btn' onClick={onHidePopup}>
+                    </p>
+                    <p className='pop-up-close-btn' onClick={onHidePopup}>
                         <i class="bi bi-x-circle"></i>
-                    </span>
+                    </p>
                 </div>
             )}
 
-        </>
+        </div>
     )
 }
 

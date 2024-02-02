@@ -66,6 +66,8 @@ function Signin() {
 
   return (
     <div className={styles.wrapperCoffee}>
+<Toaster />
+
       <div className={styles.container}>
         <div className={styles.container__content}>
           <form className={styles.container__form} onSubmit={handleSubmit(signinHandler)}>
@@ -116,11 +118,9 @@ function Signin() {
         </div>
         <div className={styles.container__svgs}>
           <Coffee />
-
         </div>
 
       </div>
-      <Toaster position="top-left" reverseOrder={false} />
     </div>
 
   )
