@@ -5,6 +5,9 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import connectToDB from "@/configs/db";
+import TodoModel from "@/models/Todo"
+
 
 function Todolist() {
 
@@ -96,6 +99,36 @@ function Todolist() {
   );
 }
 
-export function 
+export async function getServerSideProps(context){
+  connectToDB()
+
+  const { token } = req.context.cookies;
+
+    if (!token) {
+      return{
+        redirect:{
+          destination: "/signin"
+        }
+      }
+    }
+
+    const tokenPayload = verifyToken(token);
+
+    if (!tokenPayload) {
+      return{
+        redirect:{
+          destination: "/signin"
+        }
+      }
+    }
+
+    const user = await UserModel.findOne(
+      {email: tokenPayload.email},
+      "fisrname lastname"
+      );
+
+    const todos = await TodoModel.findOne({user: user._id});
+
+}
 
 export default Todolist;
