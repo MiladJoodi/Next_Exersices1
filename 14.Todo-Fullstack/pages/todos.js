@@ -19,6 +19,10 @@ function Todolist() {
       },
       body: JSON.stringify({title, isCompleted: false})
     })
+    if(res.status === 201){
+      setTitle("")
+      alert("Todo Added Successfully")
+    }
   }
   
 
@@ -37,6 +41,8 @@ function Todolist() {
               id="input"
               type="text"
               placeholder="Type your To-Do works..."
+              value={title} 
+              onChange={event=> setTitle(event.target.value)}
             />
             <button type="submit" id="submit" onClick={addTodo}>
               ADD
@@ -73,7 +79,7 @@ function Todolist() {
             <ul id="tasksContainer">
               <li>
                 <span className="mark">
-                  <input value={title} onChange={event=> setTitle(event.target.value)} type="checkbox" className="checkbox" />
+                  <input type="checkbox" className="checkbox" />
                 </span>
                 <div className="list">
                   <p>{`Todo.title`}</p>
