@@ -1,6 +1,6 @@
 import UserModel from "@/models/User";
 import connectToDB from "@/configs/db";
-import { hashPassword, generateToken } from "@/utils/auth";
+import { generateToken, hashPassword } from "@/utils/auth";
 import { serialize } from "cookie";
 
 const handler = async (req, res) => {
@@ -24,32 +24,22 @@ const handler = async (req, res) => {
       return res.status(422).json({ message: "Data is not valid !!" });
     }
 
-    // isUserExist
-    // HashPassword
-    // GenerateToken
-    // Create ✅
-
-
     const isUserExist = await UserModel.findOne({
-      $or: [{username:username} , {email:email}]
-    })
+      $or: [{ username }, { email }],
+    });
 
-  // isUserExist
-    if(isUserExist){
-      return res.status(422).json({message: "This User Is Exist Already"})
+    if (isUserExist) {
+      return res
+        .status(422)
+        .json({ message: "This username or email exist already !!" });
     }
 
-    // hash
-    const hashedPassword = await hashPassword(password)
+    const hashedPassword = await hashPassword(password);
 
-    // token
-    const token = generateToken({email})
+    const token = generateToken({ email });
 
-    // admin frist
-    const users = await UserModel.find({})
+    const users = await UserModel.find({});
 
-
-    // Create Model
     await UserModel.create({
       firstname,
       lastname,
@@ -60,14 +50,16 @@ const handler = async (req, res) => {
     });
 
     return res
-    .setHeader("Set-Cookie", serialize("token", token, {
-      httpOnly: true,
-      path: "/",
-      maxAge: 60 * 60 * 24
-    }))
-    .status(201)
-    .json({ message: "User Created Successfully :))" });
-
+      .setHeader(
+        "Set-Cookie",
+        serialize("token", token, {
+          httpOnly: true,
+          path: "/",
+          maxAge: 60 * 60 * 24,
+        })
+      )
+      .status(201)
+      .json({ message: "User Created Successfully :))" });
   } catch (err) {
     return res
       .status(500)

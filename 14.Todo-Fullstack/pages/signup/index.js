@@ -32,7 +32,7 @@ function Index() {
 
       alert('Register Successfully')
       
-      router.replace("/dashboard")
+      router.replace("/todos")
     }else if(res.status === 422){
       alert("Already Exist")
     }
