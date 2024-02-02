@@ -42,6 +42,17 @@ function Todolist({user, todos}) {
     }
   }
 
+  const removeTodo = (id)=>{
+    const res = await.fetch(`/api/todos/${id}`,{
+      method: 'DELETE'
+    })
+    
+    if(res.status === 200){
+      getTodos()
+    }
+    
+  }
+
 
   return (
     <>
