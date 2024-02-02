@@ -7,27 +7,41 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import connectToDB from "@/configs/db";
 import TodoModel from "@/models/Todo"
+import UserModel from "@/models/User"
+import { verifyToken } from "@/utils/auth";
 
 
-function Todolist() {
+function Todolist({user, todos}) {
+  
+  console.log("todos =>",todos)
 
   const [isShowInput, setIsShowInput] = useState(false)
   const [title, setTitle] = useState("")
+  const [allTodos, setAllTodos] = useState([...todos])
+
+  const getTodos = async ()=>{
+    const res = await fetch("/api/todos")
+    const data = await res.json()
+
+    setAllTodos(data)
+  }
 
   const addTodo = async () => {
-    const res = await fetch('/api/todos',{
+    const res = await fetch('/api/todos', {
       method: 'POST',
-      headers:{
+      headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({title, isCompleted: false})
+      body: JSON.stringify({ title, isCompleted: false })
     })
-    if(res.status === 201){
+    if (res.status === 201) {
       setTitle("")
       alert("Todo Added Successfully")
+
+      getTodos()
     }
   }
-  
+
 
   return (
     <>
@@ -44,8 +58,8 @@ function Todolist() {
               id="input"
               type="text"
               placeholder="Type your To-Do works..."
-              value={title} 
-              onChange={event=> setTitle(event.target.value)}
+              value={title}
+              onChange={event => setTitle(event.target.value)}
             />
             <button type="submit" id="submit" onClick={addTodo}>
               ADD
@@ -54,7 +68,7 @@ function Todolist() {
         </div>
         <div className="head">
           <div className="date">
-            <p>{`user.name`}</p>
+            <p>{user.firstname} {user.lastname}</p>
           </div>
           <div className="add" onClick={event => setIsShowInput(true)}>
             <svg
@@ -80,17 +94,19 @@ function Todolist() {
         <div className="pad">
           <div id="todo">
             <ul id="tasksContainer">
-              <li>
+              {allTodos.map((todo)=>(
+                <li>
                 <span className="mark">
                   <input type="checkbox" className="checkbox" />
                 </span>
                 <div className="list">
-                  <p>{`Todo.title`}</p>
+                  <p>{todo.title}</p>
                 </div>
                 <span className="delete">
                   <FontAwesomeIcon icon={faTrash} />
                 </span>
               </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -99,35 +115,44 @@ function Todolist() {
   );
 }
 
-export async function getServerSideProps(context){
+export async function getServerSideProps(context) {
   connectToDB()
 
-  const { token } = req.context.cookies;
+  const { token } = context.req.cookies;
 
-    if (!token) {
-      return{
-        redirect:{
-          destination: "/signin"
-        }
+  if (!token) {
+    return {
+      redirect: {
+        destination: "/signin"
       }
     }
+  }
 
-    const tokenPayload = verifyToken(token);
+  const tokenPayload = verifyToken(token);
 
-    if (!tokenPayload) {
-      return{
-        redirect:{
-          destination: "/signin"
-        }
+  if (!tokenPayload) {
+    return {
+      redirect: {
+        destination: "/signin"
       }
     }
+  }
 
-    const user = await UserModel.findOne(
-      {email: tokenPayload.email},
-      "fisrname lastname"
-      );
+  const user = await UserModel.findOne(
+    { email: tokenPayload.email },
+    "fisrname lastname"
+  );
 
-    const todos = await TodoModel.findOne({user: user._id});
+  const todos = await TodoModel.find({
+    user: user._id
+  });
+
+  return{
+    props:{
+      user: JSON.parse(JSON.stringify(user)),
+      todos: JSON.parse(JSON.stringify(todos))
+    }
+  }
 
 }
 
