@@ -7,6 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 function Todolist() {
+
+  const [isShowInput, setIsShowInput] = useState(false)
+
   return (
     <>
       <h1>Next-Todos</h1>
@@ -16,7 +19,7 @@ function Todolist() {
       </div>
 
       <div className="container">
-        <div className="form-container">
+        <div className="form-container" style={{ display: `${isShowInput ? "block" : "none"}` }}>
           <div className="add-form">
             <input
               id="input"
