@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { signIn } from "next-auth/react"
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 
 function Index() {
   const router = useRouter();
-
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,13 +15,10 @@ function Index() {
       password,
       redirect: false,
     });
-    console.log(res)
-
 
     if (res.status === 200) {
       router.replace("/dashboard");
     }
-
   };
 
   return (
