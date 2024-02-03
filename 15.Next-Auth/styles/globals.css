@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url(./../public/images/bg.jpeg);
+  background-size: cover;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+.box h1 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+.box .inputBox {
+  position: relative;
+}
+.box .inputBox input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.box .inputBox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 1px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label {
+  top: -18px;
+  left: 0;
+  color: #03a9f4;
+  font-size: 12px;
+}
+.register {
+  color: #03a9f4;
+}
+.box input[type="submit"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #03a9f4;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+a {
+  color: #fff;
+  margin-left: 2%;
+}
+
+.register-btn {
+  width: 100%;
+}
+
+button a {
+  color: #000;
+  width: 70px;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  width: 80%;
+  padding: 2rem 2rem 2rem 4rem;
+}
+
+.index {
+  text-align: center;
+  padding-top: 17rem;
+}
+
+/* sidebar */
+
+.sidebar {
+  width: 20%;
+  min-width: 200px;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem 0rem;
+  gap: 20px;
+  background-color: rgb(52, 49, 49);
+}
+
+.sidebar-title {
+  color: white;
+  padding: 0rem 2rem 1rem 0.8rem;
+  font-family: cursive;
+  border-bottom: 1px solid white;
+}
+
+.sidebar-links {
+  list-style: none;
+  display: flex;
+  padding: 0rem 5rem 0rem 1.4rem;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 20px;
+  font-family: cursive;
+}
+.sidebar-links li {
+  padding-bottom: 1rem;
+}
+.sidebar-links a {
+  color: rgba(255, 255, 255, 0.834);
+  display: flex;
+  gap: 15px;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+.sidebar-links li:last-child {
+  border-bottom: 0;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0px;
+  left: 2px;
+}
+
+/* sidebar */
