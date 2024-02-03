@@ -1,6 +1,7 @@
 import connectToDB from "@/configs/db";
-import UserModel from "@/models/User"
-import NextAuth from "next-auth"
+import UserModel from "@/models/User";
+import { verifyPassword } from "@/utils/auth";
+import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export default NextAuth({
@@ -9,32 +10,31 @@ export default NextAuth({
   },
   providers: [
     CredentialsProvider({
-      name: "name_here",
+      name: "Next-Credentials",
       async authorize(credentials, req) {
-        connectToDB()
-        
-        const {identifier, password} = credentials
+        connectToDB();
 
-        if(!identifier.trim() || !password.trim()){
-          throw new Error("Data in not valid")
+        const { identifier, password } = credentials;
+
+        if (!identifier.trim() || !password.trim()) {
+          throw new Error("Data is not valid !!");
         }
 
-        //Find User
         const user = await UserModel.findOne({
-          $or: [{username: identifier}, {email: identifier}]
-        })
+          $or: [{ username: identifier }, { email: identifier }],
+        });
 
-        if(!user){
-          throw new Error("User not found")
+        if (!user) {
+          throw new Error("User not found with this username and password !!");
         }
 
-        //Password Validation
-        const isValidPassword = await verifyPassword(password, user.password)
-        if(!isValidPassword){
-          throw new Error('Username Or Password Is Not Valid')
+        const isValidPassword = await verifyPassword(password, user.password);
+
+        if (!isValidPassword) {
+          throw new Error("username or password is not valid");
         }
 
-        return {email: user.email}; // Jwt Payload
+        return { email: user.email }; // Jwt Payload
       },
     }),
   ],

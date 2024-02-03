@@ -5,15 +5,17 @@ function Index() {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
 
+  const signin = async (event) => {
+    event.preventDefault();
 
-  const signin = async (event)=>{
-    event.preventDefault()
     const res = await signIn("credentials", {
       identifier,
       password,
-      redirect:false
-    })
-  }
+      redirect: false,
+    });
+
+    console.log("Res ->", res);
+  };
 
   return (
     <div className="box">

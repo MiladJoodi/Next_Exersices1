@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { signIn } from "next-auth/react";
+
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
