@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -9,6 +10,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignIn, faSignOut, faBars } from "@fortawesome/free-solid-svg-icons";
 
 function Index() {
+
+  const signOutHandler = (event)=>{
+      event.preventDefault()
+
+      signOut()
+      alert("SignOut Successfully")
+  }
+
   return (
     <div className="container">
       <aside className="sidebar">
@@ -25,7 +34,7 @@ function Index() {
                 Dashboard
               </Link>
             </li>
-            <li>
+            <li onClick={signOutHandler}>
               <Link href="#">
                 <span>
                   <FontAwesomeIcon icon={faSignOut} />
