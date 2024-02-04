@@ -6,25 +6,22 @@ function Dashboard({ user }) {
 }
 
 // Route Protection -> Server Side
-export async function getServerSideProps({req}){
-  const session = await getSession({req}) //null ya jwt payload
+export async function getServerSideProps({ req }) {
+  const session = await getSession({ req }); // null -> Jwt Payload
 
-  console.log("Session=> ", session);
-
-  if(!session){
+  if (!session) {
     return {
-      redirect:{
-        destination: "/signin"
-      }
+      redirect: {
+        destination: "/signin",
+      },
+    };
+  } else {
+    return {
+      props: {
+        user: session.user,
+      },
+    };
   }
-}else{
-  return{
-    props:{
-      user: session.user
-    }
-  }
-}
-
 }
 
 export default Dashboard;

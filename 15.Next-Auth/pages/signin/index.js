@@ -1,12 +1,19 @@
-import React, { useState } from "react";
-import { signIn } from "next-auth/react"
+import React, { useState, useEffect } from "react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 function Index() {
   const router = useRouter();
-
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
+
+  const { status } = useSession();
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.replace("/dashboard");
+    }
+  }, [status]);
 
   const signin = async (event) => {
     event.preventDefault();
@@ -16,13 +23,10 @@ function Index() {
       password,
       redirect: false,
     });
-    console.log(res)
-
 
     if (res.status === 200) {
       router.replace("/dashboard");
     }
-
   };
 
   return (
