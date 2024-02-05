@@ -26,10 +26,10 @@ const schema = mongoose.Schema({
         // maxlength: 32,
         required: true
     },
-    role: {
-        type: String,
-        required: true 
-    },
+    // role: {
+    //     type: String,
+    //     required: true 
+    // },
 })
 
 const model = mongoose.models.User || mongoose.model('User', schema)
