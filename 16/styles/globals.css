@@ -1,0 +1,45 @@
+.blogCard {
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 300px;
+}
+.blogCardContent {
+  margin-top: 1rem;
+}
+
+.login {
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 300px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-right: -15px;
+  margin-left: -15px;
+  justify-content: center;
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.header button {
+  margin-left: 10rem;
+  padding: 4px;
+  height: 2rem;
+  background-color: #ad270c;
+  border: none;
+}
