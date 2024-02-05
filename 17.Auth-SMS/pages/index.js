@@ -1,26 +1,63 @@
 import React, { useState } from "react";
 
 function Index() {
+  const [phone, setPhone] = useState("");
+  const [code, setCode] = useState("");
+  const [isCodeSent, setIsCodeSent] = useState(false);
 
-  const [phone, setPhone] = useState("")
-  const [code, setCode] = useState("")
-  const [isCodeSent, setIsCodeSent] = useState("")
+  const sendCode = async (event) => {
+    event.preventDefault();
+    console.log("Send Code !!");
 
-  
+    const res = await fetch("/api/sms/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ phone }),
+    });
+
+    console.log("Res ->", res);
+  };
+
   return (
     <div className="box">
       <h1 align="center">Login Form</h1>
       <form role="form" method="post">
-        <div className="inputBox">
-          <input type="text" autoComplete="off" required />
-          <label>Code</label>
-        </div>
-        <input type="submit" className="register-btn" value="Verify Code" />
-        <div className="inputBox">
-          <input type="text" autoComplete="off" required />
-          <label>Phone Number</label>
-        </div>
-        <input type="submit" className="register-btn" value="Send Code" />
+        {isCodeSent ? (
+          <>
+            <div className="inputBox">
+              <input
+                type="text"
+                autoComplete="off"
+                required
+                value={code}
+                onChange={(event) => setCode(event.target.value)}
+              />
+              <label>Code</label>
+            </div>
+            <input type="submit" className="register-btn" value="Verify Code" />
+          </>
+        ) : (
+          <>
+            <div className="inputBox">
+              <input
+                type="text"
+                autoComplete="off"
+                required
+                value={phone}
+                onChange={(event) => setPhone(event.target.value)}
+              />
+              <label>Phone Number</label>
+            </div>
+            <input
+              type="submit"
+              className="register-btn"
+              value="Send Code"
+              onClick={sendCode}
+            />
+          </>
+        )}
       </form>
     </div>
   );
