@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Index() {
+
+  const [phone, setPhone] = useState("")
+  const [code, setCode] = useState("")
+  const [isCodeSent, setIsCodeSent] = useState("")
+
+  
   return (
     <div className="box">
       <h1 align="center">Login Form</h1>
