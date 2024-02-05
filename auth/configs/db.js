@@ -5,7 +5,7 @@ const connectToDB = async () => {
     if (mongoose.connections[0].readyState) {
       return true;
     } else {
-      await mongoose.connect("mongodb://127.0.0.1:27017/next-auth");
+      await mongoose.connect("mongodb://127.0.0.1:27017/next-auth-test");
       console.log("Connect To DB Successfully :))");
     }
   } catch (err) {
@@ -13,4 +13,4 @@ const connectToDB = async () => {
   }
 };
 
-export default connectToDB;
+export default connectToDB ;
