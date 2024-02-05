@@ -28,6 +28,7 @@ function Index() {
         <h3 className="sidebar-title">Sidebar</h3>
 
         <ul className="sidebar-links">
+          
           {
             status === "authenticated" ?
               <>

@@ -1,11 +1,20 @@
-import React, { useState } from "react";
-import { signIn } from "next-auth/react";
+import React, { useEffect, useState } from "react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 function Index() {
   const router = useRouter();
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
+
+  //Protect Routes in client
+  const { data, status } = useSession();
+  useEffect(()=>{
+    if(status === "authenticated"){
+      router.replace('/dashboard')
+    }
+  },[status])
+
 
   const signin = async (event) => {
     event.preventDefault();
