@@ -1,4 +1,6 @@
 const request = require("request");
+const otpModel = require("@/models/otp");
+
 
 const handler = async (req, res) => {
   if (req.method !== "POST") {
