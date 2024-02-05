@@ -1,20 +1,21 @@
 const request = require("request");
 const otpModel = require("@/models/otp");
 
+import connectToDB from "@/configs/db";
 
 const handler = async (req, res) => {
+  connectToDB();
+
   if (req.method !== "POST") {
     return false;
   }
 
   const { phone } = req.body;
 
-  const data = new Date()
-  const expTime = date.getTime() + 300000
+  const date = new Date();
+  const expTime = date.getTime() + 300000;
 
   const code = Math.floor(Math.random() * 99999);
-  console.log("Phone ->", phone);
-  console.log("Code ->", code);
 
   request.post(
     {
@@ -33,12 +34,12 @@ const handler = async (req, res) => {
     async function (error, response, body) {
       if (!error && response.statusCode === 200) {
         //YOU‌ CAN‌ CHECK‌ THE‌ RESPONSE‌ AND SEE‌ ERROR‌ OR‌ SUCCESS‌ MESSAGE
-        // console.log("Response ->", response.body);
+
         await otpModel.create({
-            phone,
-            code,
-            expTime
-        })
+          phone,
+          code,
+          expTime,
+        });
 
         return res.status(201).json({ message: "Code Sent Successfully :))" });
       } else {
