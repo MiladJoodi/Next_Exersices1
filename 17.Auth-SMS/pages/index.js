@@ -17,8 +17,16 @@ function Index() {
       body: JSON.stringify({ phone }),
     });
 
-    console.log("Res ->", res);
+    if(res.status === 201){
+      setIsCodeSent(true)
+      alert("code sent successfuly")
+    }
   };
+
+  const verifyCode = async (event)=>{
+    event.preventDefault()
+    console.log("code sent")
+  }
 
   return (
     <div className="box">
@@ -36,7 +44,7 @@ function Index() {
               />
               <label>Code</label>
             </div>
-            <input type="submit" className="register-btn" value="Verify Code" />
+            <input type="submit" className="register-btn" value="Verify Code" onClick={verifyCode} />
           </>
         ) : (
           <>
