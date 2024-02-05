@@ -9,6 +9,9 @@ const handler = async (req, res) => {
 
   const { phone } = req.body;
 
+  const data = new Date()
+  const expTime = date.getTime() + 300000
+
   const code = Math.floor(Math.random() * 99999);
   console.log("Phone ->", phone);
   console.log("Code ->", code);
@@ -27,10 +30,16 @@ const handler = async (req, res) => {
       },
       json: true,
     },
-    function (error, response, body) {
+    async function (error, response, body) {
       if (!error && response.statusCode === 200) {
         //YOU‌ CAN‌ CHECK‌ THE‌ RESPONSE‌ AND SEE‌ ERROR‌ OR‌ SUCCESS‌ MESSAGE
-        console.log("Response ->", response.body);
+        // console.log("Response ->", response.body);
+        await otpModel.create({
+            phone,
+            code,
+            expTime
+        })
+
         return res.status(201).json({ message: "Code Sent Successfully :))" });
       } else {
         console.log("whatever you want");
