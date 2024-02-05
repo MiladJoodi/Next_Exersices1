@@ -4,13 +4,17 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignIn, faSignOut, faBars } from "@fortawesome/free-solid-svg-icons";
 
 function Index() {
 
+  // unauthenticated یا authenticaited 
+  const{data, status} = useSession();
+
+  
   const signOutHandler = (event) => {
     event.preventDefault();
 
