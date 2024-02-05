@@ -7,7 +7,7 @@ function Dashboard({ user }) {
 
 // Route Protection -> Server Side
 export async function getServerSideProps({ req }) {
-  const session = await getSession({ req }); // null -> Jwt Payload
+  const session = await getSession({ req }); // null یا Jwt Payload
 
   if (!session) {
     return {
