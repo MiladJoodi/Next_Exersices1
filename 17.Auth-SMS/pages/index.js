@@ -1,13 +1,15 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
+import swal from "sweetalert";
 
 function Index() {
+  const router = useRouter();
   const [phone, setPhone] = useState("");
   const [code, setCode] = useState("");
   const [isCodeSent, setIsCodeSent] = useState(false);
 
   const sendCode = async (event) => {
     event.preventDefault();
-    console.log("Send Code !!");
 
     const res = await fetch("/api/sms/send", {
       method: "POST",
@@ -17,16 +19,51 @@ function Index() {
       body: JSON.stringify({ phone }),
     });
 
-    if(res.status === 201){
-      setIsCodeSent(true)
-      alert("code sent successfuly")
+    if (res.status === 201) {
+      setIsCodeSent(true);
+
+      swal({
+        title: "Code Sent Successfully :))",
+        icon: "success",
+        buttons: "Enter Code",
+      });
     }
   };
 
-  const verifyCode = async (event)=>{
-    event.preventDefault()
-    console.log("code sent")
-  }
+  const verifyCode = async (event) => {
+    event.preventDefault();
+    console.log("Verify Code !!");
+
+    const res = await fetch("/api/sms/verify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ phone, code }),
+    });
+
+    if (res.status === 409) {
+      swal({
+        title: "Code is not correct !!",
+        icon: "error",
+        buttons: "Try Again",
+      });
+    } else if (res.status === 410) {
+      swal({
+        title: "Code is expired !!",
+        icon: "error",
+        buttons: "Try Another Time",
+      });
+    } else if (res.status === 200) {
+      swal({
+        title: "Code is correct :))",
+        icon: "success",
+        buttons: "Go to dashboard",
+      }).then(() => {
+        router.replace("/dashboard");
+      });
+    }
+  };
 
   return (
     <div className="box">
@@ -44,7 +81,12 @@ function Index() {
               />
               <label>Code</label>
             </div>
-            <input type="submit" className="register-btn" value="Verify Code" onClick={verifyCode} />
+            <input
+              type="submit"
+              className="register-btn"
+              value="Verify Code"
+              onClick={verifyCode}
+            />
           </>
         ) : (
           <>
