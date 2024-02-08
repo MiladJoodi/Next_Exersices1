@@ -4,13 +4,20 @@ import axios from 'axios'
 
 const MoviesFromClient = ()=>{
 
+    const [movies, setMovies] = useState([])
+
     useEffect(()=>{
-        axios.get("")
+        axios.get("https://moviesapi.ir/api/v1/movies?page={page}")
+        .then(d=> setMovies(d.data.data))
+        .catch(e=> console.log(e))
     }, [])
+
 
     return(
         <div>
-            MoviesFromClient
+            {movies.map((mov,i)=>(
+                <div key={i}>{mov.title}</div>
+            ))}
         </div>
     )
 }
