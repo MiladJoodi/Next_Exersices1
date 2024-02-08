@@ -1,0 +1,47 @@
+.wrapper{
+  min-height: 100vh;
+}
+body {
+  overflow-y: scroll;
+  direction: rtl;
+}
+
+@keyframes fadeInHoriz {
+  0% {
+      opacity: 0;
+      transform: translateX(20px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.fade-in-horiz {
+  animation: fadeInHoriz 0.8s ease forwards;
+}
+
+header{
+  height: 200px;
+  background:  url('../public/assets/images/header-background.jpg');
+  letter-spacing: 3px;
+}
+.card {
+  opacity: 0;
+}
+
+.card__placeholder {
+  height: 280px;
+  animation: image-loading 1s linear infinite alternate;
+}
+
+@keyframes image-loading {
+  0% {
+      background-color: hsl(200, 20%, 80%);
+  }
+
+  100% {
+      background-color: hsl(200, 20%, 95%);
+  }
+}
