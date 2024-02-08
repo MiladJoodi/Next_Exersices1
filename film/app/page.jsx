@@ -4,6 +4,7 @@ const getData = async () => {
 }
 
 import Image from "next/image"
+import Link from "next/link"
 
 const Home = async () => {
     const data = await getData()
@@ -12,7 +13,7 @@ const Home = async () => {
             <div className="text-center text-2xl text-blue-500">صفحه اصلی</div>
             <div className="flex justify-between items-center flex-wrap">
                 {data.data.map((mov, i) => (
-                    <div className="relative h-[28rem] my-4 w-72 border-2 border-zinc-300 rounded-2xl p-4 flex flex-col gap-4" key={i}>
+                    <Link href={`/movies/${mov.id}`} className="relative h-[28rem] my-4 w-72 border-2 border-zinc-300 rounded-2xl p-4 flex flex-col gap-4" key={i}>
                         <div className="flex justify-center items-center">
                             <Image
                                 className="rounded-lg"
@@ -27,7 +28,7 @@ const Home = async () => {
                             <div className="px-3 py-1 bg-zinc-200 rounded-md">{mov.year}</div>
                             <div className="px-3 py-1 bg-zinc-200 rounded-md">{mov.country}</div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </main>
