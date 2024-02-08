@@ -7,17 +7,23 @@ const getData = async (id) => {
 
 import Image from "next/image"
 
-const Single = async () => {
+const Single = async ({params}) => {
 
-    const data = await getData()
+    const data = await getData(params.id)
 
     return (
-        <main className="">
-            <section className="rounded-lg mx-auto">
-                <div>{data.title}</div>
+        <main className="container mx-auto">
+            <section className="rounded-lg bg-zinc-100 p-8 flex justify-between items-start">
+                <div>
+                    <h1>{data.title}</h1>
+                    <div>سال ساخت: {data.year}</div>
+                    <div>زمان: {data.runtime}</div>
+                    <div>کارگردان: {data.director}</div>
+                    <div>نمره IMDB: {data.imdb_rating}</div>
+                </div>
                 <div>
                     <Image
-                        rounded-3xl
+                        className="rounded-3xl"
                         width={250}
                         height={300}
                         alt={data.title}
