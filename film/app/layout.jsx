@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 const RootLayout = ({ children }) => {
     return (
         <html lang="fa-IR">
-            <body>
+            <body className="flex flex-col gap-8">
                 <Header />
                 {children}
                 <Footer />
