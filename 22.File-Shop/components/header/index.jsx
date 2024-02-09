@@ -1,21 +1,23 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
     return (
-        <header className="container mx-auto">
+        <header className="container mx-auto py-2">
             <div className="flex justify-between items-center">
-                <div className="logo p-4 rounded-lg shadow-[0px_1px_10px_rgba(0,0,0,0.25)">
+                <Link href={"/"}>
+                <a className="logo p-4 rounded-lg text-center shadow-[0px_1px_10px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0px_1px_10px_rgba(0,0,0,0.5)] ">
                     <Image
                     className='rounded-lg '
                     src={"/logo.png"}
-                    layout='fix'
-                    objectFit='cover'
                     width={100}
                     height={100}
                     alt='logo'
                     />
                     <div>فروشگاه فایل مرن فا</div>
-                </div>
+                </a>
+                </Link>
+                <div>h</div>
             </div>
         </header>
     );
