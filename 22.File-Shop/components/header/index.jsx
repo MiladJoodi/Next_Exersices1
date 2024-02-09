@@ -2,9 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BsTelegram, BsTelephoneFill } from "react-icons/bs"
 import { AiFillTwitterCircle, AiOutlineYoutube } from "react-icons/ai"
-import { IoMailOpenOutline } from "react-icons/io5"
+import { IoMailOpenOutline, IoPerson } from "react-icons/io5"
 import { BiSearchAlt } from "react-icons/bi";
-import { BsPersonCircle } from "react-icons/bs"
+import { HiShoppingCart } from "react-icons/hi";
 
 import { useState } from 'react';
 
@@ -15,7 +15,7 @@ const Header = () => {
 
     return (
         <header className="container mx-auto py-2">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-start">
                 {/* Header logo */}
                 <div className='flex flex-col relative h-52'>
                     {/*⚠️ Brand Logo */}
@@ -64,7 +64,7 @@ const Header = () => {
                 {/* Header logo */}
 
                 {/* Header left side */}
-                <div className='w-5/6 flex flex-col gap-1'>
+                <div className='w-5/6 flex flex-col gap-1 py-4 h-40 justify-between'>
                     {/* Header left side - top */}
                     <div className='flex justify-between items-center w-full'>
                         {/* Header Links👋 */}
@@ -116,25 +116,36 @@ const Header = () => {
                     {/* Header left side - top */}
 
                     {/* ✋Header left side - search bar */}
-                    <div>
+                    <div className='flex justify-between items-center'>
                         {/* Search */}
-                        <div className='flex justify-start items-center'>
-                            <input name='productsSearch' id='productsSearch' type="text" placeholder='جستجو بین محصولات...' />
-                            <label htmlFor="productsSearch">
+                        <div className='flex justify-start items-center bg-yellow-400 w-full ml-8'>
+                            <input
+                                className='outline-none w-full'
+                                name='productsSearch'
+                                id='productsSearch'
+                                type="text"
+                                placeholder='جستجو بین محصولات...'
+                            />
+                            <label htmlFor="productsSearch w-12">
                                 <BiSearchAlt
-                                    className='w-6 h-6'
+                                    className='w-8 h-8'
                                 />
                             </label>
                         </div>
                         {/* Search */}
 
-                        {/* Person in cart */}
-                        <div className=''>
-                            <BsPersonCircle
-                            className='bg-zinc-400 text-white rounded p-2 w-10 h-10'
-                            />
+                        <div className='flex gap-4 items-center'>
+                            {/* Person and cart */}
+                            <div className=''>
+                                <IoPerson className='bg-zinc-400 text-white rounded p-2 w-12 h-12' />
+                            </div>
+                            <div className='flex gap-2 items-center justify-center bg-orange-400 p-2 rounded-md'>
+                                <div className='text-orange-500 bg-white rounded-full w-8 h-8 flex justify-center items-center'>0</div>
+                                <div className='text-white'>سبد خرید</div>
+                                <div className='text-orange-500 bg-white rounded-lg w-8 h-8 flex justify-center items-center'><HiShoppingCart className='w-6 h-6' /></div>
+                            </div>
+                            {/* Person and cart */}
                         </div>
-                        {/* Person in cart */}
 
                     </div>
                     {/* ✋Header left side - search bar */}
