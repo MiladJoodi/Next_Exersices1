@@ -16,7 +16,7 @@ const Single = async ({ params }) => {
     }
 
     return (
-        <main className="container mx-auto flex flex-col gap-12">
+        <div className="container mx-auto flex flex-col gap-12">
             <section className="rounded-lg bg-zinc-100 p-8 flex justify-between items-start">
                 <div className="flex flex-col gap-8">
                     <div className="flex flex-col gap-4">
@@ -53,12 +53,12 @@ const Single = async ({ params }) => {
                     />
                 </div>
             </section>
-            <section className="flex justify-between items-center">
+            <section className="flex justify-between items-center flex-wrap justify-around">
                 {
                     data.images.map((img, i)=>(
                         <Image
                         key={i}
-                        className="rounded-xl"
+                        className="rounded-xl my-4"
                         width={400}
                         height={200}
                         alt={data.title}
@@ -68,7 +68,7 @@ const Single = async ({ params }) => {
                     ))
                 }
             </section>
-        </main>
+        </div>
     )
 }
 export default Single
