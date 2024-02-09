@@ -1,0 +1,110 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: shabnam, sans-serif;
+  direction: rtl;
+  background-color: #1e1e1e;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: shabnam;
+  src: url("/font/Shabnam-FD.woff");
+  font-display: block;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bx {
+  position: relative;
+  width: 220px;
+  height: 310px;
+  border: 1px solid #10101066;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.bx img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.bx .content {
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  bottom: 0;
+  border-radius: 0px 0px 20px 20px;
+  z-index: 1;
+  direction: ltr;
+}
+
+.bx .content::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgb(255 255 255 / 5%);
+  backdrop-filter: blur(5px);
+  border-radius: 0px 0px 20px 20px;
+  z-index: -1;
+}
+
+.content h3 {
+  color: #fff;
+  padding: 5px 0px 0px 10px;
+  font-size: 17px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: 400;
+}
+
+.content p {
+  color: #fff;
+  padding: 0px 0px 5px 10px;
+  font-size: 13px;
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.content h6 {
+  color: #fff;
+  padding: 0px 0px 0px 10px;
+  font-size: 13px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  font-weight: 400;
+}
+
+.content h6 span {
+  color: #000;
+  background: #b9aa00;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.content h6 .bi {
+  color: #dbca0e;
+  font-size: 15px;
+  margin-left: 5px;
+}
