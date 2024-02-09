@@ -95,14 +95,18 @@ const Header = () => {
                             </ul>
                         </nav>
                         {/* Header Links👋 */}
-                        <div className=''>
+                        <div className='flex flex-col items-end gap-2'>
                             <div className='flex gap-2 items-center'>
                                 <div>09105886740</div>
-                                <BsTelephoneFill className='w-8 h-8 rounded bg-zinc-200 rotate-12 p-2' />
+                                <div className='rounded bg-slate-200 rotate-12 p-2'>
+                                    <BsTelephoneFill className='w-4 h-4 -rotate-12' />
+                                </div>
                             </div>
                             <div className='flex gap-2 items-center'>
                                 <div>winbeta.com@gmail.com</div>
-                                <IoMailOpenOutline className='w-8 h-8 rounded bg-zinc-200 rotate-12 p-2' />
+                                <div className='rounded bg-slate-200 rotate-12 p-2'>
+                                    <IoMailOpenOutline className='w-4 h-4 -rotate-12' />
+                                </div>
                             </div>
                         </div>
                     </div>
