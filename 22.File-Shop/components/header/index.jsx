@@ -20,7 +20,7 @@ const Header = () => {
                             <div>فروشگاه فایل مرن فا</div>
                         </div>
                     </Link>
-                    <div>
+                    <div className='flex justify-around  items-center text-[1.5rem] p-1 bg-red-300 rounded-br-md rounded-bl-md'>
                         <BsTelegram />
                         <AiFillTwitterCircle />
                         <AiOutlineYoutube />
