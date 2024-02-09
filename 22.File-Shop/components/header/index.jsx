@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { BsTelegram, BsTelephoneFill } from "react-icons/bs"
 import { AiFillTwitterCircle, AiOutlineYoutube } from "react-icons/ai"
 import { IoMailOpenOutline } from "react-icons/io5"
+import { BiSearchAlt } from "react-icons/bi";
+import { BsPersonCircle } from "react-icons/bs"
 
 import { useState } from 'react';
 
@@ -63,6 +65,7 @@ const Header = () => {
 
                 {/* Header left side */}
                 <div className='w-5/6 flex flex-col gap-1'>
+                    {/* Header left side - top */}
                     <div className='flex justify-between items-center w-full'>
                         {/* Header Links👋 */}
                         <nav>
@@ -110,7 +113,32 @@ const Header = () => {
                             </div>
                         </div>
                     </div>
-                    <div></div>
+                    {/* Header left side - top */}
+
+                    {/* ✋Header left side - search bar */}
+                    <div>
+                        {/* Search */}
+                        <div className='flex justify-start items-center'>
+                            <input name='productsSearch' id='productsSearch' type="text" placeholder='جستجو بین محصولات...' />
+                            <label htmlFor="productsSearch">
+                                <BiSearchAlt
+                                    className='w-6 h-6'
+                                />
+                            </label>
+                        </div>
+                        {/* Search */}
+
+                        {/* Person in cart */}
+                        <div className=''>
+                            <BsPersonCircle
+                            className='bg-zinc-400 text-white rounded p-2 w-10 h-10'
+                            />
+                        </div>
+                        {/* Person in cart */}
+
+                    </div>
+                    {/* ✋Header left side - search bar */}
+
                 </div>
                 {/* Header left side */}
 
