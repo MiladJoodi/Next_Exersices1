@@ -10,6 +10,11 @@ const Home = async () => {
     const data = await getData()
     return (
         <main className="flex flex-col gap-8 container mx-auto">
+            <>
+            <title>سایت فیلم</title>
+            <meta name="description" content="وب سایت تخصصی فیلم" />
+            <link rel="icon" type="image/x-icon" href="/favicon.png"></link>
+            </>
             <div className="text-center text-2xl text-blue-500">صفحه اصلی</div>
             <div className="flex justify-between items-center flex-wrap">
                 {data.data.map((mov, i) => (
