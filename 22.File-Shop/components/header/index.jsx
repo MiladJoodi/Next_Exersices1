@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { BsTelegram } from "react-icons/bs"
+import { BsTelegram, BsTelephoneFill } from "react-icons/bs"
 import { AiFillTwitterCircle, AiOutlineYoutube } from "react-icons/ai"
+import { IoMailOpenOutline } from "react-icons/io5"
 
 import { useState } from 'react';
 
@@ -13,10 +14,11 @@ const Header = () => {
     return (
         <header className="container mx-auto py-2">
             <div className="flex justify-between items-center">
+                {/* Header logo */}
                 <div className='flex flex-col relative h-52'>
                     {/*⚠️ Brand Logo */}
                     <Link href={"/"}
-                     className='z-30'>
+                        className='z-30'>
                         <div
                             onMouseEnter={() => setLogoHover(1)}
                             onMouseLeave={() => setLogoHover(0)}
@@ -33,16 +35,16 @@ const Header = () => {
                     </Link>
                     {/*⚠️ Brand Logo */}
 
-                    {/*⚠️ Social Mediab Links  */}
+                    {/*⚠️ Social Media Links  */}
                     <div
-                    onMouseEnter={() => setLogoHover(1)}
-                    onMouseLeave={() => setLogoHover(0)}
-                    className={
-                        logoHover==0
-                        ? 'absolute bottom-20 right-0 left-0 flex justify-around items-center p-2 text-indigo-600 bg-zinc-100 rounded-br-md rounded-bl-md transition-all duration-500'
-                        : 'absolute bottom-0 right-0 left-0 flex justify-around items-center p-2 text-indigo-600 bg-zinc-100 rounded-br-md rounded-bl-md transition-all duration-500'
-                    }
-                    
+                        onMouseEnter={() => setLogoHover(1)}
+                        onMouseLeave={() => setLogoHover(0)}
+                        className={
+                            logoHover == 0
+                                ? 'absolute bottom-20 right-0 left-0 flex justify-around items-center p-2 text-indigo-600 bg-zinc-100 rounded-br-md rounded-bl-md transition-all duration-500'
+                                : 'absolute bottom-0 right-0 left-0 flex justify-around items-center p-2 text-indigo-600 bg-zinc-100 rounded-br-md rounded-bl-md transition-all duration-500'
+                        }
+
                     >
                         <Link href="#">
                             <BsTelegram className='text-[1.5rem] transition-all duration-300 hover:text-orange-500' />
@@ -57,7 +59,57 @@ const Header = () => {
                     {/*⚠️ Social Mediab Links  */}
 
                 </div>
-                <div>h</div>
+                {/* Header logo */}
+
+                {/* Header left side */}
+                <div className='w-5/6 flex flex-col gap-1'>
+                    <div className='flex justify-between items-center w-full'>
+                        {/* Header Links👋 */}
+                        <nav>
+                            <ul className='flex justify-start items-center gap-2'>
+                                <li>
+                                    <Link href={"/"}>
+                                        <span className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white'>خانه</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={"/"}>
+                                        <span className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white'>اپلیکیشن ها</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={"/"}>
+                                        <span className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white'>کتاب ها</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={"/"}>
+                                        <span className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white'>فایل های گرافیکی</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={"/"}>
+                                        <span className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white'>وبلاگ</span>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </nav>
+                        {/* Header Links👋 */}
+                        <div className=''>
+                            <div className='flex gap-2 items-center'>
+                                <div>09105886740</div>
+                                <BsTelephoneFill className='w-8 h-8 rounded bg-zinc-200 rotate-12 p-2' />
+                            </div>
+                            <div className='flex gap-2 items-center'>
+                                <div>winbeta.com@gmail.com</div>
+                                <IoMailOpenOutline className='w-8 h-8 rounded bg-zinc-200 rotate-12 p-2' />
+                            </div>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+                {/* Header left side */}
+
             </div>
         </header>
     );
