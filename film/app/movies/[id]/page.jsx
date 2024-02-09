@@ -5,11 +5,15 @@ const getData = async (id) => {
     return data.json()
 }
 
+import NotFound from "@/app/not-found"
 import Image from "next/image"
 
 const Single = async ({ params }) => {
 
     const data = await getData(params.id)
+    if(!data.id){
+        return NotFound()
+    }
 
     return (
         <main className="container mx-auto flex flex-col gap-12">
