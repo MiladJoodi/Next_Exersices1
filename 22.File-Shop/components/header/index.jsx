@@ -3,14 +3,24 @@ import Link from 'next/link';
 import { BsTelegram } from "react-icons/bs"
 import { AiFillTwitterCircle, AiOutlineYoutube } from "react-icons/ai"
 
+import { useState } from 'react';
+
 const Header = () => {
+
+    const [logoHover, setLogoHover] = useState(0)
+    console.log(logoHover)
+
     return (
         <header className="container mx-auto py-2">
             <div className="flex justify-between items-center">
-                <div className='flex flex-col'>
+                <div className='flex flex-col relative h-52'>
                     {/*⚠️ Brand Logo */}
-                    <Link href={"/"}>
-                        <div className="logo w-full h-full p-4 rounded-lg text-center shadow-[0px_1px_10px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0px_1px_10px_rgba(0,0,0,0.5)] ">
+                    <Link href={"/"}
+                     className='z-30'>
+                        <div
+                            onMouseEnter={() => setLogoHover(1)}
+                            onMouseLeave={() => setLogoHover(0)}
+                            className="bg-white logo p-4 rounded-lg text-center shadow-[0px_1px_10px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0px_1px_10px_rgba(0,0,0,0.5)] ">
                             <Image
                                 className='rounded-lg '
                                 src={"/logo.png"}
@@ -23,17 +33,25 @@ const Header = () => {
                     </Link>
                     {/*⚠️ Brand Logo */}
 
-
                     {/*⚠️ Social Mediab Links  */}
-                    <div className='flex justify-around  items-center text-[1.5rem] p-2 bg-red-300 rounded-br-md rounded-bl-md'>
+                    <div
+                    onMouseEnter={() => setLogoHover(1)}
+                    onMouseLeave={() => setLogoHover(0)}
+                    className={
+                        logoHover==0
+                        ? 'absolute bottom-20 right-0 left-0 flex justify-around items-center p-2 text-indigo-600 bg-zinc-100 rounded-br-md rounded-bl-md transition-all duration-500'
+                        : 'absolute bottom-0 right-0 left-0 flex justify-around items-center p-2 text-indigo-600 bg-zinc-100 rounded-br-md rounded-bl-md transition-all duration-500'
+                    }
+                    
+                    >
                         <Link href="#">
-                            <BsTelegram />
+                            <BsTelegram className='text-[1.5rem] transition-all duration-300 hover:text-orange-500' />
                         </Link>
                         <Link href="#">
-                            <AiFillTwitterCircle />
+                            <AiOutlineYoutube className='text-[1.7rem] transition-all duration-300 hover:text-orange-500' />
                         </Link>
                         <Link href="#">
-                            <AiOutlineYoutube />
+                            <AiFillTwitterCircle className='text-[1.7rem] transition-all duration-300 hover:text-orange-500' />
                         </Link>
                     </div>
                     {/*⚠️ Social Mediab Links  */}
