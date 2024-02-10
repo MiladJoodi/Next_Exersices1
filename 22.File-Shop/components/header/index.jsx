@@ -118,15 +118,15 @@ const Header = () => {
                     {/* ✋Header left side - search bar */}
                     <div className='flex justify-between items-center'>
                         {/* Search */}
-                        <div className='flex justify-start items-center bg-yellow-400 w-full ml-8'>
+                        <div className='relative flex justify-start items-center w-3/4 ml-8'>
                             <input
-                                className='outline-none w-full'
+                                className='outline-none w-full p-3 rounded-lg transition-all duration-500 shadow-[0px_0px_5px_rgba(0,0,0,0.15)] focus:shadow-[0px_3px_7px_rgba(0,0,0,0.25)]'
                                 name='productsSearch'
                                 id='productsSearch'
                                 type="text"
                                 placeholder='جستجو بین محصولات...'
                             />
-                            <label htmlFor="productsSearch w-12">
+                            <label htmlFor="productsSearch" className='w-10 absolute left-0 cursor-pointer'>
                                 <BiSearchAlt
                                     className='w-8 h-8'
                                 />
@@ -134,7 +134,7 @@ const Header = () => {
                         </div>
                         {/* Search */}
 
-                        <div className='flex gap-4 items-center'>
+                        <div className='flex gap-4 items-center w-1/4 justify-end'>
                             {/* Person and cart */}
                             <div className=''>
                                 <IoPerson className='bg-zinc-400 text-white rounded p-2 w-12 h-12' />
