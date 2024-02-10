@@ -118,9 +118,9 @@ const Header = () => {
                     {/* ✋Header left side - search bar */}
                     <div className='flex justify-between items-center'>
                         {/* Search */}
-                        <div className='relative flex justify-start items-center w-3/4 ml-8'>
+                        <div className='relative flex justify-start items-center w-full ml-8'>
                             <input
-                                className='outline-none w-full p-3 rounded-lg transition-all duration-500 shadow-[0px_0px_5px_rgba(0,0,0,0.15)] focus:shadow-[0px_3px_7px_rgba(0,0,0,0.25)]'
+                                className='outline-none w-full h-[3.2rem] p-3 rounded-lg transition-all duration-500 shadow-[0px_0px_5px_rgba(0,0,0,0.15)] focus:shadow-[0px_3px_7px_rgba(0,0,0,0.25)]'
                                 name='productsSearch'
                                 id='productsSearch'
                                 type="text"
@@ -134,7 +134,7 @@ const Header = () => {
                         </div>
                         {/* Search */}
 
-                        <div className='flex gap-4 items-center w-1/4 justify-end'>
+                        <div className='flex gap-4 items-center w-[20rem] justify-end'>
                             {/* Person and cart */}
                             <div className=''>
                                 <IoPerson className='bg-zinc-400 text-white rounded p-2 w-12 h-12' />
@@ -152,7 +152,6 @@ const Header = () => {
 
                 </div>
                 {/* Header left side */}
-
             </div>
         </header>
     );
