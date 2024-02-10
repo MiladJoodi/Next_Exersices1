@@ -15,16 +15,16 @@ const Header = () => {
 
     return (
         <header className="container mx-auto py-2">
-            <div className="flex justify-between items-start">
+            <div className="flex justify-between items-start gap-4">
                 {/* Header logo */}
-                <div className='flex flex-col relative h-52'>
+                <div className='flex flex-col relative h-52 w-48'>
                     {/*⚠️ Brand Logo */}
                     <Link href={"/"}
                         className='z-30'>
                         <div
                             onMouseEnter={() => setLogoHover(1)}
                             onMouseLeave={() => setLogoHover(0)}
-                            className="bg-white logo p-4 rounded-lg text-center shadow-[0px_1px_10px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0px_1px_10px_rgba(0,0,0,0.5)] ">
+                            className="bg-white flex flex-col items-center logo p-4 rounded-lg text-center shadow-[0px_1px_10px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0px_1px_10px_rgba(0,0,0,0.5)]">
                             <Image
                                 className='rounded-lg '
                                 src={"/logo.png"}
@@ -64,7 +64,7 @@ const Header = () => {
                 {/* Header logo */}
 
                 {/* Header left side */}
-                <div className='w-5/6 flex flex-col gap-1 py-4 h-40 justify-between'>
+                <div className='w-full flex flex-col gap-4 py-4 h-40 justify-between'>
                     {/* Header left side - top */}
                     <div className='flex justify-between items-center w-full'>
                         {/* Header Links👋 */}
