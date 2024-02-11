@@ -47,3 +47,14 @@ const updatePost = async (req, res) => {
     }
 }
 module.exports.updatePost = updatePost
+
+//Delete
+const removePost = async (req, res) => {
+    try {
+        await Post.deleteOne({_id: req.params.id});
+        res.status(200).json({msg: "post deleted"})
+    } catch (e) {
+        res.status(400).json({ mgs: "خطا" })
+    }
+}
+module.exports.removePost = removePost
