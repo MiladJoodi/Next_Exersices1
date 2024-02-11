@@ -6,7 +6,12 @@ const PostSchema = new mongoose.Schema({
     },
     viewNum:{
         type: Number,
-        required: true
+        required: true,
+        default: 0
+    },
+    data:{
+        type: String,
+        default: new Date()
     }
 });
 
