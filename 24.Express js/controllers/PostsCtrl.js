@@ -27,11 +27,23 @@ module.exports.createPost = createPost
 //Get One Post
 const getOnePost = async (req, res) => {
     try {
-        const thePost = await Post.findById(req.params.id);
+        // const thePost = await Post.findById(req.params.id);
+        const thePost = await Post.findOne({_id: req.params.id});
         res.status(200).json(thePost)
     } catch (e) {
         res.status(400).json({ mgs: "خطا" })
     }
 }
-
 module.exports.getOnePost = getOnePost
+
+//Update Post
+const updatePost = async (req, res) => {
+    try {
+        const newData = req.body;
+        await Post.findByIdAndUpdate(req.params.id, newData, {new: true});
+        res.status(200).json({msg: "post updated"})
+    } catch (e) {
+        res.status(400).json({ mgs: "خطا" })
+    }
+}
+module.exports.updatePost = updatePost
