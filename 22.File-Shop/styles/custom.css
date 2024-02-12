@@ -1,3 +1,13 @@
 .logo{
     z-index: 50 !important;
 }
+
+.swiper-button-next, .swiper-button-prev{
+    background: rgb(255, 255, 255);
+    padding: 2rem;
+    border-radius: .2rem !important;
+    font-size: .2rem;
+    width: 3rem !important;
+    height: 3rem !important;
+}
+

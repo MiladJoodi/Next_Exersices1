@@ -15,8 +15,7 @@ import Image from "next/image";
 
 const MainSlider = () => {
    return (
-      <main>
-         <section className=" container mx-auto p-4">
+         <section className="container mx-auto">
             <Swiper
                modules={[Navigation, Pagination, Scrollbar]}
                spaceBetween={20}
@@ -58,6 +57,7 @@ const MainSlider = () => {
                         src={"/images/slider/slide3.jpg"}
                         objectFit="cover"
                         className="rounded-lg"
+                        layout="fix"
                         width={1320}
                         height={310}
                         alt="alt"
@@ -66,7 +66,6 @@ const MainSlider = () => {
                </SwiperSlide>
             </Swiper>
          </section>
-      </main>
    );
 };
 
