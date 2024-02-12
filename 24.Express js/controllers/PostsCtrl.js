@@ -2,7 +2,7 @@ const Post = require("../models/Post")
 
 const getAllPosts = async (req, res) => {
     try {
-        const allPosts = await Post.find()
+        const allPosts = await Post.find().select({viewNum:1, data:1})
         allPosts.reverse()
         res.status(200).json(allPosts)
     } catch (e) {
