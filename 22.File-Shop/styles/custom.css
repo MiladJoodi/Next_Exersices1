@@ -1,8 +1,10 @@
-.logo{
+.logo {
     z-index: 50 !important;
 }
 
-.swiper-button-next, .swiper-button-prev{
+/* MAIN SLIDER */
+.swiper-button-next,
+.swiper-button-prev {
     background: rgb(255, 255, 255);
     padding: 2rem;
     border-radius: .2rem !important;
@@ -11,3 +13,28 @@
     height: 3rem !important;
 }
 
+.swiper-button-next::after,
+.swiper-button-next::after {
+    font-size: 2rem !important;
+    font-weight: 900;
+}
+
+.swiper-pagination-bullet {
+    background: rgb(255, 255, 255) !important;
+    color: rgb(255, 255, 255) !important;
+    width: 2rem;
+    border-radius: .1rem !important;
+}
+
+/* PRODUCTS SLIDER */
+.sliderContainer{
+scroll-snap-type: x mandatory;
+scroll-behavior: smooth;
+}
+.sliderContainer::-webkit-scrollbar{
+    height: 0;
+    width: 0;
+}
+.sliderItem{
+    scroll-snap-align: start;
+}
