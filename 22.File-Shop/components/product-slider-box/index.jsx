@@ -7,9 +7,9 @@ import Link from "next/link";
 
 const SlideBox = () => {
    return (
-      <article className="sliderItem p-2">
-         <Link href={"/shop"} target={"_blank"}>
-            <div className="relative bg-white h-[28rem] w-72 rounded-lg shadow-[0px_1px_10px_rgba(0,0,0,0.25)] hover:shadow-[0px_1px_8px_rgba(0,0,0,0.5)] transition-all duration-500">
+      <article className="sliderItem p-2 transition-all duration-300 hover:pt-0">
+         <Link href={"/shop"} target={"_blank"} legacyBehavior>
+            <div className="relative bg-white h-[24rem] w-72 rounded-lg">
                <div className="flex justify-center items-center pt-3">
                   <Image
                      width={260}
@@ -25,6 +25,8 @@ const SlideBox = () => {
                         عنوان محصول هستنوان محصول هستنوان محصول هستنوان محصول
                         هستنوان محصول هست این
                      </h3>
+
+                     {/* Categories */}
                      <div className="categories flex justify-start items-center flex-wrap gap-1">
                         <Link href={"/"} className="py-1 px-2 rounded bg-zinc-200 transition-all duration-300 hover:bg-zinc-300">رمان</Link>
                         <Link href={"/"} className="py-1 px-2 rounded bg-zinc-200 transition-all duration-300 hover:bg-zinc-300">داستانی</Link>

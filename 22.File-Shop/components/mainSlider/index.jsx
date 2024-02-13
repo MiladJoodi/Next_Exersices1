@@ -29,7 +29,7 @@ const MainSlider = () => {
                   <div className="flex justify-center items-center">
                      <Image
                         src={"/images/slider/slide1.jpg"}
-                        objectFit="cover"
+                        // objectFit="cover"
                         className="rounded-lg"
                         width={1280}
                         height={310}
@@ -42,7 +42,7 @@ const MainSlider = () => {
                   <div className="flex justify-center items-center">
                      <Image
                         src={"/images/slider/slide2.jpg"}
-                        objectFit="cover"
+                        // objectFit="cover"
                         className="rounded-lg"
                         width={1280}
                         height={310}
@@ -55,9 +55,9 @@ const MainSlider = () => {
                   <div className="flex justify-center items-center">
                      <Image
                         src={"/images/slider/slide3.jpg"}
-                        objectFit="cover"
+                        // objectFit="cover"
                         className="rounded-lg"
-                        layout="fix"
+                        // layout="fix"
                         width={1320}
                         height={310}
                         alt="alt"
