@@ -16,25 +16,23 @@ const SlideBox = () => {
 
          <div className="relative bg-white h-[28rem] w-72 rounded-lg">
 
-            <Link href={"/shop"} target={"_blank"}>
-               <div className="flex justify-center items-center pt-2">
-                  <Image
-                     width={270}
-                     height={150}
-                     src={"/images/ganj1.jpg"}
-                     alt="alt"
-                     className="rounded-md"
-                  />
-               </div>
+            <Link href={"/shop"} className="flex justify-center items-center pt-2">
+               <Image
+                  width={270}
+                  height={150}
+                  src={"/images/ganj1.jpg"}
+                  alt="alt"
+                  className="rounded-md"
+               />
             </Link>
 
             <div>
                <div className="flex flex-col gap-6 p-2">
                   <Link href={"/shop"}>
-                  <h3 className="">
-                     عنوان محصول هستن و ان محصول هستن وان محصول هستن وان محصول
-                     هستن وان محصول هست این
-                  </h3>
+                     <h3>
+                        عنوان محصول هستن و ان محصول هستن وان محصول هستن وان محصول
+                        هستن وان محصول هست این
+                     </h3>
                   </Link>
 
                   {/* items */}
@@ -81,7 +79,7 @@ const SlideBox = () => {
                      </div>
                      <div className="bg-zinc-200 flex justify-center items-center w-9 h-9 rounded-lg transition-all duration-500 hover:bg-zinc-300 cursor-pointer">
                         <Link href={"/"}>
-                        <AiOutlineSearch />
+                           <AiOutlineSearch />
                         </Link>
                      </div>
                   </div>
