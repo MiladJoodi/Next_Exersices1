@@ -1,6 +1,6 @@
 "use client"
 
-import SlideBox from "../../components/product-slider-box";
+import SlideBox from "../product-slider-box";
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
 import { useRef } from "react";

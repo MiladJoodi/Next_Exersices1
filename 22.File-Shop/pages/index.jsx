@@ -1,6 +1,6 @@
-import MainSlider from "@/components/mainSlider";
+import MainSlider from "@/components/sliders/mainSlider";
 import MiddleBanner from "@/components/middle-banner";
-import ProductsSlider from "@/components/product-slider";
+import ProductsSlider from "@/components/sliders/product-slider";
 import GraphicCategories from "@/components/graphic-cats";
 // import MainSlider from "../components/mainSlider/index";
 
