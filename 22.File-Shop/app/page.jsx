@@ -1,4 +1,4 @@
-// import MainSlider from "@/components/sliders/mainSlider";
+import MainSlider from "@/components/sliders/mainSlider";
 import MiddleBanner from "@/components/middle-banner";
 import ProductsSlider from "@/components/sliders/product-slider";
 import GraphicCategories from "@/components/graphic-cats";
@@ -10,7 +10,7 @@ const Home = () => {
    return (
       <div>
          <main className="flex flex-col gap-12">
-            {/* <MainSlider /> */}
+            <MainSlider />
             <ProductsSlider title="اپلیکیشن ها" linkCom="apps" />
             <MiddleBanner />
             <ProductsSlider title="کتاب ها" linkCom="books" />

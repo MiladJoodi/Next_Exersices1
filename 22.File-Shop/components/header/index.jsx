@@ -26,14 +26,16 @@ const Header = () => {
                         onMouseLeave={() => setLogoHover(0)}
                         className="bg-white flex flex-col items-center logo p-4 rounded-lg text-center shadow-[0px_1px_10px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0px_1px_10px_rgba(0,0,0,0.5)]"
                     >
-                        <Image
-                            className='rounded-lg '
-                            src={"/logo.png"}
-                            width={100}
-                            height={100}
-                            alt='logo'
-                        />
-                        <div>فروشگاه فایل مرن فا</div>
+                        <div className='flex justify-center'>
+                            <Image
+                                className='rounded-lg '
+                                src={"/logo.png"}
+                                width={100}
+                                height={100}
+                                alt='logo'
+                            />
+                        </div>
+                        <div>پروژه فروشگاه فایل</div>
                     </Link>
                     {/*⚠️ Brand Logo */}
 
@@ -43,8 +45,8 @@ const Header = () => {
                         onMouseLeave={() => setLogoHover(0)}
                         className={
                             logoHover == 0
-                                ? 'absolute bottom-20 right-0 left-0 flex justify-around items-center p-2 text-indigo-600 bg-zinc-100 rounded-br-md rounded-bl-md transition-all duration-500'
-                                : 'absolute bottom-0 right-0 left-0 flex justify-around items-center p-2 text-indigo-600 bg-zinc-100 rounded-br-md rounded-bl-md transition-all duration-500'
+                                ? 'absolute bottom-20 right-0 left-0 flex justify-around items-center p-2 text-indigo-600 bg-zinc-100 rounded-br-md rounded-bl-md transition-all duration-500 delay-150 ease-in-out'
+                                : 'absolute bottom-0 right-0 left-0 flex justify-around items-center p-2 text-indigo-600 bg-zinc-100 rounded-br-md rounded-bl-md transition-all duration-500 delay-150 ease-in-out'
                         }
 
                     >
