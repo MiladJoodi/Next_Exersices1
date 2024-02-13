@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsTelegram, BsTelephoneFill } from "react-icons/bs"
@@ -20,20 +22,18 @@ const Header = () => {
                 <div className='flex flex-col relative h-52 w-48'>
                     {/*⚠️ Brand Logo */}
                     <Link href={"/"}
-                        className='z-30'>
-                        <div
-                            onMouseEnter={() => setLogoHover(1)}
-                            onMouseLeave={() => setLogoHover(0)}
-                            className="bg-white flex flex-col items-center logo p-4 rounded-lg text-center shadow-[0px_1px_10px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0px_1px_10px_rgba(0,0,0,0.5)]">
-                            <Image
-                                className='rounded-lg '
-                                src={"/logo.png"}
-                                width={100}
-                                height={100}
-                                alt='logo'
-                            />
-                            <div>فروشگاه فایل مرن فا</div>
-                        </div>
+                        onMouseEnter={() => setLogoHover(1)}
+                        onMouseLeave={() => setLogoHover(0)}
+                        className="bg-white flex flex-col items-center logo p-4 rounded-lg text-center shadow-[0px_1px_10px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0px_1px_10px_rgba(0,0,0,0.5)]"
+                    >
+                        <Image
+                            className='rounded-lg '
+                            src={"/logo.png"}
+                            width={100}
+                            height={100}
+                            alt='logo'
+                        />
+                        <div>فروشگاه فایل مرن فا</div>
                     </Link>
                     {/*⚠️ Brand Logo */}
 
