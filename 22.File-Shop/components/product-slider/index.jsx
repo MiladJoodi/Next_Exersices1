@@ -36,7 +36,7 @@ const ProductsSlider = ({title, linkCom}) => {
                      </Link>
                   </div>
                </header>
-               <div ref={carouselRef} className="sliderContainer w-full max-w-7xl overflow-x-scroll px-4  ">
+               <div ref={carouselRef} className="sliderContainer mx-auto w-full max-w-7xl overflow-x-scroll px-4  ">
                   <div className=" flex justify-between items-center gap-4 ">
                      <SlideBox />
                      <SlideBox />
