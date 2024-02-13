@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { IoResizeOutline } from "react-icons/io5";
-import { MdFileCopy } from "react-icons/md"
-import { TiBrush } from "react-icons/ti"
-
 const CatBox = () => {
     return (
         <Link href={"/"}>

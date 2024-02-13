@@ -1,12 +1,12 @@
 "use client"
 
-import SlideBox from "../product-slider-box";
+import SlideBox from "../graphic-slider-box";
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
 import { useRef } from "react";
 import Link from "next/link";
 
-const GraphicSlider = ({linkCom}) => {
+const GraphicSlider = () => {
 
    const carouselRef = useRef();
    const carouselSwitcher = (data) => {
@@ -31,7 +31,7 @@ const GraphicSlider = ({linkCom}) => {
                         <FaChevronRight onClick={() => { carouselSwitcher(1) }} className=" cursor-pointer bg-zinc-200 transition-all duration-300 hover:text-white hover:bg-orange-400 w-10 h-10 p-3 rounded" />
                         <FaChevronLeft onClick={() => { carouselSwitcher(-1) }} className=" cursor-pointer bg-zinc-200 transition-all duration-300 hover:text-white hover:bg-orange-400 w-10 h-10 p-3 rounded" />
                      </div>
-                     <Link href={`/${linkCom}`}>
+                     <Link href={"/"}>
                         <div className="bg-orange-500 text-white border-white border-2 px-4 py-1.5 rounded-md transition-all duration-500 hover:bg-orange-600">مشاهده همه</div>
                      </Link>
                   </div>
@@ -63,4 +63,4 @@ const GraphicSlider = ({linkCom}) => {
    );
 };
 
-export default ProductsSlider;
+export default GraphicSlider;
