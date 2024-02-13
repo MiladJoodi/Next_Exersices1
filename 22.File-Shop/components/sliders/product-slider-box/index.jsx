@@ -10,9 +10,9 @@ const SlideBox = () => {
       <article className="sliderItem p-2 transition-all duration-300 hover:pt-0">
          <Link href={"/shop"} target={"_blank"} legacyBehavior>
             <div className="relative bg-white h-[24rem] w-72 rounded-lg">
-               <div className="flex justify-center items-center pt-3">
+               <div className="flex justify-center items-center pt-2">
                   <Image
-                     width={260}
+                     width={270}
                      height={150}
                      src={"/images/ganj1.jpg"}
                      alt="alt"
