@@ -48,17 +48,17 @@ const Header = () => {
                         }
 
                     >
-                        <Link href="#">
-                            <BsTelegram className='text-[1.5rem] transition-all duration-300 hover:text-orange-500' />
+                        <Link href="#" className='text-[1.5rem] transition-all duration-300 hover:text-orange-500' >
+                            <BsTelegram />
                         </Link>
-                        <Link href="#">
-                            <AiOutlineYoutube className='text-[1.7rem] transition-all duration-300 hover:text-orange-500' />
+                        <Link href="#" className='text-[1.7rem] transition-all duration-300 hover:text-orange-500'>
+                            <AiOutlineYoutube />
                         </Link>
-                        <Link href="#">
-                            <AiFillTwitterCircle className='text-[1.7rem] transition-all duration-300 hover:text-orange-500' />
+                        <Link href="#" className='text-[1.7rem] transition-all duration-300 hover:text-orange-500'>
+                            <AiFillTwitterCircle />
                         </Link>
                     </div>
-                    {/*⚠️ Social Mediab Links  */}
+                    {/*⚠️ Social Media Links  */}
 
                 </div>
                 {/* Header logo */}
@@ -71,28 +71,28 @@ const Header = () => {
                         <nav>
                             <ul className='flex justify-start items-center gap-2'>
                                 <li>
-                                    <Link href={"/"}>
-                                        <span className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white'>خانه</span>
+                                    <Link href={"/"} className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white'>
+                                        خانه
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href={"/"}>
-                                        <span className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white'>اپلیکیشن ها</span>
+                                    <Link href={"/"} className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white' >
+                                        اپلکیشن ها
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href={"/"}>
-                                        <span className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white'>کتاب ها</span>
+                                    <Link href={"/"} className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white' >
+                                        کتاب ها
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href={"/"}>
-                                        <span className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white'>فایل های گرافیکی</span>
+                                    <Link href={"/"} className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white' >
+                                        فایل های گرافیکی
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href={"/"}>
-                                        <span className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white'>وبلاگ</span>
+                                    <Link href={"/"} className='w-32 h-10 rounded-md bg-zinc-200 flex justify-center items-center transition-all duration-300 hover:bg-orange-400 hover:text-white' >
+                                        وبلاگ
                                     </Link>
                                 </li>
                             </ul>

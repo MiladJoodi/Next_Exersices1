@@ -9,8 +9,7 @@ const SlideBox = () => {
    return (
       <article className="sliderItem p-2 transition-all duration-300 hover:pt-0">
          <div className="relative bg-white h-[24rem] w-72 rounded-lg">
-            <Link href={"/shop"}>
-               <div className="flex justify-center items-center pt-2">
+            <Link href={"/shop"} className="flex justify-center items-center pt-2">
                   <Image
                      width={270}
                      height={150}
@@ -18,7 +17,6 @@ const SlideBox = () => {
                      alt="alt"
                      className="rounded-md"
                   />
-               </div>
             </Link>
             <div>
                <div className="flex flex-col gap-2 p-2">
