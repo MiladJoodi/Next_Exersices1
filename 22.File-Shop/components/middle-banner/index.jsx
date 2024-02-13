@@ -3,7 +3,7 @@ import Image from "next/image";
 const MiddleBanner = () => {
     return (
         <div>
-            <section className="container mx-auto flex justify-between items-center">
+            <section className="container mx-auto flex justify-center gap-9 items-center">
                 <Image
                     alt="alt"
                     width={600}
