@@ -5,7 +5,7 @@ const BlogBox = () => {
     return (
         <article className="sliderItem p-2 transition-all duration-300 hover:pt-0">
 
-            <div className="relative bg-white h-[28rem] w-72 rounded-lg">
+            <div className="relative bg-white shadow-[0px_1px_8px_rgba(0,0,0,.2)] h-[28rem] w-72 rounded-lg">
 
                 <Link href={"/shop"} target={"_blank"}>
                     <div className="flex justify-center items-center pt-2">
@@ -34,6 +34,7 @@ const BlogBox = () => {
                         <div className="h-1 w-[90%] bg-zinc-300 border-2 rounded-full mx-auto"/>
                         <div className="flex justify-between items-center">
                             <div className="text-base sm:text-sm bg-zinc-300 rounded-md py-1 px-3">1402/04/15</div>
+                            <div className="text-base sm:text-sm bg-zinc-300 rounded-md py-1 px-3">5 دیدگاه</div>
                         </div>
                     </div>
 
