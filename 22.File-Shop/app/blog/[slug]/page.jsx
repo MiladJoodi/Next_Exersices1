@@ -23,20 +23,20 @@ const SingleBlog = () => {
             <section className="flex flex-col gap-6">
                 <h1 className="text-blue-400 text-lg">این مقاله به عنوان تست می باشد</h1>
                 <div className="flex justify-start items-center gap-4 text-base sm:text-sm">
-                    <div className="bg-zinc-100 rounded-md p-2 flex justify-between items-center gap-3">
-                        <FaRegEye className="w-6 h-6" />
+                    <div className="bg-zinc-100 rounded-md p-2 flex justify-between items-center gap-2">
+                        <FaRegEye className="w-6 h-6 text-black" />
                         <span>تعداد بازدید</span>
                         <span>5</span>
                     </div>
 
-                    <div className="bg-zinc-100 rounded-md p-2 flex justify-between items-center gap-3">
-                        <FaRegComment className="w-6 h-6" />
+                    <div className="bg-zinc-100 rounded-md p-2 flex justify-between items-center gap-2">
+                        <FaRegComment className="w-6 h-6 text-black" />
                         <span>تعداد دیدگاه:</span>
                         <span>5</span>
                     </div>
 
-                    <div className="bg-zinc-100 rounded-md p-2 flex justify-between items-center gap-3">
-                        <SlCalender className="w-6 h-6" />
+                    <div className="bg-zinc-100 rounded-md p-2 flex justify-between items-center gap-2">
+                        <SlCalender className="w-6 h-6 text-black" />
                         <span>آخرین به روزرسانی:</span>
                         <span>1402/11/25</span>
                     </div>
