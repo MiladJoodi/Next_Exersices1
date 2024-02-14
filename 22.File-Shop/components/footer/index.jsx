@@ -62,21 +62,21 @@ const Footer = () => {
                         <div className="text-xl">راهنمای خرید</div>
                         <ul className="flex flex-col gap-4 text-base sm:text-sm">
                             <li>
-                                <Link href={"/"} className="flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
+                                <Link href={"/"} className="w-32 flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
                                     <TfiAngleLeft />
                                     <span>سوالات متداول</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link href={"/"} className="flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
+                                <Link href={"/"} className="w-32 flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
                                     <TfiAngleLeft />
-                                    <span>چگونه خرید کنم</span>
+                                    <span>چگونه خرید کنم؟</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link href={"/"} className="flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
+                                <Link href={"/"} className="w-32 flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
                                     <TfiAngleLeft />
-                                    <span>قوانین استفاده از محصولات</span>
+                                    <span>قوانین سایت</span>
                                 </Link>
                             </li>
                         </ul>
