@@ -14,7 +14,7 @@ const Footer = () => {
         });
     };
     return (
-        <footer className="container mx-auto flex flex-col gap-8">
+        <footer className="container mx-auto flex flex-col gap-8 py-6">
             <div className="flex justify-between items-center p-8 bg-zinc-100 rounded-lg">
                 <div className="w-72 max-w-72 flex flex-col gap-4">
                     <div className="flex justify-center">
