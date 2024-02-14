@@ -1,8 +1,10 @@
+import BreadCrumb from "@/components/breadCrumb";
 
 const SingleBlog = () => {
     return (
         <div>
-            Enter
+            <BreadCrumb />
+            SingleBlog
         </div>
     );
 }
