@@ -20,7 +20,7 @@ const BlogBox = () => {
                 </Link>
 
                 <div>
-                    <div className="flex flex-col gap-6 p-2">
+                    <div className="flex flex-col gap-10 p-2">
                         <Link href={"/shop"}>
                             <h3 className="line-clamp-2">
                                 عنوان محصول هستن و ان محصول هستن وان محصول هستن وان محصول
