@@ -20,7 +20,7 @@ const RelatedPosts = () => {
    return (
       <div className="">
          <div className="container mx-auto py-8">
-            <section className="flex flex-col gap-6 px-2">
+            <div className="flex flex-col gap-6 px-2">
                <header className=" flex justify-between items-center">
                 <h2 className="text-xl">مطالب مرتبط</h2>
                   <div className="flex gap-1">
@@ -41,7 +41,7 @@ const RelatedPosts = () => {
                      <BlogBox />
                   </div>
                </div>
-            </section>
+            </div>
          </div>
       </div>
    );

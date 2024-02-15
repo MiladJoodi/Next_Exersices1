@@ -31,7 +31,7 @@ const GraphicSlider = () => {
                         <FaChevronRight onClick={() => { carouselSwitcher(1) }} className=" cursor-pointer bg-white transition-all duration-300 hover:text-white hover:bg-indigo-400 w-10 h-10 p-3 rounded" />
                         <FaChevronLeft onClick={() => { carouselSwitcher(-1) }} className=" cursor-pointer bg-white transition-all duration-300 hover:text-white hover:bg-indigo-400 w-10 h-10 p-3 rounded" />
                      </div>
-                     <Link href={"/"} className="bg-orange-500 text-white border-white border-2 px-4 py-1.5 rounded-md transition-all duration-500 hover:bg-orange-600">
+                     <Link href={"/"} className="bg-indigo-500 text-white border-white border-2 px-4 py-1.5 rounded-md transition-all duration-500 hover:bg-indigo-600">
                         مشاهده همه
                      </Link>
                   </div>

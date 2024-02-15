@@ -105,7 +105,7 @@ const Footer = () => {
 
             <div className="flex justify-between items-center">
                 <p>تمامی حقوق مادی و معنوی این وب سایت محفوظ است.</p>
-                <HiOutlineArrowUp onClick={() => goTopCtrl()} className="cursor-pointer border-2 border-indigo-500 w-10 h-10 p-2 rounded-md bg-zinc-200 transition-all duration-500 hover:bg-indigo-400 hover:text-white" />
+                <HiOutlineArrowUp onClick={() => goTopCtrl()} className="fixed left-4 bottom-2 cursor-pointer border-2 border-indigo-500 w-12 h-12 p-2 rounded-md bg-yellow border-black transition-all duration-500 hover:bg-indigo-400 hover:text-white" />
             </div>
         </footer>
     );
