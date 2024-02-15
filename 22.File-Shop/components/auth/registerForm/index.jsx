@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useForm } from "react-hook-form"
 
 const RegisterForm = () => {
@@ -19,12 +20,18 @@ const RegisterForm = () => {
             password: watch("password"),
             rePassword: watch("rePassword"),
         }
+        console.log(formData)
     }
 
     return (
         <section className="container mx-auto flex justify-center items-center">
-            <form onSubmit={handleSubmit(formSubmiter)} className="flex flex-col gap-10 m-12 w-96">
-                <h1 className="text-lg text-center text-blue-400">ثبت نام در سایت</h1>
+            <form onSubmit={handleSubmit(formSubmiter)} className="flex flex-col gap-8 m-12 w-[30rem] bg-zinc-100 p-12 rounded-md ">
+
+                <div className="flex justify-center items-center gap-6">
+                    <h1 className="text-lg text-center text-blue-400">ثبت نام در سایت</h1>
+                    <Link href={"/login"} className="bg-blue-500 text-white px-2 py-1 rounded-md">ورود به حساب</Link>
+                </div>
+
                 {/* Username */}
                 <div className="flex flex-col gap-1">
                     <input
