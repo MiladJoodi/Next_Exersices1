@@ -32,7 +32,7 @@ app.use(hpp());
 
 app.get("/", (req, res) => {
   res.status(200).json({
-    msg: "this is mernfa file shop course server..."
+    msg: "this is file shop course server..."
   });
 });
 
