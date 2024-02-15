@@ -33,25 +33,25 @@ const Footer = () => {
                         <div className="text-xl">دسترسی سریع</div>
                         <ul className="flex flex-col gap-4 text-base sm:text-sm">
                             <li>
-                                <Link href={"/"} className="flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
+                                <Link href={"/about"} className="flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
                                     <TfiAngleLeft />
                                     <span>درباره ما</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link href={"/"} className="flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
+                                <Link href={"/contact"} className="flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
                                     <TfiAngleLeft />
                                     <span>تماس با ما</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link href={"/"} className="flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
+                                <Link href={"/help"} className="flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
                                     <TfiAngleLeft />
                                     <span>حریم خصوصی</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link href={"/"} className="flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
+                                <Link href={"/blog"} className="flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
                                     <TfiAngleLeft />
                                     <span>وبلاگ</span>
                                 </Link>
@@ -62,19 +62,19 @@ const Footer = () => {
                         <div className="text-xl">راهنمای خرید</div>
                         <ul className="flex flex-col gap-4 text-base sm:text-sm">
                             <li>
-                                <Link href={"/"} className="w-32 flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
+                                <Link href={"/help"} className="w-32 flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
                                     <TfiAngleLeft />
                                     <span>سوالات متداول</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link href={"/"} className="w-32 flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
+                                <Link href={"/help"} className="w-32 flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
                                     <TfiAngleLeft />
                                     <span>چگونه خرید کنم؟</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link href={"/"} className="w-32 flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
+                                <Link href={"/help"} className="w-32 flex gap-1 items-center transition-all duration-300 hover:gap-3 hover:text-orange-500">
                                     <TfiAngleLeft />
                                     <span>قوانین سایت</span>
                                 </Link>

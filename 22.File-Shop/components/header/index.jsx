@@ -141,7 +141,7 @@ const Header = () => {
                              <Link href={"/account"}>
                                 <IoPerson className='bg-zinc-400 text-white rounded p-2 w-12 h-12' />
                             </Link>
-                            <Link className='flex gap-2 items-center justify-center bg-orange-400 p-2 rounded-md'>
+                            <Link href={"/cart"} className='flex gap-2 items-center justify-center bg-orange-400 p-2 rounded-md'>
                                 <div className='text-orange-500 bg-white rounded-full w-8 h-8 flex justify-center items-center'>0</div>
                                 <div className='text-white'>سبد خرید</div>
                                 <div className='text-orange-500 bg-white rounded-lg w-8 h-8 flex justify-center items-center'><HiShoppingCart className='w-6 h-6' /></div>
