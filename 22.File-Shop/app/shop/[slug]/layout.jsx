@@ -7,57 +7,61 @@ const BlogLayout = ({ children }) => {
         <div className="flex justify-between items-start container mx-auto gap-4">
             <main className="w-[75%]">{children}</main>
             <aside className="w-80 max-w-80 rounded-md flex flex-col gap-12">
-                {/*Search  */}
-                <form className="border-zinc-700 border-2 px-2 rounded-md flex justify-between items-center">
-                    <input type="text" className="bg-transparent p-2 outline-none text-sm" placeholder="جستجو در بلاگ" />
-                    <BiSearchAlt className="w-8 h-8" />
-                </form>
+                {/* Buttons */}
+                <div>
+                    <button>افزودن به سبد خرید</button>
+                </div>
+
+                {/* Cart Count */}
+                <div className="rounded-lg p-3 shadow-[0px_0px_8px_rgba(0,0,0,0.35)]">
+                    <ul className="flex flex-col gap-3">
+                        <li className="flex justify-between items-center">
+                            <span>تعداد خرید</span>
+                            <span>12</span>
+                        </li>
+                        <li className="flex justify-between items-center">
+                            <span>تعداد بازدید</span>
+                            <span>82</span>
+                        </li>
+                        <li className="flex justify-between items-center">
+                            <span>تعداد دیدگاه</span>
+                            <span>3</span>
+                        </li>
+                    </ul>
+                </div>
 
                 {/* Desc */}
                 <div className="flex flex-col gap-4 rounded-lg p-3 shadow-[0px_0px_8px_rgba(0,0,0,0.35)]">
-                    <h3 className="text-blue-400">توضیحات خلاصه</h3>
-                    <p className="leading-9 text-base sm:text-sm text-justify">طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی</p>
+                    <h3 className="text-blue-400">معرفی کوتاه</h3>
+                    <p className="text-sm text-justify leading-8">طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی</p>
                 </div>
-                 
-                {/* popular */}
+
+                {/* Tags */}
                 <div className="flex flex-col gap-4 rounded-lg p-3 shadow-[0px_0px_8px_rgba(0,0,0,0.35)]">
-                    <h3 className="text-blue-400">پرفروشترین محصولات</h3>
-                    <ul className="flex flex-col gap-3">
-                        <li>
-                            <Link className="p-2 flex justify-center item-center text-base sm:text-sm border-r-2 border-zinc-600" href={"/"}>مقاله تستی اول این نوشته بای تست است</Link>
-                        </li>
-                        <li>
-                            <Link className="p-2 flex justify-center item-center text-base sm:text-sm border-r-2 border-zinc-600" href={"/"}>مقاله تستی اول این نوشته بای تست است</Link>
-                        </li>
-                        <li>
-                            <Link className="p-2 flex justify-center item-center text-base sm:text-sm border-r-2 border-zinc-600" href={"/"}>مقاله تستی اول این نوشته بای تست است</Link>
-                        </li>
-                    </ul>
-                </div>
-                
-                {/* Most View */}
-                <div className="flex flex-col gap-4 rounded-lg p-3 shadow-[0px_0px_8px_rgba(0,0,0,0.35)]">
-                    <h3 className="text-blue-400">پربازدید ترین مقالات</h3>
-                    <ul className="flex flex-col gap-3">
-                        <li>
-                            <Link className="p-2 flex justify-center item-center text-base sm:text-sm border-r-2 border-zinc-600" href={"/"}>مقاله تستی اول این نوشته بای تست است</Link>
-                        </li>
-                        <li>
-                            <Link className="p-2 flex justify-center item-center text-base sm:text-sm border-r-2 border-zinc-600" href={"/"}>مقاله تستی اول این نوشته بای تست است</Link>
-                        </li>
-                        <li>
-                            <Link className="p-2 flex justify-center item-center text-base sm:text-sm border-r-2 border-zinc-600" href={"/"}>مقاله تستی اول این نوشته بای تست است</Link>
-                        </li>
-                    </ul>
+                    <h3 className="text-blue-400">برچسب ها</h3>
+                    <div className="flex justify-start items-center gap-2 flex-wrap">
+                        <Link href={"/"} className="p-2 flex justify-center item-center rounded-md text-base sm:text-sm bg-zinc-100 tarnsition-all duration-300 hover:text-white hover:bg-orange-500" >
+                            مقاله
+                        </Link>
+                        <Link href={"/"} className="p-2 flex justify-center item-center rounded-md text-base sm:text-sm bg-zinc-100 tarnsition-all duration-300 hover:text-white hover:bg-orange-500" >
+                            مقاله
+                        </Link>
+                        <Link href={"/"} className="p-2 flex justify-center item-center rounded-md text-base sm:text-sm bg-zinc-100 tarnsition-all duration-300 hover:text-white hover:bg-orange-500" >
+                            مقاله
+                        </Link>
+                        <Link href={"/"} className="p-2 flex justify-center item-center rounded-md text-base sm:text-sm bg-zinc-100 tarnsition-all duration-300 hover:text-white hover:bg-orange-500" >
+                            مقاله
+                        </Link>
+                    </div>
                 </div>
 
                 {/* Subcribe */}
                 <div className="flex flex-col gap-4 rounded-lg p-3 shadow-[0px_0px_8px_rgba(0,0,0,0.35)]">
                     <h3 className="text-blue-400">شرکت در خبرنامه</h3>
                     <form className="border-zinc-700 border-2 px-2 rounded-md flex justify-between items-center">
-                    <input type="text" className="bg-transparent p-2 outline-none text-sm" placeholder="ایمیل خود را وارد کنید..." />
-                    <IoSendOutline className="rotate-180 w-6 h-6" />
-                </form>
+                        <input type="text" className="bg-transparent p-2 outline-none text-sm" placeholder="ایمیل خود را وارد کنید..." />
+                        <IoSendOutline className="rotate-180 w-6 h-6" />
+                    </form>
                 </div>
             </aside>
         </div>
