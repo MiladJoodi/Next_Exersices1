@@ -36,6 +36,12 @@ app.get("/", (req, res) => {
   });
 });
 
+// ROUTES
+const midBanRoutes = require("./routes/MiddleBannerRoutes");
+
+//ROUTES MIDDLEWARE
+app.use("/api", midBanRoutes)
+
 const PORT = process.env.PORT;
 const DB_URL = process.env.DB_URL;
 

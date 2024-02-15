@@ -17,4 +17,4 @@ const MiddleBanner = new mongoose.Schema({
         type: String
     }
 })
-module.exports = mongoose.Model("MiddleBanner", MiddleBanner);
+module.exports = mongoose.model("MiddleBanner", MiddleBanner);
