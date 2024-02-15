@@ -6,10 +6,11 @@ const BlogLayout = ({ children }) => {
     return (
         <div className="flex justify-between items-start container mx-auto gap-4">
             <main className="w-[75%]">{children}</main>
-            <aside className="w-80 max-w-80 rounded-md flex flex-col gap-12">
+            <aside className="w-80 max-w-80 rounded-md flex flex-col gap-8">
                 {/* Buttons */}
-                <div>
-                    <button>افزودن به سبد خرید</button>
+                <div className="flex flex-col gap-6">
+                    <button className="flex justify-center items-center rounded-md w-full p-2 bg-orange-500 transition-all duration-300 hover:bg-orange-600 text-white">افزودن به سبد خرید - 30,000 تومان</button>
+                    <button className="flex justify-center items-center rounded-md w-full p-2 bg-blue-500 transition-all duration-300 hover:bg-blue-600 text-white">افزودن به علاقه مندی ها</button>
                 </div>
 
                 {/* Cart Count */}
