@@ -9,7 +9,7 @@ import { SlCalender } from "react-icons/sl";
 const SingleBlog = () => {
     return (
         <div className="flex flex-col gap-12">
-            <BreadCrumb secondTitle={"وبلاگ"} secondLink={"/blog"} title={"این مقاله به عنوان تست است"} />
+            <BreadCrumb secondTitle={"فروشگاه"} secondLink={"/shop"} title={"فایل لایه باز ادوبی ایکس دی"} />
             <section className="flex justify-center items-center">
                 <Image
                     className="rounded-xl"
