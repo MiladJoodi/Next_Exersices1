@@ -4,7 +4,7 @@ import { IoSendOutline } from "react-icons/io5";
 
 const BlogLayout = ({ children }) => {
     return (
-        <div className="flex justify-between items-start container mx-auto gap-2">
+        <div className="flex justify-between items-start container mx-auto gap-4">
             <main className="w-[75%]">{children}</main>
             <aside className="w-80 max-w-80 rounded-md flex flex-col gap-12">
                 {/*Search  */}
@@ -18,7 +18,7 @@ const BlogLayout = ({ children }) => {
                     <h3 className="text-blue-400">توضیحات خلاصه</h3>
                     <p className="leading-9 text-base sm:text-sm text-justify">طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی</p>
                 </div>
-                
+                 
                 {/* popular */}
                 <div className="flex flex-col gap-4 rounded-lg p-3 shadow-[0px_0px_8px_rgba(0,0,0,0.35)]">
                     <h3 className="text-blue-400">پرفروشترین محصولات</h3>

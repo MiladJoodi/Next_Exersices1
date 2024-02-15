@@ -4,22 +4,107 @@ import Image from "next/image";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegComment } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
+import { TiTickOutline } from "react-icons/ti";
+
 
 
 const SingleBlog = () => {
     return (
         <div className="flex flex-col gap-12">
-            <BreadCrumb secondTitle={"فروشگاه"} secondLink={"/shop"} title={"فایل لایه باز ادوبی ایکس دی"} />
-            <section className="flex justify-center items-center">
-                <Image
-                    className="rounded-xl"
-                    width={800}
-                    height={400}
-                    alt={"this is alt"}
-                    src={"/images/ganj1.jpg"}
-                    priority={true}
-                />
+            <BreadCrumb
+                secondTitle={"فروشگاه"}
+                secondLink={"/shop"}
+                title={"فایل لایه باز ادوبی ایکس دی"}
+            />
+            {/* Top Section */}
+            <section className="flex justify-center items-center rounded-xl p-4 shadow-[0px_0px_8px_rgba(0,0,0,0.25)]">
+                <div className="flex justify-start items-center gap-2 w-full">
+                    <div>
+                        <Image
+                            className="rounded-xl"
+                            width={400}
+                            height={200}
+                            alt={"this is alt"}
+                            src={"/images/ganj1.jpg"}
+                            priority={true}
+                        />
+                    </div>
+                    <div className="h-[12rem] flex flex-col gap-8">
+                        <h1 className="text-lg">کتاب گنج - جلال آل احمد</h1>
+                        <ul className="flex flex-col gap-3">
+                            <li className="flex justify-between items-center gap-2 w-48">
+                                <div className="flex justify-start items-center gap-1"><TiTickOutline className="text-black" /><span>فرمت</span></div>
+                                <div className="text-black">PSD</div>
+                            </li>
+                            <li className="flex justify-between items-center gap-2 w-48">
+                                <div className="flex justify-start items-center gap-1"><TiTickOutline className="text-black" /><span>ابعاد</span></div>
+                                <div className="text-black">1080*720</div>
+                            </li>
+                            <li className="flex justify-between items-center gap-2 w-48">
+                                <div className="flex justify-start items-center gap-1"><TiTickOutline className="text-black" /><span>حجم فایل</span></div>
+                                <div className="text-black">10 مگ</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </section>
+
+            {/* 3 Items */}
+            <section className="flex justify-between items-center gap-2">
+                <div className="w-[18rem] rounded-md flex justify-center items-center gap-2 bg-slate-100 p-4 transition-all duration-300 hover:bg-slate-200">
+                    <div className="flex justify-start items-center gap-2">
+                        <Image
+                            className="rounded-xl"
+                            width={100}
+                            height={100}
+                            alt={"this is alt"}
+                            src={"/images/icons/trophy.png"}
+                            priority={true}
+                        />
+                        <div className="flex flex-col gap-3">
+                            <div className="font-bold text-base sm:text-sm">محصولات اورجینال</div>
+                            <div className="text-base sm:text-xs">برترین های دنیای وب</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="w-[18rem] rounded-md flex justify-center items-center gap-2 bg-slate-100 p-4 transition-all duration-300 hover:bg-slate-200">
+                    <div className="flex justify-start items-center gap-2">
+                        <Image
+                            className="rounded-xl"
+                            width={100}
+                            height={100}
+                            alt={"this is alt"}
+                            src={"/images/icons/feedback.png"}
+                            priority={true}
+                        />
+                        <div className="flex flex-col gap-3">
+                            <div className="font-bold text-base sm:text-sm">بالاترین کیفیت</div>
+                            <div className="text-base sm:text-xs">تاثیرگذارترین در موفقیت</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="w-[18rem] rounded-md flex justify-center items-center gap-2 bg-slate-100 p-4 transition-all duration-300 hover:bg-slate-200">
+                    <div className="flex justify-start items-center gap-2">
+                        <Image
+                            className="rounded-xl"
+                            width={100}
+                            height={100}
+                            alt={"this is alt"}
+                            src={"/images/icons/target1.png"}
+                            priority={true}
+                        />
+                        <div className="flex flex-col gap-3">
+                            <div className="font-bold text-base sm:text-sm">پشتیبانی فوق سریع</div>
+                            <div className="text-base sm:text-xs">کمتر از 30 دقیقه</div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
             <section className="flex flex-col gap-6">
                 <h1 className="text-blue-400 text-lg">این مقاله به عنوان تست می باشد</h1>
                 <div className="flex justify-start items-center gap-4 text-base sm:text-sm">
