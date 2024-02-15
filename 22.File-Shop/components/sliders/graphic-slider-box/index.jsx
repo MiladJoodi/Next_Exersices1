@@ -14,7 +14,7 @@ const SlideBox = () => {
    return (
       <article className="sliderItem p-2 transition-all duration-300 hover:pt-0">
 
-         <div className="relative bg-white h-[28rem] w-72 rounded-lg">
+         <div className="relative bg-white h-[26rem] w-72 rounded-lg">
 
             <Link href={"/shop"} className="flex justify-center items-center pt-2">
                <Image
@@ -29,7 +29,7 @@ const SlideBox = () => {
             <div>
                <div className="flex flex-col gap-6 p-2">
                   <Link href={"/shop"}>
-                     <h3 className="line-clamp-3">
+                     <h3 className="line-clamp-2">
                         عنوان محصول هستن و ان محصول هستن ستن وان محصول هستن وان محصول
                         هستن وان محصول هستستن وان محصول هستن وان محصول
                         هستن وان محصول هستستن وان محصول هستن وان محصول

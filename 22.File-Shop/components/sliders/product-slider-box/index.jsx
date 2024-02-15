@@ -8,7 +8,7 @@ import Link from "next/link";
 const SlideBox = () => {
    return (
       <article className="sliderItem p-2 transition-all duration-300 hover:pt-0">
-         <div className="relative bg-white h-[24rem] w-72 rounded-lg">
+         <div className="relative bg-white h-[22rem] w-72 rounded-lg">
             <Link href={"/shop"} className="flex justify-center items-center pt-2">
                   <Image
                      width={270}
@@ -21,7 +21,7 @@ const SlideBox = () => {
             <div>
                <div className="flex flex-col gap-6 p-2">
                <Link href={"/"}>
-                     <h3 className="line-clamp-3 text-justify">
+                     <h3 className="line-clamp-2 text-justify">
                         عنوان محصول هستنوان محصول هستنوان محصول هستنوان محصول
                         هستنوان محصول هست محصول هستنوان محصول هستنوان محصول هستنوان محصول
                         هستنوان محصولمحصول هستنوان محصول هستنوان محصول هستنوان محصول
