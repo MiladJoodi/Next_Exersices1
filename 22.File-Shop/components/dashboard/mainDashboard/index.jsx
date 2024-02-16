@@ -18,9 +18,9 @@ const MainDashboard = () => {
   }, [contentChanger]);
 
   return (
-    <div className="flex justify-between items-start gap-1 container mx-auto">
+    <div className="flex justify-between items-start gap-4 container mx-auto">
       <DashboardCtrl setContentChanger={setContentChanger} />
-      <div>{details}</div>
+      <div className="w-full">{details}</div>
     </div>
   );
 };
