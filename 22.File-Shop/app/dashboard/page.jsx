@@ -1,10 +1,12 @@
+import DashboardCtrl from "@/components/dashboard/dashboard-ctrl";
 
 const Page = () => {
-    return (
-        <section className="container mx-auto p-12 flex justify-center items-center">
-            <div className="px-8 py-4 rounded-md bg-orange-500 text-white">داشبورد سایت</div>
-        </section>
-    );
-}
+  return (
+    <div className="flex justify-between items-start gap-1 container mx-auto">
+      <DashboardCtrl />
+      <div>test</div>
+    </div>
+  );
+};
 
 export default Page;
