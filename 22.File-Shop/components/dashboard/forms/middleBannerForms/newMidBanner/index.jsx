@@ -16,11 +16,11 @@ const NewMidBanner = () => {
       link: imageLinkRef.current.value,
       situation: imageSituationRef.current.value,
     };
-    const url = `${process.env.SERVER_URL}`
+    const url = `http://localhost:27017/api/new-middle-banners`
     console.log(url)
-    // axios.post(url, formData)
-    // .then(d=> console.log("ok"))
-    // .catch(e=> console.log("error"))
+    axios.post(url, formData)
+    .then(d=> console.log("ok"))
+    .catch(e=> console.log("error"))
   };
 
   return (
