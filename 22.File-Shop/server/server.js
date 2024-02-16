@@ -46,7 +46,5 @@ const PORT = process.env.PORT;
 const DB_URL = process.env.DB_URL;
 
 mongoose.connect(DB_URL)
-  .then(d => {
-    app.listen(PORT);
-  })
-  .catch(err => console.log(err));
+    .then(data => app.listen(PORT))
+    .catch(err => console.log("Connect Error"))

@@ -3,6 +3,7 @@ const router = express();
 
 const MiddleBannerCtrl = require("../controllers/MiddleBannerCtrl");
 
-router.get("/new-middle-banners", MiddleBannerCtrl.newMiddleBan);
+router.get("/middle-banners", MiddleBannerCtrl.getAllMiddleBan);
+router.get("/new-middle-banners", MiddleBannerCtrl.newMidBan);
 
 module.exports = router
