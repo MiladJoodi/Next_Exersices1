@@ -1,4 +1,4 @@
-const DCBtn = ({ title, content,setContentChanger }) => {
+const DCBtn = ({ title, content, setContentChanger }) => {
   return (
     <button
       onClick={() => setContentChanger(content)}
