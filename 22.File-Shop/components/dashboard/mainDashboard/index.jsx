@@ -1,15 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DashboardCtrl from "../dashboard-ctrl";
+import MiddleBannerAll from "../forms/middleBannerForms";
+import SlidersAll from "../forms/sliderForms";
 
 const MainDashboard = () => {
   const [contentChanger, setContentChanger] = useState("midBan");
-    console.log(contentChanger)
+  const [details, setDetails] = useState(<MiddleBannerAll />);
+
+  useEffect(() => {
+    if (contentChanger === "midBan") {
+      setDetails(<MiddleBannerAll />);
+    } else if (contentChanger === "sliders") {
+      setDetails(<SlidersAll />);
+    }
+  }, [contentChanger]);
+
   return (
     <div className="flex justify-between items-start gap-1 container mx-auto">
       <DashboardCtrl setContentChanger={setContentChanger} />
-      <div>test</div>
+      <div>{details}</div>
     </div>
   );
 };
