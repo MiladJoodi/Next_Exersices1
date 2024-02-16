@@ -6,11 +6,11 @@ import NewMidBanner from "./newMidBanner";
 const MiddleBannerAll = ()=>{
     const [det, setDet] = useState(<AllMidBanners/>)
 
-    useEffect(()=>{
-        if(det ==="xx" ){
-            setDet()
-        }
-    },[det])
+    // useEffect(()=>{
+    //     if(det ==="xx" ){
+    //         setDet()
+    //     }
+    // },[det])
 
     return(
         <div className="flex flex-col gap-8">
@@ -21,7 +21,7 @@ const MiddleBannerAll = ()=>{
                         همه
                     </button>
                     <button onClick={()=>setDet(<NewMidBanner/>)}  className="px-3 py-1 rounded-md bg-indigo-600 text-white transition-all duration-500 hover:bg-orange-500">
-                        بندر جدید
+                        بنر جدید
                     </button>
                 </div>
             </section>
