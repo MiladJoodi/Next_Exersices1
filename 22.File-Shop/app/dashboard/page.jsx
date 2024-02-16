@@ -1,10 +1,10 @@
 import DashboardCtrl from "@/components/dashboard/dashboard-ctrl";
+import MainDashboard from "@/components/dashboard/mainDashboard";
 
 const Page = () => {
   return (
-    <div className="flex justify-between items-start gap-1 container mx-auto">
-      <DashboardCtrl />
-      <div>test</div>
+    <div>
+      <MainDashboard />
     </div>
   );
 };
