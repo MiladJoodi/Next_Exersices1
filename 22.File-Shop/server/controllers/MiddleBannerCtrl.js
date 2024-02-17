@@ -10,7 +10,8 @@ const getAllMiddleBan = async (req, res) => {
         .sort({ _id: -1 })
         .skip((pageNumber - 1) * paginate)
         .limit(paginate);
-      res.status(200).json(GoalMidBans);
+      const AllMidBansNum = await (await MiddleBanner.find()).length;
+      res.status(200).json({GoalMidBans, AllMidBansNum});
     } else {
       const AllMidBans = await MiddleBanner.find();
       res.status(200).json(AllMidBans);

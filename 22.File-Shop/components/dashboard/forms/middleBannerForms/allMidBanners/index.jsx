@@ -10,9 +10,10 @@ const AllMidBanners = () => {
   useEffect(() => {
     axios
       .get(`http://localhost:27017/api/middle-banners?pn=${pageNumber}`)
-      .then((d) => setbanners(d.data))
+      .then((d) => setbanners(d.data.GoalMidBans))
+    //   console.log(d.data)
       .catch((e) => console.log(e));
-  }, [banners]);
+  }, []);
   return (
     <div className="p-4 flex flex-col gap-8">
       <div className="flex flex-col gap-6">
