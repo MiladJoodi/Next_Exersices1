@@ -6,11 +6,15 @@ import Image from "next/image";
 
 const AllMidBanners = () => {
   const [banners, setbanners] = useState([]);
+  const [midbanNumber, setmidbanNumber] = useState(1)
   const [pageNumber, setPageNumber] = useState(1);
   useEffect(() => {
     axios
       .get(`http://localhost:27017/api/middle-banners?pn=${pageNumber}`)
-      .then((d) => setbanners(d.data.GoalMidBans))
+      .then((d) => {
+        setbanners(d.data.GoalMidBans);
+        setmidbanNumber(d.data.AllMidBansNum)
+      })
     //   console.log(d.data)
       .catch((e) => console.log(e));
   }, []);
@@ -29,6 +33,12 @@ const AllMidBanners = () => {
         ) : (
           banners.map((ba, i) => <Box key={i} data={ba} />)
         )}
+      </div>
+            {
+              
+            }
+      <div>
+        
       </div>
     </div>
   );
