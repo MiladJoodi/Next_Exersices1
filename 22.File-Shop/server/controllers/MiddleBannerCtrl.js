@@ -26,7 +26,7 @@ module.exports.getAllMiddleBan = getAllMiddleBan;
 //POST
 const newMidBan = async (req, res) => {
   try {
-    const newMidBan = new MiddleBanner({
+    const newMidBanner = new MiddleBanner({
       image: req.body.image,
       imageAlt: req.body.imageAlt,
       situation: req.body.situation,
@@ -36,7 +36,7 @@ const newMidBan = async (req, res) => {
         minute: "2-digit",
       }),
     });
-    newMidBan
+    newMidBanner
       .save()
       .then((d) => {
         res.status(200).json({ msg: "بنر میانی با موفقیت ذخیره شد" });
@@ -50,3 +50,64 @@ const newMidBan = async (req, res) => {
   }
 };
 module.exports.newMidBan = newMidBan;
+
+
+//UPDATE
+const updateMidBan = async (req, res) => {
+  try {
+
+    await updateOne(
+      {_id: req.body.goalId},
+      {
+        $set:{
+          image: req.body.image,
+          imageAlt: req.body.imageAlt,
+          situation: req.body.situation,
+          link: req.body.link,
+          date: new Date().toLocaleDateString("fa-IR", {
+            hour: "2-digit",
+            minute: "2-digit",
+          })
+        }
+      }
+    )
+    res.status(200).json({ msg: "بنر میانی با موفقیت به روز رسانی شد" });
+
+    // const newMidBanner = new MiddleBanner({
+    //   image: req.body.image,
+    //   imageAlt: req.body.imageAlt,
+    //   situation: req.body.situation,
+    //   link: req.body.link,
+    //   date: new Date().toLocaleDateString("fa-IR", {
+    //     hour: "2-digit",
+    //     minute: "2-digit",
+    //   }),
+    // });
+    // newMidBanner
+    //   .save()
+    //   .then((d) => {
+    //     res.status(200).json({ msg: "بنر میانی با موفقیت ذخیره شد" });
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     res.status(400).json({ msg: "خطا در ذخیر بنر" });
+    //   });
+  } catch (err) {
+    console.log("error");
+  }
+};
+module.exports.updateMidBan = updateMidBan;
+
+//DELETE
+const deleteMidBan = async (req, res) => {
+  try {
+    await deleteOne(
+      {_id: req.body.goalId},
+    )
+    res.status(200).json({ msg: "بنر میانی با موفقیت حذف شد" });
+
+  } catch (err) {
+    console.log("error");
+  }
+};
+module.exports.deleteMidBan = deleteMidBan;
