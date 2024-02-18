@@ -111,3 +111,16 @@ const deleteMidBan = async (req, res) => {
   }
 };
 module.exports.deleteMidBan = deleteMidBan;
+
+
+// GET ONE MIDDLE BANNER
+const getOneMidBan = async (req, res) => {
+  try {
+    const goalMidBan = await MiddleBanner.findById(req.params.id);
+    res.status(200).json(goalMidBan);
+
+  } catch (err) {
+    console.log("error");
+  }
+};
+module.exports.getOneMidBan = getOneMidBan;
