@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef,useState, useEffect } from "react";
 import axios from "axios";
 
 const MidBannerDetails = ({midBanId}) => {
@@ -8,21 +8,26 @@ const MidBannerDetails = ({midBanId}) => {
   const imageLinkRef = useRef();
   const imageSituationRef = useRef();
 
+  //UPDATE
   const submiter = (e) => {
     e.preventDefault();
     const formData = {
+      goalId: midBanId,
       image: imageUrlRef.current.value,
       imageAlt: imageAltRef.current.value,
       link: imageLinkRef.current.value,
       situation: imageSituationRef.current.value,
     };
-    const url = `http://localhost:27017/api/new-middle-banners`
+    const url = `http://localhost:27017/api/update-middle-banner`
     console.log(url)
     axios.post(url, formData)
     .then(d=> console.log("ok"))
     .catch(e=> console.log("error"))
   };
-  console.log(midBanId)
+
+  useEffect(()=>{
+    
+  },[midBanId]);
 
   return (
     <div className="flex flex-col gap-8">
@@ -30,7 +35,7 @@ const MidBannerDetails = ({midBanId}) => {
       <form onSubmit={submiter} className="flex flex-col gap-6">
         {/* img url */}
         <div className="flex flex-col gap-2">
-          <div>آدرس عکس</div>
+          <div>آدرس جدید عکس</div>
           <input
             ref={imageUrlRef}
             type="text"
@@ -39,7 +44,7 @@ const MidBannerDetails = ({midBanId}) => {
         </div>
         {/* img alt */}
         <div className="flex flex-col gap-2">
-          <div>توضیحات عکس</div>
+          <div>توضیحات جدید عکس</div>
           <input
             ref={imageAltRef}
             type="text"
@@ -48,7 +53,7 @@ const MidBannerDetails = ({midBanId}) => {
         </div>
         {/* Link */}
         <div className="flex flex-col gap-2">
-          <div>توضیحات عکس</div>
+          <div>توضیحات جدید عکس</div>
           <input
             ref={imageLinkRef}
             type="text"
@@ -72,7 +77,7 @@ const MidBannerDetails = ({midBanId}) => {
           type="submit"
           className="p-2 bg-indigo-600 text-white w-full rounded-md transition-all duration-500 hover:bg-orange-500"
         >
-          ارسال
+          به روزرسانی
         </button>
       </form>
     </div>

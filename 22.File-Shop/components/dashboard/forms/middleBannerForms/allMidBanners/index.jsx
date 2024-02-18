@@ -20,6 +20,7 @@ const AllMidBanners = ({setmidBanDetCtrl}) => {
   const [numberOfBtns, setnumbersOfBtns] = useState([-1])
   console.log(numberOfBtns)
   const [pageNumber, setPageNumber] = useState(1);
+  
   useEffect(() => {
     axios
       .get(`http://localhost:27017/api/middle-banners?pn=${pageNumber}`)
