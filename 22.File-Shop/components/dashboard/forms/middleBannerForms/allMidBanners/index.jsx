@@ -7,6 +7,8 @@ import Image from "next/image";
 const AllMidBanners = () => {
   const [banners, setbanners] = useState([]);
   const [midbanNumber, setmidbanNumber] = useState(1)
+  const [numberOfBtns, setnumbersOfBtns] = useState([1])
+  console.log(numberOfBtns)
   const [pageNumber, setPageNumber] = useState(1);
   useEffect(() => {
     axios
@@ -14,6 +16,8 @@ const AllMidBanners = () => {
       .then((d) => {
         setbanners(d.data.GoalMidBans);
         setmidbanNumber(d.data.AllMidBansNum)
+        setnumbersOfBtns(Array.from(Array(Math.ceil(d.data.AllMidBansNum/2)).keys()))
+
       })
     //   console.log(d.data)
       .catch((e) => console.log(e));
@@ -34,9 +38,7 @@ const AllMidBanners = () => {
           banners.map((ba, i) => <Box key={i} data={ba} />)
         )}
       </div>
-            {
-              
-            }
+            
       <div>
         
       </div>
