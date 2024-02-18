@@ -4,7 +4,7 @@ import axios from "axios";
 import Box from "./Box";
 import Image from "next/image";
 
-const AllMidBanners = () => {
+const AllMidBanners = ({setmidBanDetCtrl}) => {
 
   //Go To Top
   const goTopCtrl = () => {
@@ -45,7 +45,7 @@ const AllMidBanners = () => {
             />
           </div>
         ) : (
-          banners.map((ba, i) => <Box key={i} data={ba} />)
+          banners.map((ba, i) => <Box key={i} data={ba} setmidBanDetCtrl={setmidBanDetCtrl} />)
         )}
       </div>
             
@@ -70,6 +70,7 @@ const AllMidBanners = () => {
             
           }
       </div>
+
     </div>
   );
 };

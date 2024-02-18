@@ -1,8 +1,10 @@
+"use client"
+
 import Image from "next/image";
 
-const Box = ({ data }) => {
+const Box = ({ data, setmidBanDetCtrl }) => {
   return (
-    <div className="p-6 w-full rounded bg-zinc-100 border-2 border-zinc-200 transition-all duration-500 hover:border-orange-500">
+    <div onClick={()=>setmidBanDetCtrl(data._id)} className="cursor-pointer p-6 w-full rounded bg-zinc-100 border-2 border-zinc-200 transition-all duration-500 hover:border-orange-500">
       <div className="flex justify-start items-center">
         <Image
           className="rounded-lg"
