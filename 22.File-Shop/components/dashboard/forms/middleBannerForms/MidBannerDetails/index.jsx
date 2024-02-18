@@ -26,7 +26,7 @@ const MidBannerDetails = ({midBanId}) => {
   };
 
   useEffect(()=>{
-    
+    axios.get()
   },[midBanId]);
 
   return (
