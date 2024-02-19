@@ -27,7 +27,7 @@ const MidBannerDetails = ({midBanId}) => {
 
   useEffect(()=>{
     axios.get()
-  },[midBanId]);
+  },[midBanId])
 
   return (
     <div className="flex flex-col gap-8">
